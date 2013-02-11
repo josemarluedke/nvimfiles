@@ -129,7 +129,6 @@ map <S-r> :w !ruby<CR>
 map <leader>gr :topleft :split config/routes.rb<cr>
 map <leader>gg :topleft :split Gemfile<cr>
 
-
 " ---------------------------------------------------------------------------
 " Plugins
 " ---------------------------------------------------------------------------
@@ -168,11 +167,10 @@ map <leader>rt :!ctags --extra=+f --languages=-javascript --exclude=.git --exclu
 " set complete=.,t
 set complete=.,w,b,u,t,i
 
-
 " Strip trailing whitespace
 function! <SID>StripTrailingWhitespaces()
-		" Only strip whitespace if isn't a slim file
-		if &filetype =~ 'slim'
+		" Only strip whitespace if isn't a slim or haml file
+		if &filetype =~ 'slim' || &filetype =~ 'haml'
 		  return
 		endif
 		" Preparation: save last search, and cursor position.
