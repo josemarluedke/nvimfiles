@@ -81,7 +81,7 @@ Expand CSS selectors `div.event` in to markup `<div class='event'></div>`
 
 http://net.tutsplus.com/articles/general/quick-tip-even-quicker-markup-with-sparkup/
 
-### [Fugitive](https://github.com/tpope/vim-fugitive)         
+### [Fugitive](https://github.com/tpope/vim-fugitive)
 
 Git integration
 
@@ -98,7 +98,7 @@ http://vimcasts.org/episodes/fugitive-vim---a-complement-to-command-line-git/
 Use:
 
 	:%Subvert/facilit{y,ies}/building{,s}/g
-	
+
 Instead:
 
 	:%s/facilities/buildings/g
@@ -114,7 +114,7 @@ Want to turn `fooBar` into `foo_bar`?  Press `crs` (coerce to snake\_case).  Mix
 Rename the current file
 
 	:rename[!] {newname}
-	
+
 ### [Loremipsum](https://github.com/vim-scripts/loremipsum)
 
 Insert a dummy text of a certain length
@@ -129,9 +129,9 @@ Run your Ruby tests! Supports RSpec, Test::Unit/MiniTest, and Cucumber. For more
 
 With bufexplorer, you can quickly and easily switch between buffers by using the one of the default public interfaces:
 
-	'\be' (normal open)  or 
-	'\bs' (force horizontal split open)  or 
-	'\bv' (force vertical split open) 
+	'\be' (normal open)  or
+	'\bs' (force horizontal split open)  or
+	'\bv' (force vertical split open)
 
 ### [Jsbeautify](https://github.com/vim-scripts/jsbeautify) (`\ff`)
 
@@ -139,7 +139,7 @@ Format your javascript souce code.
 
 ### [BufOnly](https://github.com/vim-scripts/BufOnly.vim)
 
-`:BufOnly` without an argument will unload all buffers but the current one. 
+`:BufOnly` without an argument will unload all buffers but the current one.
 
 `:BufOnly` with an argument will close all buffers but the supplied buffer name/number.
 
@@ -147,7 +147,7 @@ Format your javascript souce code.
 
 Add RVM integration
 
-### [CtrlP](https://github.com/kien/ctrlp.vim) (`\f`)            
+### [CtrlP](https://github.com/kien/ctrlp.vim) (`\f`)
 
 Find files in your project with minimal keypresses
 
@@ -158,7 +158,7 @@ For example `conadus` would find `controllers/admin/users`
 `/gf path_or_filename` - restrict to files in current directory
 
 
-### [Snipmate](https://github.com/garbas/vim-snipmate) (`TAB`)         
+### [Snipmate](https://github.com/garbas/vim-snipmate) (`TAB`)
 
 Snippets, press `TAB` to expand
 
@@ -183,6 +183,12 @@ Requires setting GITHUB_TOKEN and GITHUB_USER Env's
 
 Align stuff
 
+	 \a= :Tabularize /=
+	 \a: :Tabularize /:
+	 \a:: :Tabularize /:\zs
+	 \a, :Tabularize /,
+	 \<Bar> :Tabularize /<Bar>
+	
 http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
 
 ### [Neerd Commenter](https://github.com/scrooloose/nerdcommenter) (`Command + /` or `\/`)
@@ -198,7 +204,7 @@ Search project for text (aka find in files)
 
 `\a "some words"`
 
-### [Nerdtree](https://github.com/scrooloose/nerdtree) (`\p`)             
+### [Nerdtree](https://github.com/scrooloose/nerdtree) (`\p`)
 
 Project file browser
 
@@ -241,7 +247,7 @@ correct text object or motion.
 
 `cst<div>` - change surround tag to `<div>`
 
-### [Solarized](https://github.com/altercation/vim-colors-solarized) 
+### [Solarized](https://github.com/altercation/vim-colors-solarized)
 
 A colour scheme, both light and dark version
 
@@ -276,7 +282,7 @@ Plugin manager and part of the reason why my vimfiles as so compact
 ## Installation
 
 Note: If you are using RVM make sure you use system ruby before installation.
-    
+
     rvm use system
 
 Note: If you already have Vim installed ensure it has support for Ruby:
@@ -287,7 +293,7 @@ You should see `+ruby,` if you see `-ruby` you need to reinstall Vim with Ruby s
 
 ### Install Vim (if not already installed)
 
-#### MacOS: MacVim / Vim 
+#### MacOS: MacVim / Vim
 
     brew install macvim --override-system-vim --enable-clipboard
 

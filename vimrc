@@ -30,7 +30,7 @@ set hidden
 
 set history=1000  "store lots of :cmdline history
 
-"Powerline
+" Powerline
 let g:Powerline_symbols = 'fancy'
 
 " ---------------------------------------------------------------------------
@@ -39,12 +39,6 @@ let g:Powerline_symbols = 'fancy'
 
 set title
 set encoding=utf-8
-
-"vertical/horizontal scroll off settings
-set scrolloff=3
-set sidescrolloff=7
-set sidescroll=1
-
 set autoindent
 set smartindent
 set showmode     "show current mode down the bottom
@@ -59,10 +53,8 @@ set ruler
 set backspace=indent,eol,start  "allow backspacing over everything in insert mode
 set laststatus=2
 set number
-set incsearch    "find the next match as we type the search
-set hlsearch     "hilight searches by default
 
-"some stuff to get the mouse going in term
+" some stuff to get the mouse going in term
 set mouse=a
 set ttymouse=xterm2
 
@@ -95,12 +87,31 @@ nmap <D-]> >>
 vmap <D-[> <gv
 vmap <D-]> >gv
 
+" Searching
+set hlsearch                    " highlight matches
+set incsearch                   " incremental searching
+set ignorecase                  " searches are case insensitive...
+set smartcase                   " ... unless they contain at least one capital letter
+
 " Toggle hlsearch with <leader>hs
 nmap <leader>hs :set hlsearch! hlsearch?<CR>
 
-set hlsearch
 " turn search highlight off
 nnoremap <leader><space> :noh<cr>
+
+" Tabularize
+nmap <Leader>a& :Tabularize /&<CR>
+vmap <Leader>a& :Tabularize /&<CR>
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a: :Tabularize /:<CR>
+vmap <Leader>a: :Tabularize /:<CR>
+nmap <Leader>a:: :Tabularize /:\zs<CR>
+vmap <Leader>a:: :Tabularize /:\zs<CR>
+nmap <Leader>a, :Tabularize /,<CR>
+vmap <Leader>a, :Tabularize /,<CR>
+nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 
 " ---------------------------------------------------------------------------
 " Ruby/Rails
@@ -188,9 +199,9 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
-"  ---------------------------------------------------------------------------
-"  GUI
-"  ---------------------------------------------------------------------------
+" ---------------------------------------------------------------------------
+" GUI
+" ---------------------------------------------------------------------------
 
 " colorscheme
 color solarized
