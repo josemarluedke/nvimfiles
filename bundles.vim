@@ -31,6 +31,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-rvm'
 
 "--------------------------
 " utility
@@ -49,8 +50,8 @@ Bundle 'lucapette/vim-ruby-doc'
 Bundle 'lucapette/vim-jquery-doc'
 Bundle 'scrooloose/syntastic'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'tpope/vim-rvm'
 Bundle 'skalnik/vim-vroom'
+Bundle 'vim-scripts/Gist.vim'
 
 "--------------------------
 " tool for explorer
