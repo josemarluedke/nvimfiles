@@ -1,10 +1,16 @@
+set nocompatible               " be iMproved
+
+if !isdirectory(expand("~/.vim/bundle/vundle/.git"))
+  !git clone git://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+endif
+
 "------------------------------------------------------------
 " when in Mac osx vi, if filetype is already off,
 " calling filetype off causes a bad exit status
 "------------------------------------------------------------
 filetype on
 "------------------------------------------------------------
-set nocompatible               " be iMproved
+
 filetype off                   " required!
 
 "--------------------
@@ -83,3 +89,5 @@ Bundle 'tomasr/molokai'
 "--------------------------
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/snipmate-snippets'
+Bundle 'tomtom/tlib_vim'
+Bundle 'MarcWeber/vim-addon-mw-utils'
