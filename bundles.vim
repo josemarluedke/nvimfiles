@@ -20,7 +20,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 
 "--------------------------
@@ -83,6 +83,7 @@ Bundle 'rickharris/vim-blackboard'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'endel/vim-github-colorscheme'
 Bundle 'tomasr/molokai'
+Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
 
 "--------------------------
 " snipmate
