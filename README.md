@@ -371,6 +371,17 @@ Note: MacOS comes with the BSD version of ctags which is not compatible.
     sudo apt-get install ack-grep
     sudo ln -s /usr/bin/ack-grep /usr/local/bin/ack
 
+## Screens
+
+*Solarized*
+![Solarized MacVim](http://farm9.staticflickr.com/8234/8465039131_a2431e5329_c.jpg)
+
+*Molokai*
+![Molokai MacVim](http://farm9.staticflickr.com/8516/8466136648_244b4987b6_c.jpg)
+
+*Molokai with transparency*
+![Molokai MacVim](http://farm9.staticflickr.com/8087/8465039507_d34e0496a8_c.jpg)
+
 ## Thanks for inspiration
 
 - [@krisleech](https://github.com/krisleech) for him [vimfiles](https://github.com/krisleech/vimfiles/)
