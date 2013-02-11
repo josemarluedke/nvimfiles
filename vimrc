@@ -248,7 +248,7 @@ else
 		if $TERM == 'xterm'
 			set term=xterm-256color
 		else
-			colorscheme default
+			colorscheme molokai
 		endif
 	endif
 endif
