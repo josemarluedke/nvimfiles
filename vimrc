@@ -84,30 +84,6 @@ set textwidth=79
 set formatoptions=n
 
 " ---------------------------------------------------------------------------
-" Status Line
-" ---------------------------------------------------------------------------
-
-" path
-set statusline=%f
-" flags
-set statusline+=%m%r%h%w
-" git branch
-set statusline+=\ %{fugitive#statusline()}
-" encoding
-set statusline+=\ [%{strlen(&fenc)?&fenc:&enc}]
-" rvm
-set statusline+=\ %{rvm#statusline()}
-" line x of y
-set statusline+=\ [line\ %l\/%L]
-
-" Colour
-hi StatusLine ctermfg=Black ctermbg=White
-
-" Change colour of statusline in insert mode
-au InsertEnter * hi StatusLine ctermbg=DarkBlue
-au InsertLeave * hi StatusLine ctermfg=Black ctermbg=White
-
-" ---------------------------------------------------------------------------
 " Mappings
 " ---------------------------------------------------------------------------
 
