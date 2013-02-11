@@ -14,7 +14,7 @@ silent! runtime bundles.vim
 " General
 " ---------------------------------------------------------------------------
 
-filetype plugin indent on  
+filetype plugin indent on
 let mapleader = "\\"
 let g:mapleader = "\\"
 syntax enable
@@ -68,6 +68,9 @@ set hlsearch     "hilight searches by default
 "some stuff to get the mouse going in term
 set mouse=a
 set ttymouse=xterm2
+
+" Ctags path (brew install ctags)
+let Tlist_Ctags_Cmd = 'ctags'
 
 " ---------------------------------------------------------------------------
 " Text Formatting
@@ -127,6 +130,23 @@ set hlsearch
 nnoremap <leader><space> :noh<cr>
 
 " ---------------------------------------------------------------------------
+" Ruby/Rails
+" ---------------------------------------------------------------------------
+
+" Skip to Model, View or Controller
+map <Leader>m :Rmodel
+map <Leader>v :Rview
+map <Leader>c :Rcontroller
+
+" Execute current buffer as ruby
+map <S-r> :w !ruby<CR>
+
+" View routes or Gemfile in large split
+map <leader>gr :topleft :split config/routes.rb<cr>
+map <leader>gg :topleft :split Gemfile<cr>
+
+
+" ---------------------------------------------------------------------------
 " Plugins
 " ---------------------------------------------------------------------------
 
@@ -136,7 +156,7 @@ let NERDChristmasTree = 1
 let NERDTreeWinPos = "left"
 let NERDTreeHijackNetrw = 1
 let NERDTreeQuitOnOpen = 1
-let NERDTreeWinSize = 30 
+let NERDTreeWinSize = 30
 let NERDTreeChDirMode = 2
 let NERDTreeDirArrows = 1
 silent! nmap <silent> <Leader>p :NERDTreeToggle<CR>
@@ -164,6 +184,24 @@ map <leader>rt :!ctags --extra=+f --languages=-javascript --exclude=.git --exclu
 " set complete=.,t
 set complete=.,w,b,u,t,i
 
+
+" Strip trailing whitespace
+function! <SID>StripTrailingWhitespaces()
+		" Only strip whitespace if isn't a slim file
+		if &filetype =~ 'slim'
+		  return
+		endif
+		" Preparation: save last search, and cursor position.
+		let _s=@/
+		let l = line(".")
+		let c = col(".")
+		" Do the business:
+		%s/\s\+$//e
+		" Clean up: restore previous search history, and cursor position
+		let @/=_s
+		call cursor(l, c)
+endfunction
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 "  ---------------------------------------------------------------------------
 "  GUI
