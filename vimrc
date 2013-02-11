@@ -24,7 +24,6 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-
 " This means that you can have unwritten changes to a file and open a new file
 " using :e, without being forced to write or undo your changes first.
 set hidden
@@ -60,7 +59,6 @@ set ruler
 set backspace=indent,eol,start  "allow backspacing over everything in insert mode
 set laststatus=2
 set number
-set relativenumber
 set incsearch    "find the next match as we type the search
 set hlsearch     "hilight searches by default
 
@@ -155,17 +153,22 @@ endif
 
 " TagList
 set tags=./tags;
+
 " Support for https://github.com/ivalkeen/guard-ctags-bundler
 set tags+=gems.tags
-map <leader>l :TlistToggle <cr>
-let Tlist_Use_Right_Window = 1
-let Tlist_WinWidth = 60
+
+map <leader>l :TagbarToggle <cr>
+
 " Generate ctags for all bundled gems as well
 map <leader>rt :!ctags --extra=+f --languages=-javascript --exclude=.git --exclude=log -R * `rvm gemdir`/gems/* `rvm gemdir`/bundler/gems/*<CR><C-M>
 
 " Use only current file to autocomplete from tags
 " set complete=.,t
 set complete=.,w,b,u,t,i
+
+" ---------------------------------------------------------------------------
+" Functions
+" ---------------------------------------------------------------------------
 
 " Strip trailing whitespace
 function! <SID>StripTrailingWhitespaces()
