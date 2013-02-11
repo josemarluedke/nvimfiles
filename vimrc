@@ -61,7 +61,6 @@ set backspace=indent,eol,start  "allow backspacing over everything in insert mod
 set laststatus=2
 set number
 set relativenumber
-set undofile
 set incsearch    "find the next match as we type the search
 set hlsearch     "hilight searches by default
 
