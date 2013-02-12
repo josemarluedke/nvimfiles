@@ -76,6 +76,9 @@ Bundle 'nono/vim-handlebars'
 Bundle 'slim-template/vim-slim'
 Bundle 'tpope/vim-haml'
 Bundle 'statianzo/vim-jade'
+Bundle 'oguzbilgic/sexy-railscasts-theme'
+Bundle 'jpo/vim-railscasts-theme'
+Bundle '29decibel/codeschool-vim-theme'
 
 "--------------------------
 " color scheme
