@@ -58,9 +58,6 @@ set number
 set mouse=a
 set ttymouse=xterm2
 
-" Ctags path (brew install ctags)
-let Tlist_Ctags_Cmd = 'ctags'
-
 " ---------------------------------------------------------------------------
 " Text Formatting
 " ---------------------------------------------------------------------------
@@ -161,12 +158,6 @@ else
   map <leader>/ <plug>NERDCommenterToggle<CR>
   imap <leader>/ <Esc><plug>NERDCommenterToggle<CR
 endif
-
-" TagList
-set tags=./tags;
-
-" Support for https://github.com/ivalkeen/guard-ctags-bundler
-set tags+=gems.tags
 
 map <leader>l :TagbarToggle <cr>
 
