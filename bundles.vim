@@ -1,4 +1,4 @@
-set nocompatible               " be iMproved
+set nocompatible " be iMproved
 
 if !isdirectory(expand("~/.vim/bundle/vundle/.git"))
   !git clone git://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
@@ -9,9 +9,7 @@ endif
 " calling filetype off causes a bad exit status
 "------------------------------------------------------------
 filetype on
-"------------------------------------------------------------
-
-filetype off                   " required!
+filetype off " required!
 
 "--------------------
 " enable vundle

@@ -1,5 +1,5 @@
-"Use Vim settings, rather then Vi settings (much better!).
-"This must be first, because it changes other options as a side effect.
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
 set nocompatible
 
 silent! runtime bundles.vim
@@ -37,22 +37,21 @@ let g:Powerline_symbols = 'fancy'
 " UI
 " ---------------------------------------------------------------------------
 
-set title
+set title				 " make your xterm inherit the title from Vim
 set encoding=utf-8
 set autoindent
 set smartindent
-set showmode     "show current mode down the bottom
-set showcmd      "show incomplete cmds down the bottom
-set hidden
+set showmode     " show current mode down the bottom
+set showcmd      " show incomplete cmds down the bottom
+set hidden			 " hides buffers instead of closing them
 set wildmenu
 set wildmode=list:longest
 set visualbell
-set cursorline
+set cursorline	 " highlight current line
 set ttyfast
-set ruler
 set backspace=indent,eol,start  "allow backspacing over everything in insert mode
-set laststatus=2
-set number
+set laststatus=2 " display the status line always
+set number			 " display the numbers
 
 " some stuff to get the mouse going in term
 set mouse=a
