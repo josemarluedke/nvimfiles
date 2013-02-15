@@ -48,6 +48,8 @@ The leader is mapped to \
 
 `\l` - Open tag list (Tagbar)
 
+`<C-h>` `<C-j>` `<C-k>` `<C-l>` - Switching between windows
+
 
 #### In Insert mode (i)
 
@@ -188,7 +190,7 @@ Align stuff
 	 \a:: :Tabularize /:\zs
 	 \a, :Tabularize /,
 	 \<Bar> :Tabularize /<Bar>
-	
+
 http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
 
 ### [Neerd Commenter](https://github.com/scrooloose/nerdcommenter) (`Command + /` or `\/`)
