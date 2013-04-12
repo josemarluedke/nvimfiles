@@ -50,6 +50,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'skalnik/vim-vroom'
 Bundle 'vim-scripts/Gist.vim'
+Bundle 'josemarluedke/vim-rspec'
 
 "--------------------------
 " tool for explorer

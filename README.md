@@ -281,6 +281,18 @@ reported.
 
 Plugin manager and part of the reason why my vimfiles as so compact
 
+### [Rspec](https://github.com/josemarluedke/vim-rspec)
+
+Run Rspec specs from Vim
+
+`\t` run the full spec file
+
+`\s` run the spec file under the cursor
+
+`\l` rerun the previous spec command
+
+This version of vim-rspec uses iTerm as default terminal. The original version uses the Terminal app.
+
 ## Installation
 
 Note: If you are using RVM make sure you use system ruby before installation.
