@@ -293,6 +293,10 @@ Run Rspec specs from Vim
 
 This version of vim-rspec uses iTerm as default terminal. The original version uses the Terminal app.
 
+### [Multiple cursors](http://github.com/terryma/vim-multiple-cursors)
+
+True Sublime Text style multiple selections for Vim
+
 ## Installation
 
 Note: If you are using RVM make sure you use system ruby before installation.

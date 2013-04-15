@@ -51,6 +51,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'skalnik/vim-vroom'
 Bundle 'vim-scripts/Gist.vim'
 Bundle 'josemarluedke/vim-rspec'
+Bundle 'terryma/vim-multiple-cursors'
 
 "--------------------------
 " tool for explorer
