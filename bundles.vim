@@ -62,6 +62,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-scripts/ctags.vim'
 Bundle 'mileszs/ack.vim'
+Bundle 'epmatsw/ag.vim'
 Bundle 'vim-scripts/BufOnly.vim'
 
 "--------------------------
