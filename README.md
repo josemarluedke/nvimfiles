@@ -206,6 +206,11 @@ Search project for text (aka find in files)
 
 `\a "some words"`
 
+### [Ag](https://github.com/epmatsw/ag.vim) (`:Ag`)
+
+Alternative of Ack, using 'the_silver_searcher' on homebrew.
+
+
 ### [Nerdtree](https://github.com/scrooloose/nerdtree) (`\p`)
 
 Project file browser
