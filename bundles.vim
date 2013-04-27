@@ -80,6 +80,7 @@ Bundle 'statianzo/vim-jade'
 Bundle 'oguzbilgic/sexy-railscasts-theme'
 Bundle 'jpo/vim-railscasts-theme'
 Bundle '29decibel/codeschool-vim-theme'
+Bundle 'puppetlabs/puppet-syntax-vim'
 
 "--------------------------
 " color scheme
