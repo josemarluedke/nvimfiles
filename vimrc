@@ -52,6 +52,7 @@ set ttyfast
 set backspace=indent,eol,start  "allow backspacing over everything in insert mode
 set laststatus=2 " display the status line always
 set number			 " display the numbers
+set relativenumber
 
 " some stuff to get the mouse going in term
 set mouse=a
