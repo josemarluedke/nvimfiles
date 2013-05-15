@@ -407,6 +407,6 @@ Note: MacOS comes with the BSD version of ctags which is not compatible.
 
 ## Thanks for inspiration
 
-- [@krisleech](https://github.com/krisleech) for him [vimfiles](https://github.com/krisleech/vimfiles/)
-- [@wongyouth](https://github.com/wongyouth) for him [vimfiles](https://github.com/wongyouth/vimfiles)
+- [@krisleech](https://github.com/krisleech) for his [vimfiles](https://github.com/krisleech/vimfiles/)
+- [@wongyouth](https://github.com/wongyouth) for his [vimfiles](https://github.com/wongyouth/vimfiles)
 - [@dcrec1](https://github.com/dcrec1) for [strip trailing whitespace](https://github.com/akitaonrails/vimfiles/commit/b9299f3570653ea70870a7b208eccd553523bddb)
