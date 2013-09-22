@@ -53,6 +53,8 @@ set backspace=indent,eol,start  "allow backspacing over everything in insert mod
 set laststatus=2 " display the status line always
 set nonumber
 set relativenumber " show relative numbers
+set splitbelow
+set splitright
 
 " some stuff to get the mouse going in term
 set mouse=a
