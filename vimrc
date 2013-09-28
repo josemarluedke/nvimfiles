@@ -81,6 +81,9 @@ set formatoptions=n
 nnoremap <leader>a :Ack
 nnoremap <leader>f :CtrlP<cr>
 
+" Switch between the last two files
+nnoremap <leader><leader> <c-^>
+
 "Key mapping for textmate-like indentation
 nmap <D-[> <<
 nmap <D-]> >>
@@ -130,7 +133,7 @@ map <leader>gh :CtrlP app/helpers<cr>
 map <leader>gl :CtrlP lib<cr>
 map <leader>gp :CtrlP public<cr>
 map <leader>gs :CtrlP public/stylesheets<cr>
-map <leader>ga :CtrlP app/assets<cr>
+map <leader>ga :CtrlP app/astets<cr>
 
 " Skip to Model, View or Controller
 map <Leader>m :Rmodel
