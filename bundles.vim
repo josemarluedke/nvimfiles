@@ -54,6 +54,7 @@ Bundle 'skalnik/vim-vroom'
 Bundle 'vim-scripts/Gist.vim'
 Bundle 'josemarluedke/vim-rspec'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'nelstrom/vim-textobj-rubyblock'
 
 "--------------------------
 " tool for explorer
