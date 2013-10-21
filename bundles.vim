@@ -41,7 +41,7 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'vim-scripts/jsbeautify'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'godlygeek/tabular'
-Bundle 'mattn/zencoding-vim'
+Bundle 'mattn/emmet-vim'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'danro/rename.vim'
 Bundle 'vim-scripts/loremipsum'
