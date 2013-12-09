@@ -83,6 +83,10 @@ set formatoptions=n
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>rv :so $MYVIMRC<CR>
+
+cmap E e
+cmap W w
+
 " \a to Ack (search in files)
 nnoremap <leader>a :Ack
 nnoremap <leader>f :CtrlP<cr>
