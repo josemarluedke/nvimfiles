@@ -87,8 +87,8 @@ nmap <silent> <leader>rv :so $MYVIMRC<CR>
 nmap :E :e
 nmap :W :w
 
-" \a to Ack (search in files)
-nnoremap <leader>a :Ack
+" \a to Silver Searcher (search in files)
+nnoremap <leader>a :Ag!<space>
 nnoremap <leader>f :CtrlP<cr>
 
 " Switch between the last two files

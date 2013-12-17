@@ -24,7 +24,7 @@ The leader is mapped to \
 
 `\f` - Find in Files (Command-t)
 
-`\a` - Search in files (Ack)
+`\a` - Search in files (Silver Searcher)
 
 `\Space` - Remove search highlighting
 
