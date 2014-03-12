@@ -276,3 +276,11 @@ autocmd BufNewFile,BufRead *.slim,*.haml setlocal list listchars=extends:>,prece
 if filereadable(expand("$HOME/") . '.vimrc.local')
   source ~/.vimrc.local
 endif
+
+" ---------------------------------------------------------------------------
+" Column color
+" ---------------------------------------------------------------------------
+
+set colorcolumn=80
+highlight ColorColumn guibg=#1e1e1e
+highlight clear SignColumn
