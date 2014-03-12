@@ -80,6 +80,17 @@ set formatoptions=n
 " Mappings
 " ---------------------------------------------------------------------------
 
+" Disable directions key navigation
+noremap <up>    :echoerr 'Use K to go up'<CR>
+noremap <down>  :echoerr 'Use J to go down'<CR>
+noremap <left>  :echoerr 'Use H to go left'<CR>
+noremap <right> :echoerr 'Use L to go right'<CR>
+" Disable it in insert mode
+"inoremap <up>    <ESC>:echoerr 'Use K to go up'<CR>
+"inoremap <down>  <ESC>:echoerr 'Use J to go down'<CR>
+"inoremap <left>  <ESC>:echoerr 'Use H to go left'<CR>
+"inoremap <right> <ESC>:echoerr 'Use L to go right'<CR>
+
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>rv :so $MYVIMRC<CR>
