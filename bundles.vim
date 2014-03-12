@@ -56,6 +56,7 @@ Bundle 'josemarluedke/vim-rspec'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'kana/vim-textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'airblade/vim-gitgutter'
 
 "--------------------------
 " tool for explorer
@@ -93,7 +94,7 @@ Bundle 'rickharris/vim-blackboard'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'endel/vim-github-colorscheme'
 Bundle 'tomasr/molokai'
-Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
+Bundle "daylerees/colour-schemes", { "rtp": "vim" }
 
 "--------------------------
 " snipmate
