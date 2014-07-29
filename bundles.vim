@@ -32,6 +32,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-rbenv'
 Bundle 'tpope/vim-rake'
 Bundle 'tpope/vim-bundler'
+Bundle 'tpope/vim-endwise'
 
 "--------------------------
 " utility
