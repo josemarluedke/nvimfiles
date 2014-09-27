@@ -208,7 +208,7 @@ task :install do
 
   execute "vim -c BundleInstall! -c q -c q -u bundles.vim",
           "Installing Bundles...",
-          "Could not install Vim plugins."
+          "Could not install Vim plugins.\r\n Try #{"vim -c BundleInstall! -c q -c q -u bundles.vim".colorize(:white)} yourself."
 
   puts
   puts "     All done!".colorize(:green)
