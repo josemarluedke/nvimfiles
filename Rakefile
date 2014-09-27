@@ -62,11 +62,6 @@ class String
   #   puts "This is uncolorized".blue.on_red.uncolorize
   #
   def colorize(params)
-    begin
-      require 'Win32/Console/ANSI' if RUBY_PLATFORM =~ /win32/
-    rescue LoadError
-      raise 'You must gem install win32console to use colorize on Windows'
-    end
 
     self.scan(REGEXP_PATTERN).inject("") do |str, match|
       match[0] ||= MODES[:default]

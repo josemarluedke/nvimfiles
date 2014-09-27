@@ -18,8 +18,8 @@ silent! runtime bundles.vim
 " ---------------------------------------------------------------------------
 
 filetype plugin indent on
-let mapleader = "\\"
-let g:mapleader = "\\"
+let mapleader = ","
+let g:mapleader = ","
 syntax enable
 
 " do not create backup, swap file, use git for version managment

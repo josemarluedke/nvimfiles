@@ -21,38 +21,38 @@ Yes, Dragon Dictate is only for MacOS, so...
 
 ### Basic Mappings
 
-The leader is mapped to ```\```
+The leader is mapped to ```,```
 
 
 #### In Normal mode (Esc)
 
-`\p` - File browser (NerdTree)
+`,p` - File browser (NerdTree)
 
-`\f` - Find in Files (Command-t)
+`,f` - Find in Files (Command-t)
 
-`\a` - Search in files (Silver Searcher)
+`,a` - Search in files (Silver Searcher)
 
-`\Space` - Remove search highlighting
+`,Space` - Remove search highlighting
 
 `Command + /` (with gui) and `\/` (without gui) - Toggle comments (NERD Commenter)
 
-`\m` - Jump to model
+`,m` - Jump to model
 
-`\v` - Jump to view
+`,v` - Jump to view
 
-`\gm` - Find in app/models
+`,gm` - Find in app/models
 
-`\gc` - Find in app/controller
+`,gc` - Find in app/controller
 
-`\gv` - Find in app/views
+`,gv` - Find in app/views
 
-`\gr` - Open routes in split
+`,gr` - Open routes in split
 
-`\gg` - Open Gemfile in split
+`,gg` - Open Gemfile in split
 
 `Command + [` or `Command + ]` - Textmate-like indentation
 
-`\l` - Open tag list (Tagbar)
+`,l` - Open tag list (Tagbar)
 
 `<C-h>` `<C-j>` `<C-k>` `<C-l>` - Switching between windows
 
@@ -155,7 +155,7 @@ Format your javascript souce code.
 
 Add RVM integration
 
-### [CtrlP](https://github.com/kien/ctrlp.vim) (`\f`)
+### [CtrlP](https://github.com/kien/ctrlp.vim) (`,f`)
 
 Find files in your project with minimal keypresses
 
@@ -191,11 +191,11 @@ Requires setting GITHUB_TOKEN and GITHUB_USER Env's
 
 Align stuff
 
-	 \a= :Tabularize /=
-	 \a: :Tabularize /:
-	 \a:: :Tabularize /:\zs
-	 \a, :Tabularize /,
-	 \<Bar> :Tabularize /<Bar>
+	 ,a= :Tabularize /=
+	 ,a: :Tabularize /:
+	 ,a:: :Tabularize /:\zs
+	 ,a, :Tabularize /,
+	 ,<Bar> :Tabularize /<Bar>
 
 http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
 
@@ -204,13 +204,13 @@ http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
 Comment/Uncomment stuff out
 
 
-### [Ack](https://github.com/mileszs/ack.vim) (`\a`)
+### [Ack](https://github.com/mileszs/ack.vim) (`,a`)
 
 Search project for text (aka find in files)
 
-`\a word`
+`,a word`
 
-`\a "some words"`
+`,a "some words"`
 
 ### [Ag](https://github.com/epmatsw/ag.vim) (`:Ag`)
 
@@ -221,7 +221,7 @@ Alternative of Ack, using 'the_silver_searcher' on homebrew.
 
 Project file browser
 
-`\p` opens file browser
+`,p` opens file browser
 
 `o` / `x` open and close files/folders
 
@@ -272,7 +272,7 @@ A colour scheme, both light and dark version
 
 Lists method names, provide auto complete
 
-Run `ctags -R` or `\rt` in project root to generate tags
+Run `ctags -R` or `,rt` in project root to generate tags
 
 ### [Powerline](https://github.com/Lokaltog/vim-powerline)
 
@@ -296,11 +296,11 @@ Plugin manager and part of the reason why my vimfiles as so compact
 
 Run Rspec specs from Vim
 
-`\t` run the full spec file
+`,t` run the full spec file
 
-`\s` run the spec file under the cursor
+`,s` run the spec file under the cursor
 
-`\l` rerun the previous spec command
+`,l` rerun the previous spec command
 
 This version of vim-rspec uses iTerm as default terminal. The original version uses the Terminal app.
 
