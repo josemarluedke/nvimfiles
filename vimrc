@@ -251,8 +251,6 @@ else
 	"set railscasts colorscheme when running vim in gnome terminal
   if $TERM == 'xterm'
     set term=xterm-256color
-  else
-    colorscheme molokai
   endif
 endif
 
