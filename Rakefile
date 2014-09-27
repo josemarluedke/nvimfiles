@@ -179,7 +179,7 @@ def execute cmd, message, error
     puts ("_" * COLS).colorize(:black)
     puts
     puts "     #{"Ooooops".colorize(:red)}"
-    puts "     #{error}"
+    puts "     #{error % cmd.colorize(:white)}"
     puts
     puts ("_" * COLS).colorize(:black)
 
@@ -206,9 +206,9 @@ task :install do
           "Installing ctags...",
           "Could not install ctags. Please install it manually and try again."
 
-  execute "vim -c BundleInstall! -c q -c q -u bundles.vim",
+  execute "vim -c BundleInstall! -c q -c q -u ~/.vim/bundles.vim",
           "Installing Bundles...",
-          "Could not install Vim plugins.\r\n     Try #{"vim -c BundleInstall! -c q -c q -u bundles.vim".colorize(:white)} yourself."
+          "Could not install Vim plugins.\r\n     Try %s yourself."
 
   puts
   puts "     All done!".colorize(:green)
