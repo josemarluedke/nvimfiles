@@ -1,8 +1,8 @@
 require_relative "colorize"
 
-MARGIN = " " * 5
+MARGIN = " " * 6
 COLS = `tput cols`.to_i
-LINE = ("_" * COLS).colorize(:black)
+LINE = ("/" * COLS).colorize(:black)
 
 def execute cmd, message, error
 
@@ -21,17 +21,17 @@ def execute cmd, message, error
     abort
   end
   print "#{" " * (margin - 4)}[#{"OK".colorize(:green)}]\r\n"
+  puts
   puts LINE
-
 end
 
 desc "Install the whole thing and dependencies"
 task :install do
   root = File.expand_path(File.dirname(__FILE__))
-  puts ("_" * COLS).colorize(:black)
+  puts LINE
 
   execute "vim --version | grep '+ruby'",
-          "Checking ruby support on vim...",
+          "Checking Ruby support on Vim...",
           "Your Vim doesn't have Ruby support.\r\n#{MARGIN}You must reinstall it and run this command again."
 
   execute "brew install ack",
@@ -41,6 +41,14 @@ task :install do
   execute "brew install ctags",
           "Installing ctags...",
           "Could not install ctags. Please install it manually and try again."
+
+  execute "mkdir -p ~/.vim/bundle && if [ ! -d ~/.vim/bundle/vundle ]; then git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle; fi",
+          "Installing vundle...",
+          "Could not install vundle."
+
+  execute "if [ -f ~/.vimrc ]; then rm ~/.vimrc; fi; ln -s ~/.vim/vimrc ~/.vimrc",
+          "Linking .vimrc...",
+          "Could not link .vimrc"
 
   execute "vim -c BundleInstall! -c q -c q -u ~/.vim/bundles.vim",
           "Installing Bundles...",

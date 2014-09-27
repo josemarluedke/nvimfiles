@@ -14,7 +14,7 @@ Yes, Dragon Dictate is only for MacOS, so...
 
 ## Quick Install
 
-	curl -k https://raw.githubusercontent.com/joaomilho/vimfiles_ruby_dragon/master/install.sh -o - | sh
+	curl -Lk http://bit.ly/1mBDHPv -o - | sh
 
 ## Usage
 
