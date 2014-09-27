@@ -174,7 +174,7 @@ def execute cmd, message, error
   puts
   print " " * 5
   print message.colorize(:white)
-  unless system "#{cmd} > /dev/null 2>&1"
+  unless system cmd
     print "#{" " * (margin - 8)}[#{"FAILED".colorize(:red)}]\r\n"
     puts ("_" * COLS).colorize(:black)
     puts
@@ -194,15 +194,15 @@ task :install do
   root = File.expand_path(File.dirname(__FILE__))
   puts ("_" * COLS).colorize(:black)
 
-  execute "vim --version | grep '+ruby'",
+  execute "vim --version | grep '+ruby' > /dev/null 2>&1",
           "Checking ruby support on vim...",
           "Your Vim doesn't have Ruby support.\r\n     You must reinstall it and run this command again."
 
-  execute "brew install ack",
+  execute "brew install ack > /dev/null 2>&1",
           "Installing ack...",
           "Could not install ack. Please install it manually and try again."
 
-  execute "brew install ctags",
+  execute "brew install ctags > /dev/null 2>&1",
           "Installing ctags...",
           "Could not install ctags. Please install it manually and try again."
 
