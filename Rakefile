@@ -189,6 +189,29 @@ def execute cmd, message, error
   puts ("_" * COLS).colorize(:black)
 
 end
+
+def execute_on_term cmd, message, error
+
+  margin = COLS - message.size - 10
+  puts
+  print " " * 5
+  print message.colorize(:white)
+  unless `#{cmd}`
+    print "#{" " * (margin - 8)}[#{"FAILED".colorize(:red)}]\r\n"
+    puts ("_" * COLS).colorize(:black)
+    puts
+    puts "     #{"Ooooops".colorize(:red)}"
+    puts "     #{error % cmd.colorize(:white)}"
+    puts
+    puts ("_" * COLS).colorize(:black)
+
+    abort
+  end
+  print "#{" " * (margin - 4)}[#{"OK".colorize(:green)}]\r\n"
+  puts ("_" * COLS).colorize(:black)
+
+end
+
 desc "Install the whole thing and dependencies"
 task :install do
   root = File.expand_path(File.dirname(__FILE__))
@@ -206,7 +229,7 @@ task :install do
           "Installing ctags...",
           "Could not install ctags. Please install it manually and try again."
 
-  execute "vim -c BundleInstall! -c q -c q -u ~/.vim/bundles.vim",
+  execute "vim -c BundleInstall! -c q -u ~/.vim/bundles.vim",
           "Installing Bundles...",
           "Could not install Vim plugins.\r\n     Try %s yourself."
 
