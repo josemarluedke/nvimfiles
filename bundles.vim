@@ -95,13 +95,12 @@ Bundle 'slim-template/vim-slim'
 "Bundle 'rickharris/vim-blackboard'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'endel/vim-github-colorscheme'
-"Bundle 'tomasr/molokai'
 "Bundle "daylerees/colour-schemes", { "rtp": "vim" }
 
 "--------------------------
-" snipmate
+" neocomplete + snippets
 "--------------------------
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
+Bundle 'Shougo/neocomplete'
+Bundle 'Shougo/neosnippet'
+Bundle 'Shougo/neosnippet-snippets'
+
