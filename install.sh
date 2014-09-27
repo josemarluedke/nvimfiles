@@ -13,4 +13,4 @@ for i in .vim vimfiles .vimrc .gvimrc; do
   fi
 done
 
-git clone https://github.com/josemarluedke/vimfiles ~/.vim && cd ~/.vim && rake install && ln -s ~/.vim/vimrc ~/.vimrc
+git clone https://github.com/joaomilho/vimfiles_ruby_dragon ~/.vim && cd ~/.vim && rake install && ln -s ~/.vim/vimrc ~/.vimrc
