@@ -229,7 +229,8 @@ task :install do
           "Installing ctags...",
           "Could not install ctags. Please install it manually and try again."
 
-  execute "vim -c BundleInstall! -c q -u ~/.vim/bundles.vim",
+  execute "vim +PluginInstall +qall ~/.vim/bundles.vim"
+  #"vim -c BundleInstall! -c q -u ~/.vim/bundles.vim",
           "Installing Bundles...",
           "Could not install Vim plugins.\r\n     Try %s yourself."
 

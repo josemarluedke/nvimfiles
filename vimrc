@@ -80,17 +80,6 @@ set formatoptions=n
 " Mappings
 " ---------------------------------------------------------------------------
 
-" Disable directions key navigation
-noremap <up>    :echoerr 'Use K to go up'<CR>
-noremap <down>  :echoerr 'Use J to go down'<CR>
-noremap <left>  :echoerr 'Use H to go left'<CR>
-noremap <right> :echoerr 'Use L to go right'<CR>
-" Disable it in insert mode
-"inoremap <up>    <ESC>:echoerr 'Use K to go up'<CR>
-"inoremap <down>  <ESC>:echoerr 'Use J to go down'<CR>
-"inoremap <left>  <ESC>:echoerr 'Use H to go left'<CR>
-"inoremap <right> <ESC>:echoerr 'Use L to go right'<CR>
-
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>rv :so $MYVIMRC<CR>
@@ -250,34 +239,21 @@ if has("gui_running")
 
   set guitablabel=%M%t
 
-  if has("gui_gnome")
-    set term=gnome-256color
-    set guifont=Monospace\ Bold\ 12
-  endif
-
   if has("gui_mac") || has("gui_macvim")
-    set guifont=Menlo:h12
-    set transparency=7
+    set guifont=Menlo:h24
+    set transparency=3
   endif
 
-  if has("gui_win32") || has("gui_win32s")
-    set guifont=Consolas:h12
-    set enc=utf-8
-  endif
 else
 	"dont load csapprox if there is no gui support - silences an annoying warning
 	let g:CSApprox_loaded = 1
 
 	"set railscasts colorscheme when running vim in gnome terminal
-	if $COLORTERM == 'gnome-terminal'
-		set term=gnome-256color
-	else
-		if $TERM == 'xterm'
-			set term=xterm-256color
-		else
-			colorscheme molokai
-		endif
-	endif
+  if $TERM == 'xterm'
+    set term=xterm-256color
+  else
+    colorscheme molokai
+  endif
 endif
 
 " listchars only for slim and haml files
