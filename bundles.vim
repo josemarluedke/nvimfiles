@@ -103,4 +103,4 @@ Bundle 'endel/vim-github-colorscheme'
 Bundle 'Shougo/neocomplete'
 Bundle 'Shougo/neosnippet'
 Bundle 'Shougo/neosnippet-snippets'
-
+Bundle 'joaomilho/ruby_dragon_snippets'
