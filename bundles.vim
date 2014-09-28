@@ -25,7 +25,7 @@ Bundle 'gmarik/vundle'
 " tpope plugins
 "--------------------------
 "Bundle 'tpope/vim-fugitive'
-"Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-surround'
 "Bundle 'tpope/vim-abolish'
 "Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-rails'
