@@ -34,6 +34,8 @@ task :install do
           "Checking Ruby support on Vim...",
           "Your Vim doesn't have Ruby support.\r\n#{MARGIN}You must reinstall it and run this command again."
 
+  #brew install vim --with-lua
+
   execute "brew install ack",
           "Installing ack...",
           "Could not install ack. Please install it manually and try again."

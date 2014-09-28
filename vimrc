@@ -269,3 +269,8 @@ endif
 set colorcolumn=80
 highlight ColorColumn guibg=#1e1e1e
 highlight clear SignColumn
+
+" ---------------------------------------------------------------------------
+" neocomplete and snippets
+" ---------------------------------------------------------------------------
+let g:neocomplete#enable_at_startup = 1
