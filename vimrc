@@ -274,7 +274,7 @@ highlight clear SignColumn
 " neocomplete and snippets
 " ---------------------------------------------------------------------------
 let g:neocomplete#enable_at_startup = 1
-
+let g:neosnippet#snippets_directory='~/.vim/bundle/ruby_dragon_snippets'
 " SuperTab like snippets behavior.
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)"
