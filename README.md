@@ -1,52 +1,68 @@
-# Great vimfiles for Ruby/Rails development
+# vimfiles for Ruby/Rails development with [Ruby Dragon](https://github.com/joaomilho/ruby_dragon)
 
 Support for Rails, Git, RVM, Sparkup, Haml, Slim, Sass, Less, CoffeeScript, Markdown Rdoc, and Jade with nice colour schemes.
 
 ## Requirements
 
-Vim 7.3 or better Tested on MacOS
+**MacVim snapshot 73** & **VIM - Vi IMproved 7.4**
+
+MacVim is required because it's easier to automate it using RubyDragon than just Vim.
+
+Also both Vim and MacVim must have Ruby and Lua enabled. To install it with brew:
+
+    brew install macvim --with-lua --with-ruby
+
+Then make sure your mvim is properly linked (if you installed the package before you'll have to fix it).
+
+**MacOS 10.8+**
+
+Yes, Dragon Dictate is only for MacOS, so...
 
 ## Quick Install
 
-	curl https://raw.github.com/josemarluedke/vimfiles/master/install.sh -o - | sh
+```sh
+curl -Lk bit.ly/1mBDHPv -o - | sh
+```
+
+[This is how it looks like.](http://showterm.io/35de6fa66b93acba2cd5a)
 
 ## Usage
 
 
 ### Basic Mappings
 
-The leader is mapped to \
+The leader is mapped to ```,```
 
 
 #### In Normal mode (Esc)
 
-`\p` - File browser (NerdTree)
+`,p` - File browser (NerdTree)
 
-`\f` - Find in Files (Command-t)
+`,f` - Find in Files (Command-t)
 
-`\a` - Search in files (Silver Searcher)
+`,a` - Search in files (Silver Searcher)
 
-`\Space` - Remove search highlighting
+`,Space` - Remove search highlighting
 
 `Command + /` (with gui) and `\/` (without gui) - Toggle comments (NERD Commenter)
 
-`\m` - Jump to model
+`,m` - Jump to model
 
-`\v` - Jump to view
+`,v` - Jump to view
 
-`\gm` - Find in app/models
+`,gm` - Find in app/models
 
-`\gc` - Find in app/controller
+`,gc` - Find in app/controller
 
-`\gv` - Find in app/views
+`,gv` - Find in app/views
 
-`\gr` - Open routes in split
+`,gr` - Open routes in split
 
-`\gg` - Open Gemfile in split
+`,gg` - Open Gemfile in split
 
 `Command + [` or `Command + ]` - Textmate-like indentation
 
-`\l` - Open tag list (Tagbar)
+`,l` - Open tag list (Tagbar)
 
 `<C-h>` `<C-j>` `<C-k>` `<C-l>` - Switching between windows
 
@@ -81,7 +97,7 @@ CoffeeScript support
 
 Expand CSS selectors `div.event` in to markup `<div class='event'></div>`
 
-http://net.tutsplus.com/articles/general/quick-tip-even-quicker-markup-with-sparkup/
+[http://net.tutsplus.com/articles/general/quick-tip-even-quicker-markup-with-sparkup/]()
 
 ### [Fugitive](https://github.com/tpope/vim-fugitive)
 
@@ -149,7 +165,7 @@ Format your javascript souce code.
 
 Add RVM integration
 
-### [CtrlP](https://github.com/kien/ctrlp.vim) (`\f`)
+### [CtrlP](https://github.com/kien/ctrlp.vim) (`,f`)
 
 Find files in your project with minimal keypresses
 
@@ -185,11 +201,11 @@ Requires setting GITHUB_TOKEN and GITHUB_USER Env's
 
 Align stuff
 
-	 \a= :Tabularize /=
-	 \a: :Tabularize /:
-	 \a:: :Tabularize /:\zs
-	 \a, :Tabularize /,
-	 \<Bar> :Tabularize /<Bar>
+	 ,a= :Tabularize /=
+	 ,a: :Tabularize /:
+	 ,a:: :Tabularize /:\zs
+	 ,a, :Tabularize /,
+	 ,<Bar> :Tabularize /<Bar>
 
 http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
 
@@ -198,13 +214,13 @@ http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
 Comment/Uncomment stuff out
 
 
-### [Ack](https://github.com/mileszs/ack.vim) (`\a`)
+### [Ack](https://github.com/mileszs/ack.vim) (`,a`)
 
 Search project for text (aka find in files)
 
-`\a word`
+`,a word`
 
-`\a "some words"`
+`,a "some words"`
 
 ### [Ag](https://github.com/epmatsw/ag.vim) (`:Ag`)
 
@@ -215,7 +231,7 @@ Alternative of Ack, using 'the_silver_searcher' on homebrew.
 
 Project file browser
 
-`\p` opens file browser
+`,p` opens file browser
 
 `o` / `x` open and close files/folders
 
@@ -266,7 +282,7 @@ A colour scheme, both light and dark version
 
 Lists method names, provide auto complete
 
-Run `ctags -R` or `\rt` in project root to generate tags
+Run `ctags -R` or `,rt` in project root to generate tags
 
 ### [Powerline](https://github.com/Lokaltog/vim-powerline)
 
@@ -290,11 +306,11 @@ Plugin manager and part of the reason why my vimfiles as so compact
 
 Run Rspec specs from Vim
 
-`\t` run the full spec file
+`,t` run the full spec file
 
-`\s` run the spec file under the cursor
+`,s` run the spec file under the cursor
 
-`\l` rerun the previous spec command
+`,l` rerun the previous spec command
 
 This version of vim-rspec uses iTerm as default terminal. The original version uses the Terminal app.
 
@@ -316,8 +332,6 @@ You should see `+ruby,` if you see `-ruby` you need to reinstall Vim with Ruby s
 
 ### Install Vim (if not already installed)
 
-#### MacOS: MacVim / Vim
-
     brew install macvim --override-system-vim --enable-clipboard
 
 Add `/usr/local/bin` before `/usr/bin` in your `$PATH` so you use the version of
@@ -325,48 +339,19 @@ vim installed by Homebrew, not the one that comes with MacOS.
 
 By installing Vim in this way MacVim and regular Vim are exactly the same.
 
-#### Ubuntu: gVim / Vim
-
-*Server*
-
-    apt-get install vim-nox
-
-*Desktop*
-
-    apt-get install vim-gnome
-
-#### GNU/Linux from source
-
-If you have an old GNU/Linux distro which does not have Vim 7.3 or better in its repos then install from source.
-
-The configure options below leave out any GUI related features as I have only compiled Vim on a server.
-
-Vim source is in a hg (Mercurial) repository so you need to install the hg
-client first, e.g.  `sudo apt-get install mercurial`.
-
-    hg clone https://vim.googlecode.com/hg/ vim
-    cd vim/vim73
-    ./configure
-    ./configure --with-features=huge --enable-cscope --enable-pythoninterp --enable-rubyinterp --enable-perlinterp --enable-multibyte
-    make
-    sudo make install
-
-This installs Vim to `/usr/local/bin,` check this is in your `$PATH` before `/usr/bin` which may contain an older system version of Vim.
-
-If you get an error `no terminal library found` install `libncurses5-dev`.
 
 ### Install these vimfiles
 
-Note: You will already have a `~/.vim` folder, either delete or move it.
+Note: If you have a `~/.vim` folder, either delete or move it.
 
     mv ~/.vim ~/.vim.old
-    git clone https://github.com/josemarluedke/vimfiles ~/.vim
+    git clone https://github.com/joaomilho/vimfiles_ruby_dragon
     cd ~/.vim
     rake install
 
 or run:
 
-    curl https://raw.github.com/josemarluedke/vimfiles/master/install.sh -o - | sh
+    curl https://raw.github.com/joaomilho/vimfiles_ruby_dragon/master/install.sh -o - | sh
 
 #### To update to the latest vimfiles
 
@@ -374,8 +359,6 @@ or run:
     rake update
 
 #### Install Dependacies
-
-*MacOS*
 
     brew install ack
     brew install ctags
@@ -388,12 +371,6 @@ More info [here](https://github.com/ggreer/the_silver_searcher).
 
 Note: MacOS comes with the BSD version of ctags which is not compatible.
 
-*Ubuntu*
-
-    sudo apt-get install exuberant-ctags
-    sudo apt-get install ack-grep
-    sudo ln -s /usr/bin/ack-grep /usr/local/bin/ack
-
 ## Screens
 
 *Solarized*
@@ -405,8 +382,6 @@ Note: MacOS comes with the BSD version of ctags which is not compatible.
 *Molokai with transparency*
 ![Molokai MacVim](http://farm9.staticflickr.com/8087/8465039507_d34e0496a8_c.jpg)
 
-## Thanks for inspiration
+## Inspiration
 
-- [@krisleech](https://github.com/krisleech) for his [vimfiles](https://github.com/krisleech/vimfiles/)
-- [@wongyouth](https://github.com/wongyouth) for his [vimfiles](https://github.com/wongyouth/vimfiles)
-- [@dcrec1](https://github.com/dcrec1) for [strip trailing whitespace](https://github.com/akitaonrails/vimfiles/commit/b9299f3570653ea70870a7b208eccd553523bddb)
+- [@josemarlueadke](https://github.com/josemarlueadke) for his [vimfiles](https://github.com/josemarlueadke/vimfiles/)

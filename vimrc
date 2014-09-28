@@ -18,8 +18,8 @@ silent! runtime bundles.vim
 " ---------------------------------------------------------------------------
 
 filetype plugin indent on
-let mapleader = "\\"
-let g:mapleader = "\\"
+let mapleader = ","
+let g:mapleader = ","
 syntax enable
 
 " do not create backup, swap file, use git for version managment
@@ -79,17 +79,6 @@ set formatoptions=n
 " ---------------------------------------------------------------------------
 " Mappings
 " ---------------------------------------------------------------------------
-
-" Disable directions key navigation
-noremap <up>    :echoerr 'Use K to go up'<CR>
-noremap <down>  :echoerr 'Use J to go down'<CR>
-noremap <left>  :echoerr 'Use H to go left'<CR>
-noremap <right> :echoerr 'Use L to go right'<CR>
-" Disable it in insert mode
-"inoremap <up>    <ESC>:echoerr 'Use K to go up'<CR>
-"inoremap <down>  <ESC>:echoerr 'Use J to go down'<CR>
-"inoremap <left>  <ESC>:echoerr 'Use H to go left'<CR>
-"inoremap <right> <ESC>:echoerr 'Use L to go right'<CR>
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
@@ -250,34 +239,19 @@ if has("gui_running")
 
   set guitablabel=%M%t
 
-  if has("gui_gnome")
-    set term=gnome-256color
-    set guifont=Monospace\ Bold\ 12
-  endif
-
   if has("gui_mac") || has("gui_macvim")
-    set guifont=Menlo:h12
-    set transparency=7
+    set guifont=Menlo:h24
+    set transparency=3
   endif
 
-  if has("gui_win32") || has("gui_win32s")
-    set guifont=Consolas:h12
-    set enc=utf-8
-  endif
 else
 	"dont load csapprox if there is no gui support - silences an annoying warning
 	let g:CSApprox_loaded = 1
 
 	"set railscasts colorscheme when running vim in gnome terminal
-	if $COLORTERM == 'gnome-terminal'
-		set term=gnome-256color
-	else
-		if $TERM == 'xterm'
-			set term=xterm-256color
-		else
-			colorscheme molokai
-		endif
-	endif
+  if $TERM == 'xterm'
+    set term=xterm-256color
+  endif
 endif
 
 " listchars only for slim and haml files
@@ -295,3 +269,18 @@ endif
 set colorcolumn=80
 highlight ColorColumn guibg=#1e1e1e
 highlight clear SignColumn
+
+" ---------------------------------------------------------------------------
+" neocomplete and snippets
+" ---------------------------------------------------------------------------
+let g:neocomplete#enable_at_startup = 1
+let g:neosnippet#snippets_directory='~/.vim/bundle/ruby_dragon_snippets'
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
+
+
