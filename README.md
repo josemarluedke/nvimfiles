@@ -19,9 +19,11 @@ Then make sure your mvim is properly linked (if you installed the package before
 Yes, Dragon Dictate is only for MacOS, so...
 
 ## Quick Install
-
-	curl -Lk http://bit.ly/1mBDHPv -o - | sh
-
+	
+```sh
+curl -Lk bit.ly/1mBDHPv -o - | sh
+```
+	
 ## Usage
 
 
