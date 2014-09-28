@@ -8,6 +8,12 @@ Support for Rails, Git, RVM, Sparkup, Haml, Slim, Sass, Less, CoffeeScript, Mark
 
 MacVim is required because it's easier to automate it using RubyDragon than just Vim.
 
+Also both Vim and MacVim must have Ruby and Lua enabled. To install it with brew:
+
+    brew install macvim --with-lua --with-ruby
+
+Then make sure your mvim is properly linked (if you installed the package before you'll have to fix it).
+
 **MacOS 10.8+**
 
 Yes, Dragon Dictate is only for MacOS, so...

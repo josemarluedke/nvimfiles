@@ -34,7 +34,10 @@ task :install do
           "Checking Ruby support on Vim...",
           "Your Vim doesn't have Ruby support.\r\n#{MARGIN}You must reinstall it and run this command again."
 
-  #brew install vim --with-lua
+  execute "vim --version | grep '+lua'",
+          "Checking Lua support on Vim...",
+          "Your Vim doesn't have Lua support.\r\n#{MARGIN}Look a the README for instructions."
+
 
   execute "brew install ack",
           "Installing ack...",
