@@ -58,6 +58,7 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'kana/vim-textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'vim-scripts/sudo.vim'
 
 "--------------------------
 " tool for explorer
