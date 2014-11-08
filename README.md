@@ -363,6 +363,7 @@ Note: You will already have a `~/.vim` folder, either delete or move it.
     git clone https://github.com/josemarluedke/vimfiles ~/.vim
     cd ~/.vim
     rake install
+    ln -s ~/.vim/vimrc ~/.vimrc
 
 or run:
 
