@@ -40,6 +40,8 @@ The leader is mapped to \
 
 `\gv` - Find in app/views
 
+`\ga` - Find in app/assets
+
 `\gr` - Open routes in split
 
 `\gg` - Open Gemfile in split
