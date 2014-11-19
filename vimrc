@@ -186,7 +186,7 @@ let NERDTreeQuitOnOpen = 1
 let NERDTreeWinSize = 30
 let NERDTreeChDirMode = 2
 let NERDTreeDirArrows = 1
-silent! nmap <silent> <Leader>p :NERDTreeToggle<CR>
+silent! nmap <silent> <Leader>] :NERDTreeToggle<CR>
 
 " NERDCommenter mappings
 if has("gui_macvim") && has("gui_running")

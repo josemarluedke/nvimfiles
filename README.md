@@ -20,7 +20,7 @@ The leader is mapped to \
 
 #### In Normal mode (Esc)
 
-`\p` - File browser (NerdTree)
+`\]` - File browser (NerdTree)
 
 `\f` - Find in Files (Command-t)
 
