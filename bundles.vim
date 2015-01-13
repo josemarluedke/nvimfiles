@@ -98,7 +98,9 @@ Bundle 'rickharris/vim-blackboard'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'endel/vim-github-colorscheme'
 Bundle 'tomasr/molokai'
-Bundle "daylerees/colour-schemes", { "rtp": "vim" }
+Bundle 'daylerees/colour-schemes', { 'rtp': 'vim' }
+Bundle 'blerins/flattown'
+Bundle 'chriskempson/base16-vim'
 
 "--------------------------
 " snipmate
