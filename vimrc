@@ -214,8 +214,8 @@ set complete=.,w,b,u,t,i
 
 " Strip trailing whitespace
 function! <SID>StripTrailingWhitespaces()
-		" Only strip whitespace if isn't a slim or haml file
-		if &filetype =~ 'slim' || &filetype =~ 'haml'
+		" Only strip whitespace if isn't a slim, haml or emblem file
+		if &filetype =~ 'slim' || &filetype =~ 'haml' || &filetype =~ 'emblem'
 		  return
 		endif
 		" Preparation: save last search, and cursor position.
