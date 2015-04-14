@@ -60,6 +60,7 @@ Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'vim-scripts/sudo.vim'
 Bundle 'stefanoverna/vim-i18n'
+Bundle 'dsawardekar/ember.vim'
 
 "--------------------------
 " tool for explorer
