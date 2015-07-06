@@ -213,11 +213,11 @@ Search project for text (aka find in files)
 Alternative of Ack, using 'the_silver_searcher' on homebrew.
 
 
-### [Nerdtree](https://github.com/scrooloose/nerdtree) (`\p`)
+### [Nerdtree](https://github.com/scrooloose/nerdtree) (`\]`)
 
 Project file browser
 
-`\p` opens file browser
+`\]` opens file browser
 
 `o` / `x` open and close files/folders
 
