@@ -15,7 +15,7 @@ end
 
 desc 'Update to latest and greatest'
 task :update do
-  system('git pull origin master')
+  system('(which git-up > /dev/null && git-up) || git pull origin master')
   puts 'Updating Bundles'
   system "vim -c BundleInstall! -c BundleClean! -c q -c q"
 
