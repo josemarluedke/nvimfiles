@@ -39,6 +39,9 @@ let g:Powerline_symbols = 'fancy'
 " Markdown
 let g:vim_markdown_folding_disabled=1
 
+" Closetag
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.jsx"
+
 " ---------------------------------------------------------------------------
 " UI
 " ---------------------------------------------------------------------------

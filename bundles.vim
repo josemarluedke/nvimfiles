@@ -60,6 +60,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'vim-scripts/sudo.vim'
 Bundle 'stefanoverna/vim-i18n'
 Bundle 'dsawardekar/ember.vim'
+Bundle 'alvan/vim-closetag'
 
 "--------------------------
 " tool for explorer
