@@ -125,10 +125,6 @@ Insert a dummy text of a certain length
 
 	:Loremipsum[!] [WORD	COUNT] [PARAGRAPH_TEMPLATE] [PREFIX POSTFIX]
 
-### [Vroom](https://github.com/skalnik/vim-vroom)
-
-Run your Ruby tests! Supports RSpec, Test::Unit/MiniTest, and Cucumber. For more information, check out the [documentation](http://vim-doc.heroku.com/view?https://raw.github.com/skalnik/vim-vroom/master/doc/vroom.txt) or `:help vroom`
-
 ### [Bufexplorer](https://github.com/corntrace/bufexplorer)
 
 With bufexplorer, you can quickly and easily switch between buffers by using the one of the default public interfaces:
