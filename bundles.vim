@@ -91,6 +91,7 @@ Bundle 'oguzbilgic/sexy-railscasts-theme'
 Bundle 'jpo/vim-railscasts-theme'
 Bundle '29decibel/codeschool-vim-theme'
 Bundle 'puppetlabs/puppet-syntax-vim'
+Bundle 'pangloss/vim-javascript'
 Bundle 'mxw/vim-jsx'
 
 "--------------------------
