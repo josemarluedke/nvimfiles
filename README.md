@@ -1,6 +1,6 @@
 # Great vimfiles for Ruby/Rails development
 
-Support for Rails, Git, RVM, Sparkup, Haml, Slim, Sass, Less, CoffeeScript, Markdown Rdoc, and Jade with nice colour schemes.
+Support for Rails, Git, RVM, Sparkup, Haml, Slim, Sass, Less, Emblem, JSX, CoffeeScript, Markdown Rdoc, and Jade with nice colour schemes.
 
 ## Requirements
 
