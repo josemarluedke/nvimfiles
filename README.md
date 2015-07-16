@@ -1,6 +1,6 @@
 # Great vimfiles for Ruby/Rails development
 
-Support for Rails, Git, RVM, Sparkup, Haml, Slim, Sass, Less, Emblem, JSX, CoffeeScript, Markdown Rdoc, and Jade with nice colour schemes.
+Support for Rails, Git, Sparkup, Haml, Slim, Sass, Less, Emblem, JSX, CoffeeScript, Markdown Rdoc, and Jade with nice colour schemes.
 
 ## Requirements
 
@@ -142,10 +142,6 @@ Format your javascript souce code.
 `:BufOnly` without an argument will unload all buffers but the current one.
 
 `:BufOnly` with an argument will close all buffers but the supplied buffer name/number.
-
-### [RVM](https://github.com/tpope/vim-rvm)
-
-Add RVM integration
 
 ### [CtrlP](https://github.com/kien/ctrlp.vim) (`\f`)
 
