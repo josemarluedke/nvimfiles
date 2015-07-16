@@ -400,13 +400,14 @@ Note: MacOS comes with the BSD version of ctags which is not compatible.
 ## Screens
 
 *Solarized*
-![Solarized MacVim](http://farm9.staticflickr.com/8234/8465039131_a2431e5329_c.jpg)
+![Solarized MacVim](https://cloud.githubusercontent.com/assets/230476/8727274/3ee2f2b0-2bb5-11e5-97de-5dc75b955f8d.png)
 
 *Molokai*
-![Molokai MacVim](http://farm9.staticflickr.com/8516/8466136648_244b4987b6_c.jpg)
+![Molokai MacVim](https://cloud.githubusercontent.com/assets/230476/8727276/3ef930e8-2bb5-11e5-9e18-13db03eca77c.png)
 
 *Molokai with transparency*
-![Molokai MacVim](http://farm9.staticflickr.com/8087/8465039507_d34e0496a8_c.jpg)
+![Molokai MacVim](https://cloud.githubusercontent.com/assets/230476/8727275/3ef74cb0-2bb5-11e5-9e09-a3602f27f755.png)
+
 
 ## Thanks for inspiration
 
