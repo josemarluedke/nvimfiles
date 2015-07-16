@@ -36,6 +36,9 @@ set history=1000  "store lots of :cmdline history
 " Powerline
 let g:Powerline_symbols = 'fancy'
 
+" Markdown
+let g:vim_markdown_folding_disabled=1
+
 " ---------------------------------------------------------------------------
 " UI
 " ---------------------------------------------------------------------------
