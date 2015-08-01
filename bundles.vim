@@ -59,6 +59,7 @@ Bundle 'stefanoverna/vim-i18n'
 Bundle 'dsawardekar/ember.vim'
 Bundle 'alvan/vim-closetag'
 Bundle 'Shougo/neocomplete.vim'
+Bundle 'jszakmeister/vim-togglecursor'
 
 "--------------------------
 " tool for explorer
