@@ -105,6 +105,9 @@ set formatoptions=n
 " Mappings
 " ---------------------------------------------------------------------------
 
+" Open new tab
+nmap <silent><leader>to :tabnew .<CR>
+
 " Disable directions key navigation
 noremap <up>    :echoerr 'Use K to go up'<CR>
 noremap <down>  :echoerr 'Use J to go down'<CR>
