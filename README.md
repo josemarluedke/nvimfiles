@@ -9,7 +9,7 @@ Support for Rails, Git, Sparkup, Haml, Slim, Sass, Less, Emblem, JSX, CoffeeScri
 
 ```curl https://raw.github.com/josemarluedke/vimfiles/master/install.sh -o - | sh```
 
-Please check also [install dependacies](#install-dependacies) section.
+Please check also [install dependencies](#install-dependencies) section.
 
 ## Usage
 
@@ -321,9 +321,9 @@ or run:
     cd ~/.vim
     rake update
 
-#### Install Dependacies
+#### Install Dependencies
 
-###### MacOS
+##### MacOS
 
     brew install ack ctags the_silver_searcher
 
