@@ -42,6 +42,9 @@ let g:vim_markdown_folding_disabled=1
 " Closetag
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.jsx"
 
+" Use 256 colors in vim
+set t_Co=256
+
 " ---------------------------------------------------------------------------
 " UI
 " ---------------------------------------------------------------------------
@@ -250,9 +253,6 @@ if has("gui_running")
   set guioptions-=l " no scrollbar on the left
   set guioptions-=b " no scrollbar on the bottom
   set guioptions-=L "no scrollbar on the nerdtree"
-
-  "tell the term has 256 colors
-   set t_Co=256
 
   set guitablabel=%M%t
 
