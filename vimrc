@@ -219,6 +219,7 @@ let NERDTreeQuitOnOpen = 1
 let NERDTreeWinSize = 30
 let NERDTreeChDirMode = 2
 let NERDTreeDirArrows = 1
+let NERDTreeMinimalUI=1
 silent! nmap <silent> <Leader>] :NERDTreeToggle<CR>
 
 "-------------------------
