@@ -209,6 +209,7 @@ map <Leader>rl :call RunLastSpec()<CR>
 " Plugins
 " ---------------------------------------------------------------------------
 
+"-------------------------
 " NERDTree
 let NERDTreeShowBookmarks = 0
 let NERDChristmasTree = 1
@@ -220,6 +221,7 @@ let NERDTreeChDirMode = 2
 let NERDTreeDirArrows = 1
 silent! nmap <silent> <Leader>] :NERDTreeToggle<CR>
 
+"-------------------------
 " NERDCommenter mappings
 if has("gui_macvim") && has("gui_running")
   map <D-/> <plug>NERDCommenterToggle<CR>
@@ -229,6 +231,7 @@ else
   imap <leader>/ <Esc><plug>NERDCommenterToggle<CR
 endif
 
+"-------------------------
 " Tagbar
 map <leader>l :TagbarToggle <cr>
 let g:tagbar_autofocus=1
@@ -239,6 +242,20 @@ map <leader>rtg :!ctags --extra=+f --languages=-javascript --exclude=.git --excl
 " Use only current file to autocomplete from tags
 " set complete=.,t
 set complete=.,w,b,u,t,i
+
+"-------------------------
+" DelimitMate
+
+" Delimitmate place cursor correctly n multiline objects e.g.
+" if you press enter in {} cursor still be
+" in the middle line instead of the last
+let delimitMate_expand_cr = 1
+
+" Delimitmate place cursor correctly in singleline pairs e.g.
+" if x - cursor if you press space in {x} result will be { x } instead of { x}
+let delimitMate_expand_space = 1
+
+let delimitMate_matchpairs = "(:),[:],{:}"
 
 " ---------------------------------------------------------------------------
 " Functions
