@@ -289,7 +289,7 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 " ---------------------------------------------------------------------------
 
 " colorscheme
-color solarized
+color railscasts
 
 if has("gui_running")
   set guioptions-=T " no toolbar set guioptions-=m " no menus
