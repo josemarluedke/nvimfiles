@@ -42,6 +42,12 @@ let g:vim_markdown_folding_disabled=1
 " Closetag
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.jsx"
 
+" Set character encoding to use in vim
+set encoding=utf-8
+
+" Let vim know what encoding we use in our terminal
+set termencoding=utf-8
+
 " Use 256 colors in vim
 set t_Co=256
 
@@ -268,7 +274,6 @@ if has("gui_running")
 
   if has("gui_win32") || has("gui_win32s")
     set guifont=Consolas:h12
-    set enc=utf-8
   endif
 else
 	"dont load csapprox if there is no gui support - silences an annoying warning
