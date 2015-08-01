@@ -234,7 +234,7 @@ map <leader>l :TagbarToggle <cr>
 let g:tagbar_autofocus=1
 
 " Generate ctags for all bundled gems as well
-map <leader>rt :!ctags --extra=+f --languages=-javascript --exclude=.git --exclude=log -R * `rvm gemdir`/gems/* `rvm gemdir`/bundler/gems/*<CR><C-M>
+map <leader>rtg :!ctags --extra=+f --languages=-javascript --exclude=.git --exclude=log -R * `rvm gemdir`/gems/* `rvm gemdir`/bundler/gems/*<CR><C-M>
 
 " Use only current file to autocomplete from tags
 " set complete=.,t
