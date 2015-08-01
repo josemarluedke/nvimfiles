@@ -201,9 +201,9 @@ map <leader>gr :topleft :split config/routes.rb<cr>
 map <leader>gg :topleft :split Gemfile<cr>
 
 " Rspec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
+map <Leader>rt :call RunCurrentSpecFile()<CR>
+map <Leader>rs :call RunNearestSpec()<CR>
+map <Leader>rl :call RunLastSpec()<CR>
 
 " ---------------------------------------------------------------------------
 " Plugins
