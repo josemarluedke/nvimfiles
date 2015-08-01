@@ -83,6 +83,7 @@ set nonumber
 set relativenumber " show relative numbers
 set splitbelow
 set splitright
+set novisualbell " Mute error bell
 
 " some stuff to get the mouse going in term
 set mouse=a
