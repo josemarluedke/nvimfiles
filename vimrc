@@ -50,6 +50,9 @@ set termencoding=utf-8
 
 " Add '-' as recognized word symbol. e.g dw delete all 'foo-bar' instead just 'foo'
 set iskeyword+=-
+
+" Show matching brackets
+set showmatch
 " Use 256 colors in vim
 set t_Co=256
 
