@@ -53,6 +53,10 @@ set iskeyword+=-
 
 " Show matching brackets
 set showmatch
+
+" Make < and > match as well
+set matchpairs+=<:>
+
 " Use 256 colors in vim
 set t_Co=256
 
