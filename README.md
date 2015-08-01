@@ -269,13 +269,6 @@ Powerline is a utility plugin which allows you to create better-looking, more fu
 See instructions for install the fontpatcher [here](https://github.com/Lokaltog/vim-powerline/tree/develop/fontpatcher).
 
 
-### [Syntastic](https://github.com/scrooloose/syntastic)
-
-Syntax checking
-
-When a file is saved the syntax is automatically checked and any errors
-reported.
-
 ### [Vundle](https://github.com/gmarik/vundle)
 
 Plugin manager and part of the reason why my vimfiles as so compact
