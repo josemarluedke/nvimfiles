@@ -2,13 +2,13 @@
 
 Support for Rails, Git, Sparkup, Haml, Slim, Sass, Less, Emblem, JSX, CoffeeScript, Markdown Rdoc, and Jade with nice colour schemes.
 
-## Requirements
 
-Vim 7.3 or better Tested on MacOS
 
 ## Quick Install
 
-	curl https://raw.github.com/josemarluedke/vimfiles/master/install.sh -o - | sh
+```curl https://raw.github.com/josemarluedke/vimfiles/master/install.sh -o - | sh```
+
+Please check also [install dependacies](#install-dependacies) section.
 
 ## Usage
 
@@ -291,31 +291,15 @@ True Sublime Text style multiple selections for Vim
 
 ## Installation
 
-Note: If you are using RVM make sure you use system ruby before installation.
-
-    rvm use system
-
-Note: If you already have Vim installed ensure it has support for Ruby:
-
-    vim --version | grep ruby
-
-You should see `+ruby,` if you see `-ruby` you need to reinstall Vim with Ruby support
-
 ### Install Vim (if not already installed)
 
-#### MacOS: MacVim / Vim
+#### MacOS: MacVim
 
     brew install macvim --override-system-vim --enable-clipboard
 
-Add `/usr/local/bin` before `/usr/bin` in your `$PATH` so you use the version of
-vim installed by Homebrew, not the one that comes with MacOS.
-
-By installing Vim in this way MacVim and regular Vim are exactly the same.
-
-#### Ubuntu: gVim / Vim
+#### Ubuntu: gVim
 
     apt-get install vim-gnome
-
 
 ### Install these vimfiles
 
@@ -338,25 +322,17 @@ or run:
 
 #### Install Dependacies
 
-*MacOS*
+###### MacOS
 
-    brew install ack
-    brew install ctags
+    brew install ack ctags the_silver_searcher
 
-Alternative to Ack
+##### Ubuntu
 
-	brew install the_silver_searcher
+    sudo apt-get install ncurses-term exuberant-ctags silversearcher-ag ack-grep
+    sudo ln -s /usr/bin/ack-grep /usr/local/bin/ack
 
-More info [here](https://github.com/ggreer/the_silver_searcher).
-
-Note: MacOS comes with the BSD version of ctags which is not compatible.
-
-*Ubuntu*
 You can download the powerline font for Ubuntu Mono [here](https://github.com/pdf/ubuntu-mono-powerline-ttf/blob/master/UbuntuMono-R-VimPowerline.ttf?raw=true).
 
-    sudo apt-get install exuberant-ctags
-    sudo apt-get install ack-grep
-    sudo ln -s /usr/bin/ack-grep /usr/local/bin/ack
 
 ## Screens
 
