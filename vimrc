@@ -287,11 +287,6 @@ else
 endif
 
 " listchars only for slim and haml files
-
-" load custom configs
-if filereadable(expand("$HOME/") . '.vimrc.local')
-  source ~/.vimrc.local
-endif
 autocmd BufNewFile,BufRead *.slim,*.haml,*.emblem setlocal list listchars=extends:>,precedes:<,eol:¬
 
 " ---------------------------------------------------------------------------
@@ -301,3 +296,11 @@ autocmd BufNewFile,BufRead *.slim,*.haml,*.emblem setlocal list listchars=extend
 set colorcolumn=80
 highlight ColorColumn guibg=#1e1e1e
 highlight clear SignColumn
+
+" ---------------------------------------------------------------------------
+" Load custom configs
+" ---------------------------------------------------------------------------
+
+if filereadable(expand("$HOME/") . '.vimrc.local')
+  source ~/.vimrc.local
+endif
