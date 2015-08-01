@@ -7,7 +7,7 @@ endif
 " calling filetype off causes a bad exit status
 "------------------------------------------------------------
 filetype on
-filetype off " required!
+filetype off " required by vundle!
 
 "--------------------
 " enable vundle
@@ -91,7 +91,9 @@ Bundle 'jpo/vim-railscasts-theme'
 Bundle '29decibel/codeschool-vim-theme'
 Bundle 'puppetlabs/puppet-syntax-vim'
 Bundle 'pangloss/vim-javascript'
-Bundle 'mxw/vim-jsx', {'rtp': 'after/'}
+Bundle 'mxw/vim-jsx', { 'rtp': 'after/' }
+Bundle 'elzr/vim-json'
+Bundle 'hail2u/vim-css3-syntax'
 
 "--------------------------
 " color scheme
