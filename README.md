@@ -2,6 +2,7 @@
 
 Support for Rails, Git, Sparkup, Haml, Slim, Sass, Less, Emblem, JSX, CoffeeScript, Markdown Rdoc, and Jade with nice colour schemes.
 
+![MacVim with these vimfiles](https://cloud.githubusercontent.com/assets/230476/9022763/f0fda188-3836-11e5-91e9-52a63326fc7f.png)
 
 
 ## Quick Install
@@ -332,18 +333,6 @@ or run:
     sudo ln -s /usr/bin/ack-grep /usr/local/bin/ack
 
 You can download the powerline font for Ubuntu Mono [here](https://github.com/pdf/ubuntu-mono-powerline-ttf/blob/master/UbuntuMono-R-VimPowerline.ttf?raw=true).
-
-
-## Screens
-
-*Solarized*
-![Solarized MacVim](https://cloud.githubusercontent.com/assets/230476/8727274/3ee2f2b0-2bb5-11e5-97de-5dc75b955f8d.png)
-
-*Molokai*
-![Molokai MacVim](https://cloud.githubusercontent.com/assets/230476/8727276/3ef930e8-2bb5-11e5-9e18-13db03eca77c.png)
-
-*Molokai with transparency*
-![Molokai MacVim](https://cloud.githubusercontent.com/assets/230476/8727275/3ef74cb0-2bb5-11e5-9e09-a3602f27f755.png)
 
 
 ## Thanks for inspiration
