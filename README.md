@@ -377,6 +377,7 @@ More info [here](https://github.com/ggreer/the_silver_searcher).
 Note: MacOS comes with the BSD version of ctags which is not compatible.
 
 *Ubuntu*
+You can download the powerline font for Ubuntu Mono [here](https://github.com/pdf/ubuntu-mono-powerline-ttf/blob/master/UbuntuMono-R-VimPowerline.ttf?raw=true).
 
     sudo apt-get install exuberant-ctags
     sudo apt-get install ack-grep

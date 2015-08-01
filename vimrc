@@ -303,7 +303,7 @@ if has("gui_running")
 
   if has("gui_gnome")
     set term=gnome-256color
-    set guifont=Mono\ 12
+    set guifont=Ubuntu\ Mono\ 12
   endif
 
   if has("gui_mac") || has("gui_macvim")
