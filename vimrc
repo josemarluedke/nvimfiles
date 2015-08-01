@@ -108,6 +108,10 @@ set formatoptions=n
 " Open new tab
 nmap <silent><leader>to :tabnew .<CR>
 
+" Replace
+nmap <leader>s :%s//<left>
+vmap <leader>s :s//<left>
+
 " Disable directions key navigation
 noremap <up>    :echoerr 'Use K to go up'<CR>
 noremap <down>  :echoerr 'Use J to go down'<CR>
