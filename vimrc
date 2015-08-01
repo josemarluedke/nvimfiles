@@ -155,7 +155,16 @@ nmap <leader>hs :set hlsearch! hlsearch?<CR>
 " turn search highlight off
 nnoremap <leader><space> :noh<cr>
 
+" Windows switch
+nmap <silent> <C-k> :wincmd k<CR>
+nmap <silent> <C-j> :wincmd j<CR>
+nmap <silent> <C-h> :wincmd h<CR>
+nmap <silent> <C-l> :wincmd l<CR>
+
+" ---------------------------------------------------------------------------
 " Tabularize
+" ---------------------------------------------------------------------------
+
 nmap <Leader>a& :Tabularize /&<CR>
 vmap <Leader>a& :Tabularize /&<CR>
 nmap <Leader>a= :Tabularize /=<CR>
@@ -168,12 +177,6 @@ nmap <Leader>a, :Tabularize /,<CR>
 vmap <Leader>a, :Tabularize /,<CR>
 nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-
-" Windows switch
-nmap <silent> <C-k> :wincmd k<CR>
-nmap <silent> <C-j> :wincmd j<CR>
-nmap <silent> <C-h> :wincmd h<CR>
-nmap <silent> <C-l> :wincmd l<CR>
 
 " ---------------------------------------------------------------------------
 " Ruby/Rails
