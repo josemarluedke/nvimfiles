@@ -73,6 +73,7 @@ set showcmd      " show incomplete cmds down the bottom
 set hidden			 " hides buffers instead of closing them
 set wildmenu
 set wildmode=list:longest
+set wildcharm=<TAB> " Autocmpletion hotkey
 set visualbell
 set cursorline	 " highlight current line
 set ttyfast
