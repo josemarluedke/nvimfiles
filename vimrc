@@ -189,7 +189,6 @@ map <leader>gm :CtrlP app/models<cr>
 map <leader>gh :CtrlP app/helpers<cr>
 map <leader>gl :CtrlP lib<cr>
 map <leader>gp :CtrlP public<cr>
-map <leader>gs :CtrlP public/stylesheets<cr>
 map <leader>ga :CtrlP app/assets<cr>
 
 " Skip to Model, View or Controller

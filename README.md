@@ -13,53 +13,50 @@ Please check also [install dependencies](#install-dependencies) section.
 
 ## Usage
 
-
 ### Basic Mappings
 
-The leader is mapped to \
+The leader key is mapped to `\`, you can change it in your `.vimrc.local`.
 
+Action | Hotkey
+--------------------------------------------------------- | -----------------
+**▶ File operations**                                     |
+File browser (NerdTree)                                   | `leader ]`
+FuzzyFinder fo files (CtrlP)                              | `leader f`
+Switch between the last two files                         | `leader leader`
+Toggle Tagbar                                             | `leader l`
+View buffer files on current window                       | `leader be`
+View buffer files on horizontal split                     | `leader bs`
+View buffer files on vertical split                       | `leader bs`
+**▶ Search & Find/replace**                               |
+Search in files (Ag/Silver Searcher)                      | `leader a`
+Remove search highlighting                                | `leader Space`
+Toggle search highlighting                                | `leader hs`
+Find and replace                                          | `leader s`
+**▶ Ruby on Rails**                                       |
+File search in view                                       | `leader gv`
+File search in controllers                                | `leader gc`
+File search in models                                     | `leader gm`
+File search in helpers                                    | `leader gh`
+File search in libs                                       | `leader gl`
+File search in public                                     | `leader gp`
+File search in assets                                     | `leader ga`
+Jump to model                                             | `leader m`
+Jump to view                                              | `leader v`
+Jump to controller                                        | `leader c`
+Open routes in split                                      | `leader gr`
+Open Gemfile in split                                     | `leader gg`
+Run rspec on current test file                            | `leader rt`
+Run rspec on current line                                 | `leader rs`
+Run last rspec file                                       | `leader rl`
+**▶ Others**                                              |
+Indent                                                    | `>>` or `Command ]`
+Reverse Indent                                            | `<<` or `Command [`
+Switching between windows                                 | `ctrl+h` `ctrl+j` `ctrl+k` `ctrl+l`
+Toggle comments                                           | `leader /` or `Command + /`
+Auto complete or expand snippet                           | `<tab>`
+Expand CSS selectors `div.event` in to markup             | `ctrl+e`
 
-#### In Normal mode (Esc)
-
-`\]` - File browser (NerdTree)
-
-`\f` - Find in Files (Command-t)
-
-`\a` - Search in files (Silver Searcher)
-
-`\Space` - Remove search highlighting
-
-`Command + /` (with gui) and `\/` (without gui) - Toggle comments (NERD Commenter)
-
-`\m` - Jump to model
-
-`\v` - Jump to view
-
-`\gm` - Find in app/models
-
-`\gc` - Find in app/controller
-
-`\gv` - Find in app/views
-
-`\ga` - Find in app/assets
-
-`\gr` - Open routes in split
-
-`\gg` - Open Gemfile in split
-
-`Command + [` or `Command + ]` - Textmate-like indentation
-
-`\l` - Open tag list (Tagbar)
-
-`<C-h>` `<C-j>` `<C-k>` `<C-l>` - Switching between windows
-
-
-#### In Insert mode (i)
-
-`<tab>` - auto complete or expand snippet
-
-See .vimrc for more.
-
+See `.vimrc` for more.
 
 ## Plugins
 
@@ -67,18 +64,12 @@ See .vimrc for more.
 
 *Lots* of stuff - get to know this plugin!
 
-`:Rmodel` - jump to model
-
-`:Rview` - jump to view
 
 `:help rails`
 
 ### [CoffeeScript](https://github.com/kchmck/vim-coffee-script)
 
 CoffeeScript support
-
-`:CoffeeCompile watch` show compiled js in split
-
 
 ### [Sparkup](https://github.com/rstacruz/sparkup) (`ctrl+e`)
 
@@ -120,6 +111,7 @@ Rename the current file
 
 	:rename[!] {newname}
 
+
 ### [Loremipsum](https://github.com/vim-scripts/loremipsum)
 
 Insert a dummy text of a certain length
@@ -128,15 +120,13 @@ Insert a dummy text of a certain length
 
 ### [Bufexplorer](https://github.com/corntrace/bufexplorer)
 
-With bufexplorer, you can quickly and easily switch between buffers by using the one of the default public interfaces:
+With bufexplorer, you can quickly and easily switch between buffers
 
-	'\be' (normal open)  or
-	'\bs' (force horizontal split open)  or
-	'\bv' (force vertical split open)
 
 ### [Jsbeautify](https://github.com/vim-scripts/jsbeautify) (`\ff`)
 
 Format your javascript souce code.
+
 
 ### [BufOnly](https://github.com/vim-scripts/BufOnly.vim)
 
@@ -149,10 +139,6 @@ Format your javascript souce code.
 Find files in your project with minimal keypresses
 
 For example `conadus` would find `controllers/admin/users`
-
-`/f path_or_filename`
-
-`/gf path_or_filename` - restrict to files in current directory
 
 
 ### [Snipmate](https://github.com/garbas/vim-snipmate) (`TAB`)
@@ -193,15 +179,12 @@ http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
 Comment/Uncomment stuff out
 
 
-### [Ack](https://github.com/mileszs/ack.vim) (`\a`)
+### [Ack](https://github.com/mileszs/ack.vim)
 
 Search project for text (aka find in files)
 
-`\a word`
 
-`\a "some words"`
-
-### [Ag](https://github.com/epmatsw/ag.vim) (`:Ag`)
+### [Ag](https://github.com/epmatsw/ag.vim) (`\a`)
 
 Alternative of Ack, using 'the_silver_searcher' on homebrew.
 
@@ -218,7 +201,7 @@ Project file browser
 
 `?` Help
 
-I use nerdtree for creating or moving files, but find command-t quicker for
+I use nerdtree for creating or moving files, but find CtrlP quicker for
 opening files.
 
 ### [Surround](https://github.com/tpope/vim-surround) (`ys`/`cs`/`ds`)
@@ -261,7 +244,7 @@ A colour scheme, both light and dark version
 
 Lists method names, provide auto complete
 
-Run `ctags -R` or `\rt` in project root to generate tags
+Run `ctags -R` or `\rtg` in project root to generate tags
 
 ### [Powerline](https://github.com/Lokaltog/vim-powerline)
 
@@ -277,12 +260,6 @@ Plugin manager and part of the reason why my vimfiles as so compact
 ### [Rspec](https://github.com/josemarluedke/vim-rspec)
 
 Run Rspec specs from Vim
-
-`\t` run the full spec file
-
-`\s` run the spec file under the cursor
-
-`\l` rerun the previous spec command
 
 This version of vim-rspec uses iTerm as default terminal. The original version uses the Terminal app.
 
