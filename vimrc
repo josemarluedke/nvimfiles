@@ -314,6 +314,7 @@ if has("gui_running")
     set guifont=Consolas:h12
   endif
 else
+  set novisualbell " Mute error bell
 	"dont load csapprox if there is no gui support - silences an annoying warning
 	let g:CSApprox_loaded = 1
 
