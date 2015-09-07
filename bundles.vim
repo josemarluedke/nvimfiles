@@ -96,6 +96,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'mxw/vim-jsx', { 'rtp': 'after/' }
 Bundle 'elzr/vim-json'
 Bundle 'hail2u/vim-css3-syntax'
+Bundle 'elixir-lang/vim-elixir'
 
 "--------------------------
 " color scheme
