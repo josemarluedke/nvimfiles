@@ -47,8 +47,6 @@ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'danro/rename.vim'
 Bundle 'vim-scripts/loremipsum'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'lucapette/vim-ruby-doc'
-Bundle 'lucapette/vim-jquery-doc'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'vim-scripts/Gist.vim'
 Bundle 'josemarluedke/vim-rspec'
