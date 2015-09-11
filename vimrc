@@ -339,7 +339,12 @@ autocmd BufNewFile,BufRead *.slim,*.haml,*.emblem setlocal list listchars=extend
 set colorcolumn=80
 highlight ColorColumn guibg=#1e1e1e
 highlight clear SignColumn
-highlight NonText guifg=bg
+
+set fillchars+=vert:│
+
+" Override color scheme
+autocmd ColorScheme * highlight VertSplit guibg=NONE
+autocmd ColorScheme * highlight NonText guifg=bg
 
 " ---------------------------------------------------------------------------
 " Load custom configs
