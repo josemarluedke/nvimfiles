@@ -106,6 +106,7 @@ Bundle 'tomasr/molokai'
 Bundle 'daylerees/colour-schemes', { 'rtp': 'vim' }
 Bundle 'blerins/flattown'
 Bundle 'chriskempson/base16-vim'
+Bundle 'geoffharcourt/one-dark.vim'
 
 "--------------------------
 " snipmate
