@@ -90,11 +90,12 @@ Bundle 'oguzbilgic/sexy-railscasts-theme'
 Bundle 'jpo/vim-railscasts-theme'
 Bundle '29decibel/codeschool-vim-theme'
 Bundle 'puppetlabs/puppet-syntax-vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'mxw/vim-jsx', { 'rtp': 'after/' }
 Bundle 'elzr/vim-json'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'elixir-lang/vim-elixir'
+" Javascript syntax
+Bundle 'othree/yajs.vim'
+Bundle 'mxw/vim-jsx', { 'rtp': 'after/' }
 
 "--------------------------
 " color scheme
