@@ -33,9 +33,6 @@ set hidden
 
 set history=1000  "store lots of :cmdline history
 
-" Powerline
-let g:Powerline_symbols = 'fancy'
-
 " Markdown
 let g:vim_markdown_folding_disabled=1
 
@@ -247,6 +244,25 @@ map <leader>rtg :!ctags --extra=+f --languages=-javascript --exclude=.git --excl
 set complete=.,w,b,u,t,i
 
 "-------------------------
+" Airline
+set laststatus=2
+let g:airline_theme='murmur'
+let g:airline_powerline_fonts=0
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_symbols = { 'linenr': '␤ ', 'branch': '⎇ ' }
+let g:airline#extensions#tabline#enabled = 0
+let g:airline#extensions#branch#enabled = 1
+let g:airline_mode_map = {
+      \ 'n' : 'N',
+      \ 'i' : 'I',
+      \ 'R' : 'REPLACE',
+      \ 'v' : 'VISUAL',
+      \ 'V' : 'V-LINE',
+      \ 'c' : 'CMD   ',
+      \ '': 'V-BLCK',
+      \ }
+
 " DelimitMate
 
 " Delimitmate place cursor correctly n multiline objects e.g.

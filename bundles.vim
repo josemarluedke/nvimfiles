@@ -47,7 +47,7 @@ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'danro/rename.vim'
 Bundle 'vim-scripts/loremipsum'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
 Bundle 'vim-scripts/Gist.vim'
 Bundle 'josemarluedke/vim-rspec'
 Bundle 'terryma/vim-multiple-cursors'

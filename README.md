@@ -246,12 +246,9 @@ Lists method names, provide auto complete
 
 Run `ctags -R` or `\rtg` in project root to generate tags
 
-### [Powerline](https://github.com/Lokaltog/vim-powerline)
+### [Airline](https://github.com/bling/vim-airline)
 
-Powerline is a utility plugin which allows you to create better-looking, more functional vim statuslines.
-
-See instructions for install the fontpatcher [here](https://github.com/Lokaltog/vim-powerline/tree/develop/fontpatcher).
-
+Lean & mean status/tabline for vim that's light as air
 
 ### [Vundle](https://github.com/gmarik/vundle)
 
