@@ -33,12 +33,6 @@ set hidden
 
 set history=1000  "store lots of :cmdline history
 
-" Markdown
-let g:vim_markdown_folding_disabled=1
-
-" Closetag
-let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.jsx"
-
 " Set character encoding to use in vim
 set encoding=utf-8
 
@@ -271,6 +265,14 @@ let g:ctrlp_custom_ignore = {
       \ 'file': '\v\.(exe|so|dll|log|gif|jpg|jpeg|png|psd|DS_Store|ctags|gitattributes)$'
       \ }
 
+"-------------------------
+" Markdown
+let g:vim_markdown_folding_disabled=1
+
+" Closetag
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.jsx"
+
+"-------------------------
 " DelimitMate
 
 " Delimitmate place cursor correctly n multiline objects e.g.
