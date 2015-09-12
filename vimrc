@@ -263,6 +263,14 @@ let g:airline_mode_map = {
       \ '': 'V-BLCK',
       \ }
 
+"-------------------------
+" CTRL+p
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_custom_ignore = {
+      \ 'dir':  '\v[\/]\.(git|hg|svn|gitkeep)|(node_modules|bower_components|tmp)$',
+      \ 'file': '\v\.(exe|so|dll|log|gif|jpg|jpeg|png|psd|DS_Store|ctags|gitattributes)$'
+      \ }
+
 " DelimitMate
 
 " Delimitmate place cursor correctly n multiline objects e.g.
