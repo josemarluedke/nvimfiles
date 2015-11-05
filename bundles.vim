@@ -96,7 +96,8 @@ Bundle 'elixir-lang/vim-elixir'
 Bundle 'rschmukler/pangloss-vim-indent'
 Bundle 'othree/yajs.vim'
 Bundle 'mxw/vim-jsx', { 'rtp': 'after/' }
-
+" Rust syntax
+Plugin 'rust-lang/rust.vim'
 "--------------------------
 " color scheme
 "--------------------------
