@@ -388,3 +388,9 @@ autocmd ColorScheme * highlight NonText guifg=bg
 if filereadable(expand("$HOME/") . '.vimrc.local')
   source ~/.vimrc.local
 endif
+
+" ---------------------------------------------------------------------------
+" Load folder specific settings and disable unsafe commands
+" ---------------------------------------------------------------------------
+set exrc
+set secure
