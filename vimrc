@@ -51,6 +51,11 @@ set matchpairs+=<:>
 " Use 256 colors in vim
 set t_Co=256
 
+" Spell
+setlocal spell
+autocmd FileType gitcommit setlocal spell
+set complete+=kspell
+
 " ---------------------------------------------------------------------------
 " UI
 " ---------------------------------------------------------------------------
