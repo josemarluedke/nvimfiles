@@ -270,6 +270,10 @@ let g:ctrlp_custom_ignore = {
       \ 'file': '\v\.(exe|so|dll|log|gif|jpg|jpeg|png|psd|DS_Store|ctags|gitattributes)$'
       \ }
 
+" Sparkup
+" Enable sparkup in Javascript files
+autocmd FileType javascript.jsx,javascript runtime! ftplugin/html/sparkup.vim
+
 "-------------------------
 " Markdown
 let g:vim_markdown_folding_disabled=1
