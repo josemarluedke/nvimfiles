@@ -270,7 +270,7 @@ True Sublime Text style multiple selections for Vim
 
 #### MacOS: MacVim
 
-    brew install macvim --override-system-vim --enable-clipboard
+    brew install macvim --with-override-system-vim --enable-clipboard  --with-cscope --with-lua
 
 #### Ubuntu: gVim
 

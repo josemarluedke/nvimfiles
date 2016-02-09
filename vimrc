@@ -134,6 +134,13 @@ nmap <D-]> >>
 vmap <D-[> <gv
 vmap <D-]> >gv
 
+" Remap code completion to Ctrl + Space
+if has("gui_running")
+    inoremap <C-Space> <C-n>
+else " no gui
+  inoremap <Nul> <C-n>
+endif
+
 " Searching
 set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
@@ -285,6 +292,27 @@ let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
 
 let delimitMate_matchpairs = "(:),[:],{:}"
+
+"-------------------------
+" Neocomplete
+
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return pumvisible() ? "\<C-y>" : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 "-------------------------
 " JSX
