@@ -97,7 +97,7 @@ Bundle 'barboza/vim-cucumber-string-highlight'
 " Javascript syntax
 Bundle 'rschmukler/pangloss-vim-indent'
 Bundle 'othree/yajs.vim'
-Bundle 'mxw/vim-jsx', { 'rtp': 'after/' }
+Bundle 'mxw/vim-jsx'
 "--------------------------
 " color scheme
 "--------------------------

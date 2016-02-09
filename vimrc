@@ -51,6 +51,11 @@ set matchpairs+=<:>
 " Use 256 colors in vim
 set t_Co=256
 
+" Spell
+setlocal spell
+autocmd FileType gitcommit setlocal spell
+set complete+=kspell
+
 " ---------------------------------------------------------------------------
 " UI
 " ---------------------------------------------------------------------------
@@ -272,6 +277,10 @@ let g:ctrlp_custom_ignore = {
       \ 'file': '\v\.(exe|so|dll|log|gif|jpg|jpeg|png|psd|DS_Store|ctags|gitattributes)$'
       \ }
 
+" Sparkup
+" Enable sparkup in Javascript files
+autocmd FileType javascript.jsx,javascript runtime! ftplugin/html/sparkup.vim
+
 "-------------------------
 " Markdown
 let g:vim_markdown_folding_disabled=1
@@ -411,3 +420,9 @@ autocmd ColorScheme * highlight NonText guifg=bg
 if filereadable(expand("$HOME/") . '.vimrc.local')
   source ~/.vimrc.local
 endif
+
+" ---------------------------------------------------------------------------
+" Load folder specific settings and disable unsafe commands
+" ---------------------------------------------------------------------------
+set exrc
+set secure
