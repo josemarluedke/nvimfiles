@@ -211,6 +211,18 @@ map <Leader>rs :call RunNearestSpec()<CR>
 map <Leader>rl :call RunLastSpec()<CR>
 
 " ---------------------------------------------------------------------------
+" Ember
+" ---------------------------------------------------------------------------
+
+map <leader>ec :CtrlP app/components<cr>
+map <leader>et :CtrlP app/templates<cr>
+map <leader>em :CtrlP app/models<cr>
+map <leader>eh :CtrlP app/helpers<cr>
+map <leader>eo :CtrlP app/routes<cr>
+map <leader>es :CtrlP app/services<cr>
+map <leader>ep :topleft :split package.json<cr>
+
+" ---------------------------------------------------------------------------
 " Plugins
 " ---------------------------------------------------------------------------
 
