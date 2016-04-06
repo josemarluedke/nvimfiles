@@ -362,6 +362,21 @@ endfunction
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " ---------------------------------------------------------------------------
+" Add support to go to file in JS without file extention
+" ----
+augroup suffixes
+  autocmd!
+
+  let associations = [
+                      \["javascript", ".js,.javascript,.es,.esx,.json,.jsx"]
+                    \]
+
+  for ft in associations
+    execute "autocmd FileType " . ft[0] . " setlocal suffixesadd=" . ft[1]
+  endfor
+augroup END
+
+" ---------------------------------------------------------------------------
 " GUI
 " ---------------------------------------------------------------------------
 
