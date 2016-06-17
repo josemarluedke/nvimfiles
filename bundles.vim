@@ -42,25 +42,18 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'vim-scripts/jsbeautify'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'godlygeek/tabular'
-Bundle 'mattn/emmet-vim'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'danro/rename.vim'
 Bundle 'vim-scripts/loremipsum'
-Bundle 'vim-ruby/vim-ruby'
 Bundle 'bling/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
 Bundle 'vim-scripts/Gist.vim'
-Bundle 'josemarluedke/vim-rspec'
 Bundle 'terryma/vim-multiple-cursors'
-Bundle 'kana/vim-textobj-user'
-Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'vim-scripts/sudo.vim'
-Bundle 'stefanoverna/vim-i18n'
-Bundle 'dsawardekar/ember.vim'
 Bundle 'alvan/vim-closetag'
 Bundle 'Shougo/neocomplete.vim'
 Bundle 'jszakmeister/vim-togglecursor'
+Bundle 'josemarluedke/vim-rspec'
 
 "--------------------------
 " tool for explorer
@@ -77,15 +70,12 @@ Bundle 'vim-scripts/BufOnly.vim'
 "--------------------------
 " filetype syntax highlight
 "--------------------------
-Bundle 'groenewege/vim-less'
-Bundle 'kchmck/vim-coffee-script'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'solarnz/thrift.vim'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'depuracao/vim-rdoc'
 Bundle 'nono/vim-handlebars'
 Bundle 'slim-template/vim-slim'
-Bundle 'heartsentwined/vim-emblem'
-Bundle 'tpope/vim-haml'
-Bundle 'statianzo/vim-jade'
 Bundle 'oguzbilgic/sexy-railscasts-theme'
 Bundle 'jpo/vim-railscasts-theme'
 Bundle '29decibel/codeschool-vim-theme'
@@ -99,6 +89,7 @@ Bundle 'barboza/vim-cucumber-string-highlight'
 Bundle 'rschmukler/pangloss-vim-indent'
 Bundle 'othree/yajs.vim'
 Bundle 'mxw/vim-jsx'
+
 "--------------------------
 " color scheme
 "--------------------------
