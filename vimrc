@@ -336,6 +336,10 @@ inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 "-------------------------
+" vim-markmultiple
+map <leader>d :call MarkMultipleClean()<CR>
+
+"-------------------------
 " JSX
 let g:jsx_ext_required = 0
 
