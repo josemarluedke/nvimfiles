@@ -54,6 +54,7 @@ Bundle 'alvan/vim-closetag'
 Bundle 'Shougo/neocomplete.vim'
 Bundle 'jszakmeister/vim-togglecursor'
 Bundle 'josemarluedke/vim-rspec'
+Bundle 'adinapoli/vim-markmultiple'
 
 "--------------------------
 " tool for explorer
