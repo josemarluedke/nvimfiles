@@ -264,6 +264,14 @@ This version of vim-rspec uses iTerm as default terminal. The original version u
 
 True Sublime Text style multiple selections for Vim
 
+### [MarkMultiple](https://github.com/adinapoli/vim-markmultiple)
+
+An emacs-like mark multiple plugin, inspired from this plugin:
+
+`Ctrl-n` to activate and to go to the next match. When you are tired, simply change the word under the cursor the usual way.
+
+`<Leader>d` to clean highlight.
+
 ## Installation
 
 ### Install Vim (if not already installed)
