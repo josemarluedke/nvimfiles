@@ -87,6 +87,7 @@ Bundle 'elixir-lang/vim-elixir'
 Plugin 'rust-lang/rust.vim'
 Bundle 'barboza/vim-cucumber-string-highlight'
 Plugin 'pangloss/vim-javascript'
+Bundle 'mxw/vim-jsx'
 
 "--------------------------
 " color scheme
