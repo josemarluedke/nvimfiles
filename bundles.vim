@@ -86,10 +86,7 @@ Bundle 'hail2u/vim-css3-syntax'
 Bundle 'elixir-lang/vim-elixir'
 Plugin 'rust-lang/rust.vim'
 Bundle 'barboza/vim-cucumber-string-highlight'
-" Javascript syntax
-Bundle 'rschmukler/pangloss-vim-indent'
-Bundle 'othree/yajs.vim'
-Bundle 'mxw/vim-jsx'
+Plugin 'pangloss/vim-javascript'
 
 "--------------------------
 " color scheme
