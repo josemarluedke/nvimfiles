@@ -41,7 +41,6 @@ Plug 'alvan/vim-closetag'
 Plug 'Shougo/neocomplete.vim'
 Plug 'jszakmeister/vim-togglecursor'
 Plug 'josemarluedke/vim-rspec'
-Plug 'adinapoli/vim-markmultiple'
 
 "--------------------------
 " tool for explorer

@@ -262,10 +262,6 @@ This version of vim-rspec uses iTerm as default terminal. The original version u
 
 ### [Multiple cursors](http://github.com/terryma/vim-multiple-cursors)
 
-True Sublime Text style multiple selections for Vim
-
-### [MarkMultiple](https://github.com/adinapoli/vim-markmultiple)
-
 This is similar to Command + d from Atom/Sublime.
 
 `Ctrl-n` to activate and to go to the next match. When you are tired, simply change the word under the cursor the usual way.

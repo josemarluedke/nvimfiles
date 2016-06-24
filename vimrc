@@ -126,6 +126,10 @@ nmap <silent> <leader>rv :so $MYVIMRC<CR>
 nmap :E :e
 nmap :W :w
 
+" bind K to grep word under cursor
+nnoremap <silent> K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+vnoremap <silent> K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
 " The Silver Searcher
 if executable('ag')
   " Use ag over grep
@@ -350,12 +354,8 @@ inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 "-------------------------
-" vim-markmultiple
-let g:mark_multiple_trigger = "<C-n>"
-map <D-d> :call MarkMultiple()<CR>
-imap <D-d> :call MarkMultiple()<CR>
-vmap <D-d> :call MarkMultiple()<CR>
-map <leader>d :call MarkMultipleClean()<CR>
+" vim-multiple-cursors
+map <leader>d :call multiple_cursors#quit()<CR>
 
 "-------------------------
 " JSX
