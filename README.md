@@ -93,13 +93,13 @@ http://vimcasts.org/episodes/fugitive-vim---a-complement-to-command-line-git/
 
 Use:
 
-	:%Subvert/facilit{y,ies}/building{,s}/g
+  :%Subvert/facilit{y,ies}/building{,s}/g
 
 Instead:
 
-	:%s/facilities/buildings/g
-	:%s/Facilities/Buildings/g
-	:%s/FACILITIES/BUILDINGS/g
+  :%s/facilities/buildings/g
+  :%s/Facilities/Buildings/g
+  :%s/FACILITIES/BUILDINGS/g
 
 #### Coercion
 
@@ -109,14 +109,14 @@ Want to turn `fooBar` into `foo_bar`?  Press `crs` (coerce to snake\_case).  Mix
 
 Rename the current file
 
-	:rename[!] {newname}
+  :rename[!] {newname}
 
 
 ### [Loremipsum](https://github.com/vim-scripts/loremipsum)
 
 Insert a dummy text of a certain length
 
-	:Loremipsum[!] [WORD	COUNT] [PARAGRAPH_TEMPLATE] [PREFIX POSTFIX]
+  :Loremipsum[!] [WORD  COUNT] [PARAGRAPH_TEMPLATE] [PREFIX POSTFIX]
 
 ### [Bufexplorer](https://github.com/corntrace/bufexplorer)
 
@@ -166,11 +166,11 @@ Requires setting GITHUB_TOKEN and GITHUB_USER Env's
 
 Align stuff
 
-	 \a= :Tabularize /=
-	 \a: :Tabularize /:
-	 \a:: :Tabularize /:\zs
-	 \a, :Tabularize /,
-	 \<Bar> :Tabularize /<Bar>
+   \a= :Tabularize /=
+   \a: :Tabularize /:
+   \a:: :Tabularize /:\zs
+   \a, :Tabularize /,
+   \<Bar> :Tabularize /<Bar>
 
 http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
 
