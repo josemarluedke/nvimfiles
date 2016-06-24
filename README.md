@@ -1,6 +1,6 @@
 # Awesome vimfiles for Ruby and Javascript development
 
-Support for Rails, Git, Sparkup, Slim, Sass, JSX, CoffeeScript, Markdown, and more with nice colour schemes.
+Support for Javascript, Ember, React, Ruby, Rails, Git, Sparkup, Slim, Sass, JSX, CoffeeScript, Markdown, and more with nice colour schemes.
 
 ![MacVim with these vimfiles](https://cloud.githubusercontent.com/assets/230476/9022763/f0fda188-3836-11e5-91e9-52a63326fc7f.png)
 
@@ -250,9 +250,9 @@ Run `ctags -R` or `\rtg` in project root to generate tags
 
 Lean & mean status/tabline for vim that's light as air
 
-### [Vundle](https://github.com/gmarik/vundle)
+### [Plug](https://github.com/junegunn/vim-plug)
 
-Plugin manager and part of the reason why my vimfiles as so compact
+Plugin manager and part of the reason why my vimfiles are so compact
 
 ### [Rspec](https://github.com/josemarluedke/vim-rspec)
 
@@ -266,7 +266,7 @@ True Sublime Text style multiple selections for Vim
 
 ### [MarkMultiple](https://github.com/adinapoli/vim-markmultiple)
 
-An emacs-like mark multiple plugin, inspired from this plugin:
+This is similar to Command + d from Atom/Sublime.
 
 `Ctrl-n` to activate and to go to the next match. When you are tired, simply change the word under the cursor the usual way.
 
@@ -315,7 +315,6 @@ or run:
     sudo ln -s /usr/bin/ack-grep /usr/local/bin/ack
 
 You can download the powerline font for Ubuntu Mono [here](https://github.com/pdf/ubuntu-mono-powerline-ttf/blob/master/UbuntuMono-R-VimPowerline.ttf?raw=true).
-
 
 ## Thanks for inspiration
 

@@ -2,7 +2,7 @@ task :install do
   root = File.expand_path(File.dirname(__FILE__))
 
   puts 'Installing Bundles'
-  system "vim -c BundleInstall! -c q -c q -u bundles.vim"
+  system "vim -c PlugInstall -c q -c q -u bundles.vim"
 
   puts '*' * 79
   puts
@@ -17,7 +17,7 @@ desc 'Update to latest and greatest'
 task :update do
   system('(which git-up > /dev/null && git-up) || git pull origin master')
   puts 'Updating Bundles'
-  system "vim -c BundleInstall! -c BundleClean! -c q -c q"
+  system "vim  -c PlugClean! -c PlugUpgrade -c PlugUpdate -c q -c q"
 
   puts '*' * 79
   puts
