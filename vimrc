@@ -337,6 +337,10 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 "-------------------------
 " vim-markmultiple
+let g:mark_multiple_trigger = "<C-n>"
+map <D-d> :call MarkMultiple()<CR>
+imap <D-d> :call MarkMultiple()<CR>
+vmap <D-d> :call MarkMultiple()<CR>
 map <leader>d :call MarkMultipleClean()<CR>
 
 "-------------------------
