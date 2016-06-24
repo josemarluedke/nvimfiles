@@ -87,7 +87,7 @@ Bundle 'elixir-lang/vim-elixir'
 Plugin 'rust-lang/rust.vim'
 Bundle 'barboza/vim-cucumber-string-highlight'
 Plugin 'pangloss/vim-javascript'
-Bundle 'mxw/vim-jsx'
+"Bundle 'mxw/vim-jsx'
 
 "--------------------------
 " color scheme
@@ -100,6 +100,7 @@ Bundle 'daylerees/colour-schemes', { 'rtp': 'vim' }
 Bundle 'blerins/flattown'
 Bundle 'chriskempson/base16-vim'
 Bundle 'geoffharcourt/one-dark.vim'
+Bundle 'junegunn/seoul256.vim'
 
 "--------------------------
 " snipmate
