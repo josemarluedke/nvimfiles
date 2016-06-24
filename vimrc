@@ -60,18 +60,18 @@ set complete+=kspell
 " UI
 " ---------------------------------------------------------------------------
 
-set title				 " make your xterm inherit the title from Vim
+set title        " make your xterm inherit the title from Vim
 set encoding=utf-8
 set autoindent
 set smartindent
 set showmode     " show current mode down the bottom
 set showcmd      " show incomplete cmds down the bottom
-set hidden			 " hides buffers instead of closing them
+set hidden       " hides buffers instead of closing them
 set wildmenu
 set wildmode=list:longest
 set wildcharm=<TAB> " Autocmpletion hotkey
 set visualbell
-set cursorline	 " highlight current line
+set cursorline   " highlight current line
 set ttyfast
 set backspace=indent,eol,start  "allow backspacing over everything in insert mode
 set laststatus=2 " display the status line always
@@ -353,19 +353,19 @@ let g:jsx_ext_required = 0
 
 " Strip trailing whitespace
 function! <SID>StripTrailingWhitespaces()
-		" Only strip whitespace if isn't a slim, haml or emblem file
-		if &filetype =~ 'slim' || &filetype =~ 'haml' || &filetype =~ 'emblem'
-		  return
-		endif
-		" Preparation: save last search, and cursor position.
-		let _s=@/
-		let l = line(".")
-		let c = col(".")
-		" Do the business:
-		%s/\s\+$//e
-		" Clean up: restore previous search history, and cursor position
-		let @/=_s
-		call cursor(l, c)
+  " Only strip whitespace if isn't a slim, haml or emblem file
+  if &filetype =~ 'slim' || &filetype =~ 'haml' || &filetype =~ 'emblem'
+    return
+  endif
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  %s/\s\+$//e
+  " Clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
 endfunction
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
@@ -416,19 +416,19 @@ if has("gui_running")
   endif
 else
   set novisualbell " Mute error bell
-	"dont load csapprox if there is no gui support - silences an annoying warning
-	let g:CSApprox_loaded = 1
+  "dont load csapprox if there is no gui support - silences an annoying warning
+  let g:CSApprox_loaded = 1
 
-	"set railscasts colorscheme when running vim in gnome terminal
-	if $COLORTERM == 'gnome-terminal'
-		set term=gnome-256color
-	else
-		if $TERM == 'xterm'
-			set term=xterm-256color
-		else
-			colorscheme molokai
-		endif
-	endif
+  "set railscasts colorscheme when running vim in gnome terminal
+  if $COLORTERM == 'gnome-terminal'
+    set term=gnome-256color
+  else
+    if $TERM == 'xterm'
+      set term=xterm-256color
+    else
+      colorscheme molokai
+    endif
+  endif
 endif
 
 if has("gui_macvim")
