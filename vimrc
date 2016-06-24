@@ -126,9 +126,23 @@ nmap <silent> <leader>rv :so $MYVIMRC<CR>
 nmap :E :e
 nmap :W :w
 
-" \a to Silver Searcher (search in files)
-nnoremap <leader>a :Ag!<space>
-nnoremap <leader>f :CtrlP<cr>
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+
+  " \a to Silver Searcher
+  nnoremap <leader>a :Ag!<space>
+endif
+
+" Map leader f to CtrlP
+nnoremap <unique> <leader>f :CtrlP<cr>
 
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
@@ -283,7 +297,7 @@ let g:airline_mode_map = {
 
 "-------------------------
 " CTRL+p
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*
 let g:ctrlp_custom_ignore = {
       \ 'dir':  '\v[\/]\.(git|hg|svn|gitkeep)|(node_modules|bower_components|tmp)$',
       \ 'file': '\v\.(exe|so|dll|log|gif|jpg|jpeg|png|psd|DS_Store|ctags|gitattributes)$'
