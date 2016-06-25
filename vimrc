@@ -1,16 +1,10 @@
 " Use Vim settings, rather then Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" ---------------------------------------------------------------------------
 " Macros
-" ---------------------------------------------------------------------------
 silent! runtime macros/matchit.vim
 
-" ---------------------------------------------------------------------------
 " Plugins
-" ---------------------------------------------------------------------------
-
 silent! runtime bundles.vim
 
 " ---------------------------------------------------------------------------
@@ -22,7 +16,7 @@ let mapleader = "\\"
 let g:mapleader = "\\"
 syntax enable
 
-" do not create backup, swap file, use git for version managment
+" do not create backup, swap file, use git for version management
 set nobackup
 set nowritebackup
 set noswapfile
@@ -35,8 +29,6 @@ set history=1000  "store lots of :cmdline history
 
 " Set character encoding to use in vim
 set encoding=utf-8
-
-" Let vim know what encoding we use in our terminal
 set termencoding=utf-8
 
 " Add '-' as recognized word symbol. e.g dw delete all 'foo-bar' instead just 'foo'
@@ -44,9 +36,7 @@ set iskeyword+=-
 
 " Show matching brackets
 set showmatch
-
-" Make < and > match as well
-set matchpairs+=<:>
+set matchpairs+=<:> " Make < and > to match
 
 " Use 256 colors in vim
 set t_Co=256
@@ -56,12 +46,18 @@ setlocal spell
 autocmd FileType gitcommit setlocal spell
 set complete+=kspell
 
+" Copy to osx clipboard
+vnoremap <C-c> "*y<CR><Paste>
+
+" Align blocks of text and keep them selected
+vmap < <gv
+vmap > >gv
+
 " ---------------------------------------------------------------------------
 " UI
 " ---------------------------------------------------------------------------
 
 set title        " make your xterm inherit the title from Vim
-set encoding=utf-8
 set autoindent
 set smartindent
 set showmode     " show current mode down the bottom
@@ -76,13 +72,15 @@ set ttyfast
 set backspace=indent,eol,start  "allow backspacing over everything in insert mode
 set laststatus=2 " display the status line always
 set nonumber
-set relativenumber " show relative numbers
+set relativenumber number " show relative numbers
 set splitbelow
 set splitright
 
 " some stuff to get the mouse going in term
 set mouse=a
-set ttymouse=xterm2
+if !has('nvim')
+  set ttymouse=xterm2
+endif
 
 " ---------------------------------------------------------------------------
 " Text Formatting
@@ -101,8 +99,11 @@ set formatoptions=n
 " Mappings
 " ---------------------------------------------------------------------------
 
+" Remap ; to :
+nnoremap ; :
+
 " Open new tab
-nmap <silent><leader>to :tabnew .<CR>
+nmap <silent><leader>t :tabnew .<CR>
 
 " Replace
 nmap <leader>s :%s//<left>
@@ -113,11 +114,6 @@ noremap <up>    :echoerr 'Use K to go up'<CR>
 noremap <down>  :echoerr 'Use J to go down'<CR>
 noremap <left>  :echoerr 'Use H to go left'<CR>
 noremap <right> :echoerr 'Use L to go right'<CR>
-" Disable it in insert mode
-"inoremap <up>    <ESC>:echoerr 'Use K to go up'<CR>
-"inoremap <down>  <ESC>:echoerr 'Use J to go down'<CR>
-"inoremap <left>  <ESC>:echoerr 'Use H to go left'<CR>
-"inoremap <right> <ESC>:echoerr 'Use L to go right'<CR>
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
@@ -176,12 +172,6 @@ nmap <leader>hs :set hlsearch! hlsearch?<CR>
 " turn search highlight off
 nnoremap <leader><space> :noh<cr>
 
-" Windows switch
-nmap <silent> <C-k> :wincmd k<CR>
-nmap <silent> <C-j> :wincmd j<CR>
-nmap <silent> <C-h> :wincmd h<CR>
-nmap <silent> <C-l> :wincmd l<CR>
-
 " ---------------------------------------------------------------------------
 " Tabularize
 " ---------------------------------------------------------------------------
@@ -202,19 +192,6 @@ vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 " ---------------------------------------------------------------------------
 " Ruby/Rails
 " ---------------------------------------------------------------------------
-
-map <leader>gv :CtrlP app/views<cr>
-map <leader>gc :CtrlP app/controllers<cr>
-map <leader>gm :CtrlP app/models<cr>
-map <leader>gh :CtrlP app/helpers<cr>
-map <leader>gl :CtrlP lib<cr>
-map <leader>gp :CtrlP public<cr>
-map <leader>ga :CtrlP app/assets<cr>
-
-" Skip to Model, View or Controller
-map <Leader>m :Rmodel
-map <Leader>v :Rview
-map <Leader>c :Rcontroller
 
 " Execute current buffer as ruby
 map <S-r> :w !ruby<CR>
@@ -258,7 +235,11 @@ let NERDTreeMinimalUI=1
 silent! nmap <silent> <Leader>] :NERDTreeToggle<CR>
 
 "-------------------------
-" NERDCommenter mappings
+" NERDCommenter
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
 if has("gui_macvim") && has("gui_running")
   map <D-/> <plug>NERDCommenterToggle<CR>
   imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
@@ -287,7 +268,6 @@ let g:airline_powerline_fonts=0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_symbols = { 'linenr': '␤ ', 'branch': '⎇ ' }
-let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#branch#enabled = 1
 let g:airline_mode_map = {
       \ 'n' : 'N',
@@ -298,6 +278,29 @@ let g:airline_mode_map = {
       \ 'c' : 'CMD   ',
       \ '': 'V-BLCK',
       \ }
+
+" Tabline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_tab_nr = 1
+let airline#extensions#tabline#tab_nr_type = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#fnamemod = ':~:.'
+let g:airline#extensions#tabline#fnamecollapse = 0
+let g:airline#extensions#tabline#fnametruncate = 0
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+nmap <leader>- <Plug>AirlineSelectPrevTab
+nmap <leader>+ <Plug>AirlineSelectNextTabs#tabline#enabled = 1
 
 "-------------------------
 " CTRL+p
@@ -332,15 +335,21 @@ let delimitMate_expand_space = 1
 
 let delimitMate_matchpairs = "(:),[:],{:}"
 
-"-------------------------
-" Neocomplete
+if !has('nvim')
+  "-------------------------
+  " Neocomplete
+  " Disable AutoComplPop.
 
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
+  let g:acp_enableAtStartup = 0
+  " Use neocomplete.
+  let g:neocomplete#enable_at_startup = 1
+  " Use smartcase.
+  let g:neocomplete#enable_smart_case = 1
+endif
+
+if has('nvim')
+  let g:deoplete#enable_at_startup = 1
+endif
 
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>

@@ -87,6 +87,7 @@ Plug 'blerins/flattown'
 Plug 'chriskempson/base16-vim'
 Plug 'geoffharcourt/one-dark.vim'
 Plug 'junegunn/seoul256.vim'
+Plug 'mhartington/oceanic-next'
 
 "--------------------------
 " snipmate
@@ -95,6 +96,11 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
+
+function! DoRemote(arg)
+  UpdateRemotePlugins
+endfunction
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 
 " Add plugins to &runtimepath
 call plug#end()

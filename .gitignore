@@ -2,3 +2,5 @@ autoload/
 plug/
 plugged/
 .netrwhist
+.init.vim-rplugin~
+init.vim

@@ -2,6 +2,8 @@
 
 Support for Javascript, Ember, React, Ruby, Rails, Git, Sparkup, Slim, Sass, JSX, CoffeeScript, Markdown, and more with nice colour schemes.
 
+**Neovim compatible!**
+
 ![MacVim with these vimfiles](https://cloud.githubusercontent.com/assets/230476/9022763/f0fda188-3836-11e5-91e9-52a63326fc7f.png)
 
 
@@ -28,21 +30,12 @@ View buffer files on current window                       | `leader be`
 View buffer files on horizontal split                     | `leader bs`
 View buffer files on vertical split                       | `leader bs`
 **▶ Search & Find/replace**                               |
+Multiple Cursor                                           | `ctrl+n`
 Search in files (Ag/Silver Searcher)                      | `leader a`
 Remove search highlighting                                | `leader Space`
 Toggle search highlighting                                | `leader hs`
 Find and replace                                          | `leader s`
 **▶ Ruby on Rails**                                       |
-File search in view                                       | `leader gv`
-File search in controllers                                | `leader gc`
-File search in models                                     | `leader gm`
-File search in helpers                                    | `leader gh`
-File search in libs                                       | `leader gl`
-File search in public                                     | `leader gp`
-File search in assets                                     | `leader ga`
-Jump to model                                             | `leader m`
-Jump to view                                              | `leader v`
-Jump to controller                                        | `leader c`
 Open routes in split                                      | `leader gr`
 Open Gemfile in split                                     | `leader gg`
 Run rspec on current test file                            | `leader rt`
