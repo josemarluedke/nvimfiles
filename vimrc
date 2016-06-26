@@ -48,10 +48,9 @@ set complete+=kspell
 
 " Copy to osx clipboard
 vnoremap <C-c> "*y<CR><Paste>
-
-" Align blocks of text and keep them selected
-vmap < <gv
-vmap > >gv
+vnoremap <C-c> "*y<CR>
+vnoremap y "*y<CR>
+nnoremap Y "*Y<CR>
 
 " ---------------------------------------------------------------------------
 " UI
@@ -152,6 +151,10 @@ nmap <D-[> <<
 nmap <D-]> >>
 vmap <D-[> <gv
 vmap <D-]> >gv
+
+" Align blocks of text and keep them selected
+vmap < <gv
+vmap > >gv
 
 " Remap code completion to Ctrl + Space
 if has("gui_running")
