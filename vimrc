@@ -175,6 +175,9 @@ nmap <leader>hs :set hlsearch! hlsearch?<CR>
 " turn search highlight off
 nnoremap <leader><space> :noh<cr>
 
+" Format json strings
+com! FormatJSON %!python -m json.tool
+
 " ---------------------------------------------------------------------------
 " Tabularize
 " ---------------------------------------------------------------------------

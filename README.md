@@ -261,6 +261,15 @@ This is similar to Command + d from Atom/Sublime.
 
 `<Leader>d` to clean highlight.
 
+
+### Format JSON strings
+
+If you have a one line JSON string and want to indend and format it you can use
+this command:
+
+`:FormatJSON`
+
+
 ## Installation
 
 ### Install Vim (if not already installed)
