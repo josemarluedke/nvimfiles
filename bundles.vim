@@ -41,6 +41,7 @@ Plug 'alvan/vim-closetag'
 Plug 'Shougo/neocomplete.vim'
 Plug 'jszakmeister/vim-togglecursor'
 Plug 'josemarluedke/vim-rspec'
+Plug 'nelstrom/vim-visual-star-search'
 
 "--------------------------
 " tool for explorer
