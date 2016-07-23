@@ -131,17 +131,24 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_user_command = ['ag %s -l --nocolor -g ""']
+  let g:ctrlp_user_command += ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
+
+  " dont jump to an open tab/split if file already oppen
+  let g:ctrlp_switch_buffer = 0
+
+  let g:ctrlp_working_path_mode = 'ra'
 
   " \a to Silver Searcher
   nnoremap <leader>a :Ag!<space>
 endif
 
-" Map leader f to CtrlP
+" Map leader f and t to CtrlP
 nnoremap <unique> <leader>f :CtrlP<cr>
+nnoremap <silent> t :CtrlP<cr>
 
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
