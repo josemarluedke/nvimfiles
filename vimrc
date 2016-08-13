@@ -231,6 +231,13 @@ map <leader>es :CtrlP app/services<cr>
 map <leader>ep :topleft :split package.json<cr>
 
 " ---------------------------------------------------------------------------
+" Syntax highlight for unsual filetypes
+" ---------------------------------------------------------------------------
+
+au BufRead,BufNewFile nginx.conf if &ft == '' | setfiletype nginx | endif
+au BufRead,BufNewFile Dockerfile.dev if &ft == '' | setfiletype Dockerfile | endif
+
+" ---------------------------------------------------------------------------
 " Plugins
 " ---------------------------------------------------------------------------
 

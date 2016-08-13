@@ -75,6 +75,8 @@ Plug 'rust-lang/rust.vim'
 Plug 'barboza/vim-cucumber-string-highlight'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'evanmiller/nginx-vim-syntax'
+Plug 'ekalinin/Dockerfile.vim'
 
 "--------------------------
 " color scheme
