@@ -459,9 +459,6 @@ if has("gui_running")
   endif
 else
   set novisualbell " Mute error bell
-  "dont load csapprox if there is no gui support - silences an annoying warning
-  let g:CSApprox_loaded = 1
-
   "set railscasts colorscheme when running vim in gnome terminal
   if $COLORTERM == 'gnome-terminal'
     set term=gnome-256color
