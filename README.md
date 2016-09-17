@@ -17,7 +17,7 @@ Please check also [install dependencies](#install-dependencies) section.
 
 ### Basic Mappings
 
-The leader key is mapped to `\`, you can change it in your `.vimrc.local`.
+The leader key is mapped to `,`, you can change it in your `.vimrc.local`.
 
 Action | Hotkey
 --------------------------------------------------------- | -----------------
@@ -116,7 +116,7 @@ Insert a dummy text of a certain length
 With bufexplorer, you can quickly and easily switch between buffers
 
 
-### [Jsbeautify](https://github.com/vim-scripts/jsbeautify) (`\ff`)
+### [Jsbeautify](https://github.com/vim-scripts/jsbeautify) (`<leader>ff`)
 
 Format your javascript souce code.
 
@@ -127,7 +127,7 @@ Format your javascript souce code.
 
 `:BufOnly` with an argument will close all buffers but the supplied buffer name/number.
 
-### [CtrlP](https://github.com/kien/ctrlp.vim) (`\f`)
+### [CtrlP](https://github.com/kien/ctrlp.vim) (`<leader>f`)
 
 Find files in your project with minimal keypresses
 
@@ -159,15 +159,15 @@ Requires setting GITHUB_TOKEN and GITHUB_USER Env's
 
 Align stuff
 
-   \a= :Tabularize /=
-   \a: :Tabularize /:
-   \a:: :Tabularize /:\zs
-   \a, :Tabularize /,
-   \<Bar> :Tabularize /<Bar>
+   <leader>a= :Tabularize /=
+   <leader>a: :Tabularize /:
+   <leader>a:: :Tabularize /:\zs
+   <leader>a, :Tabularize /,
+   <Bar> :Tabularize /<Bar>
 
 http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
 
-### [Neerd Commenter](https://github.com/scrooloose/nerdcommenter) (`Command + /` or `\/`)
+### [Neerd Commenter](https://github.com/scrooloose/nerdcommenter) (`Command + /` or `<leader>/`)
 
 Comment/Uncomment stuff out
 
@@ -177,16 +177,16 @@ Comment/Uncomment stuff out
 Search project for text (aka find in files)
 
 
-### [Ag](https://github.com/epmatsw/ag.vim) (`\a`)
+### [Ag](https://github.com/epmatsw/ag.vim) (`<leader>a`)
 
 Alternative of Ack, using 'the_silver_searcher' on homebrew.
 
 
-### [Nerdtree](https://github.com/scrooloose/nerdtree) (`\]`)
+### [Nerdtree](https://github.com/scrooloose/nerdtree) (`<leader>]`)
 
 Project file browser
 
-`\]` opens file browser
+`<leader>m` opens file browser
 
 `o` / `x` open and close files/folders
 
@@ -233,11 +233,11 @@ A colour scheme, both light and dark version
 
 `:set background=light`
 
-### [Tagbar](https://github.com/majutsushi/tagbar) (`/l`)
+### [Tagbar](https://github.com/majutsushi/tagbar) (`<leader>l`)
 
 Lists method names, provide auto complete
 
-Run `ctags -R` or `\rtg` in project root to generate tags
+Run `ctags -R` or `<leader>rtg` in project root to generate tags
 
 ### [Airline](https://github.com/bling/vim-airline)
 
