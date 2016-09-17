@@ -283,7 +283,7 @@ set complete=.,w,b,u,t,i
 "-------------------------
 " Airline
 set laststatus=2
-let g:airline_theme='murmur'
+let g:airline_theme='onedark'
 let g:airline_powerline_fonts=0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
@@ -436,7 +436,7 @@ if has("nvim")
 endif
 
 " colorscheme
-color molokai
+color onedark
 
 if has("gui_running")
   set guioptions-=T " no toolbar set guioptions-=m " no menus
@@ -470,7 +470,7 @@ else
     if $TERM == 'xterm'
       set term=xterm-256color
     else
-      colorscheme molokai
+      colorscheme onedark
     endif
   endif
 endif

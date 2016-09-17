@@ -86,7 +86,7 @@ Plug 'tomasr/molokai'
 Plug 'daylerees/colour-schemes', { 'rtp': 'vim' }
 Plug 'blerins/flattown'
 Plug 'chriskempson/base16-vim'
-Plug 'geoffharcourt/one-dark.vim'
+Plug 'joshdick/onedark.vim'
 Plug 'junegunn/seoul256.vim'
 Plug 'mhartington/oceanic-next'
 
