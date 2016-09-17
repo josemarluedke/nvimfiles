@@ -252,7 +252,7 @@ let NERDTreeWinSize = 30
 let NERDTreeChDirMode = 2
 let NERDTreeDirArrows = 1
 let NERDTreeMinimalUI=1
-silent! nmap <silent> <Leader>] :NERDTreeToggle<CR>
+silent! nmap <silent> <Leader>m :NERDTreeToggle<CR>
 
 "-------------------------
 " NERDCommenter

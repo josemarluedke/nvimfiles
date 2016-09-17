@@ -22,7 +22,7 @@ The leader key is mapped to `\`, you can change it in your `.vimrc.local`.
 Action | Hotkey
 --------------------------------------------------------- | -----------------
 **▶ File operations**                                     |
-File browser (NerdTree)                                   | `leader ]`
+File browser (NerdTree)                                   | `leader m`
 FuzzyFinder fo files (CtrlP)                              | `leader f`
 Switch between the last two files                         | `leader leader`
 Toggle Tagbar                                             | `leader l`
