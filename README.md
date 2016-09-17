@@ -48,6 +48,8 @@ Switching between windows                                 | `ctrl+h` `ctrl+j` `c
 Toggle comments                                           | `leader /` or `Command + /`
 Auto complete or expand snippet                           | `<tab>`
 Expand CSS selectors `div.event` in to markup             | `ctrl+e`
+Split a one-liner into multiple lines (splitjoin.vim)     | `gS`
+Join a block into a single-line statement (splitjoin.vim) | `gJ`
 
 See `.vimrc` for more.
 
