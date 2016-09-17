@@ -47,7 +47,8 @@ Plug 'nelstrom/vim-visual-star-search'
 " tool for explorer
 "--------------------------
 Plug 'corntrace/bufexplorer'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'majutsushi/tagbar'
 Plug 'kien/ctrlp.vim'
 Plug 'vim-scripts/ctags.vim'
@@ -59,22 +60,18 @@ Plug 'vim-scripts/BufOnly.vim'
 " filetype syntax highlight
 "--------------------------
 Plug 'vim-ruby/vim-ruby'
-Plug 'solarnz/thrift.vim'
+Plug 'solarnz/thrift.vim', { 'for': 'thrift' }
 Plug 'plasticboy/vim-markdown'
 Plug 'depuracao/vim-rdoc'
 Plug 'nono/vim-handlebars'
-Plug 'slim-template/vim-slim'
-Plug 'oguzbilgic/sexy-railscasts-theme'
-Plug 'jpo/vim-railscasts-theme'
-Plug '29decibel/codeschool-vim-theme'
-Plug 'puppetlabs/puppet-syntax-vim'
-Plug 'elzr/vim-json'
+Plug 'slim-template/vim-slim', { 'for': 'slim' }
+Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'hail2u/vim-css3-syntax'
 Plug 'elixir-lang/vim-elixir'
-Plug 'rust-lang/rust.vim'
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'barboza/vim-cucumber-string-highlight'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'", { 'for': 'javascript' }
+Plug 'mxw/vim-jsx', { 'for': ['jsx', 'javascript'] }
 Plug 'evanmiller/nginx-vim-syntax'
 Plug 'ekalinin/Dockerfile.vim'
 
