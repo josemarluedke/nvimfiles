@@ -431,8 +431,12 @@ augroup END
 " GUI
 " ---------------------------------------------------------------------------
 
+if has("nvim")
+  set termguicolors
+endif
+
 " colorscheme
-color railscasts
+color molokai
 
 if has("gui_running")
   set guioptions-=T " no toolbar set guioptions-=m " no menus
