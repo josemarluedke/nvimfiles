@@ -43,6 +43,7 @@ Plug 'jszakmeister/vim-togglecursor'
 Plug 'josemarluedke/vim-rspec'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'sickill/vim-pasta'
 
 "--------------------------
 " tool for explorer
