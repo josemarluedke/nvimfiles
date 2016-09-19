@@ -146,7 +146,7 @@ if executable('ag')
   nnoremap <leader>a :Ag!<space>
 endif
 
-" Map leader f and t to CtrlP
+" Map <leader>f and t to CtrlP
 nnoremap <unique> <leader>f :CtrlP<cr>
 nnoremap <silent> t :CtrlP<cr>
 
@@ -162,13 +162,6 @@ vmap <D-]> >gv
 " Align blocks of text and keep them selected
 vmap < <gv
 vmap > >gv
-
-" Remap code completion to Ctrl + Space
-if has("gui_running")
-    inoremap <C-Space> <C-n>
-else " no gui
-  inoremap <Nul> <C-n>
-endif
 
 " Searching
 set hlsearch                    " highlight matches
@@ -391,10 +384,8 @@ map <leader>d :call multiple_cursors#quit()<CR>
 let g:jsx_ext_required = 0
 
 " ---------------------------------------------------------------------------
-" Functions
-" ---------------------------------------------------------------------------
-
 " Strip trailing whitespace
+" ---------------------------------------------------------------------------
 function! <SID>StripTrailingWhitespaces()
   " Only strip whitespace if isn't a slim, haml or emblem file
   if &filetype =~ 'slim' || &filetype =~ 'haml' || &filetype =~ 'emblem'
@@ -414,13 +405,10 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " ---------------------------------------------------------------------------
 " Add support to go to file in JS without file extention
-" ----
+" ---------------------------------------------------------------------------
 augroup suffixes
   autocmd!
-
-  let associations = [
-                      \["javascript", ".js,.javascript,.es,.esx,.json,.jsx"]
-                    \]
+  let associations = [["javascript", ".js,.javascript,.es,.esx,.json,.jsx"]]
 
   for ft in associations
     execute "autocmd FileType " . ft[0] . " setlocal suffixesadd=" . ft[1]
