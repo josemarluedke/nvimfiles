@@ -450,7 +450,6 @@ if has("gui_running")
 
   if has("gui_mac") || has("gui_macvim")
     set guifont=Menlo:h12
-    set transparency=7
   endif
 
   if has("gui_win32") || has("gui_win32s")
@@ -458,14 +457,12 @@ if has("gui_running")
   endif
 else
   set novisualbell " Mute error bell
-  "set railscasts colorscheme when running vim in gnome terminal
+
   if $COLORTERM == 'gnome-terminal'
     set term=gnome-256color
   else
     if $TERM == 'xterm'
       set term=xterm-256color
-    else
-      colorscheme onedark
     endif
   endif
 endif
