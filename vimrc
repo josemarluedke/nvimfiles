@@ -15,6 +15,7 @@ filetype plugin indent on
 let mapleader = ","
 let g:mapleader = ","
 syntax enable
+set autoread
 
 " do not create backup, swap file, use git for version management
 set nobackup
