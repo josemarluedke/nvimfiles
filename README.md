@@ -4,7 +4,7 @@ Support for Javascript, Ember, React, Ruby, Rails, Git, Sparkup, Slim, Sass, JSX
 
 **Neovim compatible!**
 
-![MacVim with these vimfiles](https://cloud.githubusercontent.com/assets/230476/9022763/f0fda188-3836-11e5-91e9-52a63326fc7f.png)
+![MacVim with these vimfiles](https://cloud.githubusercontent.com/assets/230476/18639884/8db13666-7e4a-11e6-99ad-01ebaaf7432e.png)
 
 
 ## Quick Install
