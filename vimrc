@@ -43,7 +43,6 @@ set matchpairs+=<:> " Make < and > to match
 set t_Co=256
 
 " Spell
-setlocal spell
 autocmd FileType gitcommit setlocal spell
 set complete+=kspell
 
