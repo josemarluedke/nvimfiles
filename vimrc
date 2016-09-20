@@ -108,12 +108,6 @@ nmap <silent><leader>t :tabnew .<CR>
 nmap <leader>s :%s//<left>
 vmap <leader>s :s//<left>
 
-" Disable directions key navigation
-noremap <up>    :echoerr 'Use K to go up'<CR>
-noremap <down>  :echoerr 'Use J to go down'<CR>
-noremap <left>  :echoerr 'Use H to go left'<CR>
-noremap <right> :echoerr 'Use L to go right'<CR>
-
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>rv :so $MYVIMRC<CR>

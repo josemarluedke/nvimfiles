@@ -263,7 +263,6 @@ This is similar to Command + d from Atom/Sublime.
 
 `<Leader>d` to clean highlight.
 
-
 ### Format JSON strings
 
 If you have a one line JSON string and want to indend and format it you can use
@@ -271,6 +270,19 @@ this command:
 
 `:FormatJSON`
 
+
+### Disable directions key navigation
+
+If you are not used to use hjkl keys to navigate throught files, I recommend adding the
+following code to your `~/.vimrc.local` to disable navigation using the
+arrows keys. This will make you use hjkl keys instead of arrows.
+
+```
+noremap <up>    :echoerr 'Use K to go up'<CR>
+noremap <down>  :echoerr 'Use J to go down'<CR>
+noremap <left>  :echoerr 'Use H to go left'<CR>
+noremap <right> :echoerr 'Use L to go right'<CR>
+```
 
 ## Installation
 
