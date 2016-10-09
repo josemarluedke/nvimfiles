@@ -102,7 +102,7 @@ set formatoptions=n
 nnoremap ; :
 
 " Open new tab
-nmap <silent><leader>t :tabnew .<CR>
+nmap <silent><leader>t :tabnew<CR>
 
 " Replace
 nmap <leader>s :%s//<left>
