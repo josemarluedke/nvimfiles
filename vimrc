@@ -119,6 +119,9 @@ nmap :W :w
 nnoremap <silent> K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 vnoremap <silent> K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
+" Show the path of the current file
+nnoremap <Leader>p :echo expand('%')<CR>
+
 " The Silver Searcher
 if executable('ag')
   " Use ag over grep
