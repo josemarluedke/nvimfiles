@@ -296,6 +296,11 @@ noremap <right> :echoerr 'Use L to go right'<CR>
 
     apt-get install vim-gnome
 
+#### Ruby and NeoVim users
+
+Remember to install the `neovim` gem to get deoplete completing ruby code.
+Execute: `sudo gem install neovim`
+
 ### Install these vimfiles
 
 Note: You will already have a `~/.vim` folder, either delete or move it.
