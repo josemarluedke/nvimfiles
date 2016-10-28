@@ -115,6 +115,12 @@ nmap <silent> <leader>rv :so $MYVIMRC<CR>
 nmap :E :e
 nmap :W :w
 
+" Move between splits using ctrl+j/k/h/l
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " bind K to grep word under cursor
 nnoremap <silent> K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 vnoremap <silent> K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
