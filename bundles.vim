@@ -24,6 +24,7 @@ Plug 'tpope/vim-endwise'
 "--------------------------
 " utility
 "--------------------------
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'edsono/vim-matchit'
 Plug 'Raimondi/delimitMate'
 Plug 'vim-scripts/jsbeautify'
@@ -44,6 +45,7 @@ Plug 'josemarluedke/vim-rspec'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'sickill/vim-pasta'
+Plug 'wincent/terminus'
 
 "--------------------------
 " tool for explorer
@@ -65,7 +67,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'solarnz/thrift.vim', { 'for': 'thrift' }
 Plug 'plasticboy/vim-markdown'
 Plug 'depuracao/vim-rdoc'
-Plug 'nono/vim-handlebars'
+Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'hail2u/vim-css3-syntax'
@@ -98,11 +100,6 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
-
-function! DoRemote(arg)
-  UpdateRemotePlugins
-endfunction
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 
 " Add plugins to &runtimepath
 call plug#end()
