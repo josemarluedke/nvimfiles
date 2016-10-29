@@ -430,7 +430,7 @@ autocmd FocusLost * :call <SID>StripTrailingWhitespaces() | silent! wa
 " GUI
 " ---------------------------------------------------------------------------
 
-if has("termguicolors") && !$TERM_PROGRAM == "Apple_Terminal"
+if has("termguicolors") && !($TERM_PROGRAM == "Apple_Terminal")
   set termguicolors
 endif
 
