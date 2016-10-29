@@ -65,7 +65,7 @@ set hidden       " hides buffers instead of closing them
 set wildmenu
 set wildmode=list:longest
 set wildcharm=<TAB> " Autocmpletion hotkey
-set visualbell
+set visualbell t_vb=
 set cursorline   " highlight current line
 set ttyfast
 set backspace=indent,eol,start  "allow backspacing over everything in insert mode
