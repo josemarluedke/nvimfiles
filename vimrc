@@ -383,10 +383,6 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 " vim-multiple-cursors
 map <leader>d :call multiple_cursors#quit()<CR>
 
-"-------------------------
-" JSX
-let g:jsx_ext_required = 0
-
 " ---------------------------------------------------------------------------
 " Strip trailing whitespace
 " ---------------------------------------------------------------------------

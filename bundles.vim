@@ -20,6 +20,8 @@ Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-projectionist'
 
 "--------------------------
 " utility
@@ -47,6 +49,7 @@ Plug 'nelstrom/vim-visual-star-search'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'sickill/vim-pasta'
 Plug 'wincent/terminus'
+Plug 'AndrewRadev/ember_tools.vim'
 
 "--------------------------
 " tool for explorer
