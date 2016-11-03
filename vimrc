@@ -121,6 +121,11 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" Workaround for Neovim
+if has('nvim')
+  nmap <BS> <C-W>h
+endif
+
 " bind K to grep word under cursor
 nnoremap <silent> K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 vnoremap <silent> K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
