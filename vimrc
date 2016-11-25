@@ -392,6 +392,11 @@ map <leader>d :call multiple_cursors#quit()<CR>
 " Strip trailing whitespace
 " ---------------------------------------------------------------------------
 function! <SID>StripTrailingWhitespaces()
+  " Don't try to strip whitespace in non buffers
+  if (!empty(&buftype))
+    return
+  endif
+
   " Only strip whitespace if isn't a slim, haml or emblem file
   if &filetype =~ 'slim' || &filetype =~ 'haml' || &filetype =~ 'emblem'
     return
