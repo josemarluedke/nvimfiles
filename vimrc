@@ -373,16 +373,46 @@ if has('nvim')
   let g:deoplete#enable_at_startup = 1
 endif
 
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return pumvisible() ? "\<C-y>" : "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" go back on one item with Shift-Tab <S-TAB>
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+
+"-------------------------
+" UltiSnips
+
+let g:UltiSnipsExpandTrigger="<C-k>"
+let g:UltiSnipsJumpForwardTrigger="<TAB>"
+let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
+let g:ulti_expand_or_jump_res = 0
+
+inoremap <silent> <CR> <C-r>=<SID>expand_snippet_or_return()<CR>
+function! s:expand_snippet_or_return()
+  if pumvisible()
+    let snippet = UltiSnips#ExpandSnippetOrJump()
+    if g:ulti_expand_or_jump_res > 0
+      return snippet
+    endif
+    return "\<C-y>"
+  else
+    return "\<CR>"
+  endif
+endfunction
+
+inoremap <silent> <TAB> <C-r>=<SID>expand_snippet_or_tab()<CR>
+function! s:expand_snippet_or_tab()
+  let snippet = UltiSnips#ExpandSnippetOrJump()
+  if g:ulti_expand_or_jump_res > 0
+    return snippet
+  endif
+
+  if pumvisible()
+    return "\<C-n>"
+  else
+    return "\<TAB>"
+  endif
+endfunction
 
 "-------------------------
 " vim-multiple-cursors

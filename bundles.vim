@@ -27,12 +27,11 @@ Plug 'tpope/vim-projectionist'
 " utility
 "--------------------------
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'edsono/vim-matchit'
 Plug 'Raimondi/delimitMate'
 Plug 'vim-scripts/jsbeautify'
 Plug 'scrooloose/nerdcommenter'
 Plug 'godlygeek/tabular'
-Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plug 'josemarluedke/sparkup', {'rtp': 'vim/'}
 Plug 'danro/rename.vim'
 Plug 'vim-scripts/loremipsum'
 Plug 'bling/vim-airline'
@@ -98,12 +97,11 @@ Plug 'junegunn/seoul256.vim'
 Plug 'mhartington/oceanic-next'
 
 "--------------------------
-" snipmate
+" snippets
 "--------------------------
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
+Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'josemarluedke/ember-vim-snippets'
 
 " Add plugins to &runtimepath
 call plug#end()
