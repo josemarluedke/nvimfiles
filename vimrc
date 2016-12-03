@@ -333,8 +333,8 @@ let g:ctrlp_custom_ignore = {
       \ }
 
 " Sparkup
-" Enable sparkup in Javascript files
-autocmd FileType javascript.jsx,javascript runtime! ftplugin/html/sparkup.vim
+" Enable sparkup in handlebars files
+autocmd FileType handlebars runtime! ftplugin/html/sparkup.vim
 
 "-------------------------
 " Markdown

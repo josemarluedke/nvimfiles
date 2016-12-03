@@ -31,7 +31,7 @@ Plug 'vim-scripts/jsbeautify'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'godlygeek/tabular'
-Plug 'josemarluedke/sparkup', {'rtp': 'vim/'}
+Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plug 'danro/rename.vim'
 Plug 'vim-scripts/loremipsum'
 Plug 'bling/vim-airline'
