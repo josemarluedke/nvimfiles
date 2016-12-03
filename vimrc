@@ -344,18 +344,6 @@ let g:vim_markdown_folding_disabled=1
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.jsx"
 
 "-------------------------
-" DelimitMate
-
-" Delimitmate place cursor correctly n multiline objects e.g.
-" if you press enter in {} cursor still be
-" in the middle line instead of the last
-let delimitMate_expand_cr = 1
-
-" Delimitmate place cursor correctly in singleline pairs e.g.
-" if x - cursor if you press space in {x} result will be { x } instead of { x}
-let delimitMate_expand_space = 1
-
-let delimitMate_matchpairs = "(:),[:],{:}"
 
 if !has('nvim')
   "-------------------------
