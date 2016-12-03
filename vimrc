@@ -340,10 +340,9 @@ autocmd FileType handlebars runtime! ftplugin/html/sparkup.vim
 " Markdown
 let g:vim_markdown_folding_disabled=1
 
-" Closetag
-let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.jsx"
-
 "-------------------------
+" Closetag
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.jsx,*.hbs"
 
 if !has('nvim')
   "-------------------------
