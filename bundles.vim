@@ -27,13 +27,12 @@ Plug 'tpope/vim-projectionist'
 " utility
 "--------------------------
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'vim-scripts/jsbeautify'
+Plug 'Shougo/neocomplete.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'godlygeek/tabular'
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plug 'danro/rename.vim'
-Plug 'vim-scripts/loremipsum'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'josemarluedke/airline-tabline-folder-formatter.vim'
@@ -41,13 +40,11 @@ Plug 'vim-scripts/Gist.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
-Plug 'Shougo/neocomplete.vim'
 Plug 'jszakmeister/vim-togglecursor'
 Plug 'josemarluedke/vim-rspec'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'sickill/vim-pasta'
-Plug 'wincent/terminus'
 Plug 'AndrewRadev/ember_tools.vim'
 
 "--------------------------
@@ -55,7 +52,7 @@ Plug 'AndrewRadev/ember_tools.vim'
 "--------------------------
 Plug 'corntrace/bufexplorer'
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'majutsushi/tagbar'
 Plug 'kien/ctrlp.vim'
 Plug 'vim-scripts/ctags.vim'
@@ -68,9 +65,8 @@ Plug 'vim-scripts/BufOnly.vim'
 "--------------------------
 Plug 'vim-ruby/vim-ruby'
 Plug 'solarnz/thrift.vim', { 'for': 'thrift' }
-Plug 'plasticboy/vim-markdown'
-Plug 'depuracao/vim-rdoc'
-Plug 'joukevandermaas/vim-ember-hbs'
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'joukevandermaas/vim-ember-hbs', { 'for': 'handlebars' }
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'hail2u/vim-css3-syntax'
