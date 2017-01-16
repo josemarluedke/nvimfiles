@@ -118,11 +118,6 @@ Insert a dummy text of a certain length
 With bufexplorer, you can quickly and easily switch between buffers
 
 
-### [Jsbeautify](https://github.com/vim-scripts/jsbeautify) (`<leader>ff`)
-
-Format your javascript souce code.
-
-
 ### [BufOnly](https://github.com/vim-scripts/BufOnly.vim)
 
 `:BufOnly` without an argument will unload all buffers but the current one.
