@@ -77,6 +77,7 @@ Plug 'pangloss/vim-javascript'", { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': ['jsx', 'javascript'] }
 Plug 'evanmiller/nginx-vim-syntax'
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'leafgarland/typescript-vim'
 
 "--------------------------
 " color scheme
