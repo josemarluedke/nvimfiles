@@ -48,6 +48,9 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'sickill/vim-pasta'
 Plug 'AndrewRadev/ember_tools.vim'
 
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/neoyank.vim'
+
 "--------------------------
 " tool for explorer
 "--------------------------

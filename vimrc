@@ -128,7 +128,11 @@ nnoremap <silent> K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 vnoremap <silent> K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " Show the path of the current file
-nnoremap <Leader>p :echo expand('%')<CR>
+nnoremap <Leader>e :echo expand('%')<CR>
+
+" Show yank history
+nmap <leader>p :Unite history/yank -default-action=append<CR>
+nmap <leader>P :Unite history/yank -default-action=insert<CR>
 
 " The Silver Searcher
 if executable('ag')
