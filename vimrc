@@ -1,9 +1,6 @@
 " Use Vim settings, rather then Vi settings (much better!).
 set nocompatible
 
-" Macros
-silent! runtime macros/matchit.vim
-
 " Plugins
 silent! runtime bundles.vim
 

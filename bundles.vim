@@ -11,6 +11,7 @@ call plug#begin('~/.vim/plugged')
 "--------------------------
 " tpope plugins
 "--------------------------
+Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
