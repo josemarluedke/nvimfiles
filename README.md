@@ -329,8 +329,6 @@ or run:
     sudo apt-get install ncurses-term exuberant-ctags silversearcher-ag ack-grep
     sudo ln -s /usr/bin/ack-grep /usr/local/bin/ack
 
-You can download the powerline font for Ubuntu Mono [here](https://github.com/pdf/ubuntu-mono-powerline-ttf/blob/master/UbuntuMono-R-VimPowerline.ttf?raw=true).
-
 ## Thanks for inspiration
 
 - [@krisleech](https://github.com/krisleech) for his [vimfiles](https://github.com/krisleech/vimfiles/)
