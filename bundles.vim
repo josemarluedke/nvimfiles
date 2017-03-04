@@ -86,16 +86,12 @@ Plug 'leafgarland/typescript-vim'
 "--------------------------
 " color scheme
 "--------------------------
-Plug 'rickharris/vim-blackboard'
-Plug 'altercation/vim-colors-solarized'
 Plug 'endel/vim-github-colorscheme'
 Plug 'tomasr/molokai'
 Plug 'daylerees/colour-schemes', { 'rtp': 'vim' }
-Plug 'blerins/flattown'
 Plug 'chriskempson/base16-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/seoul256.vim'
-Plug 'mhartington/oceanic-next'
 
 "--------------------------
 " snippets
