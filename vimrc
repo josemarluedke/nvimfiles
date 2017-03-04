@@ -139,8 +139,8 @@ if executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
 
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'ag %s -l --nocolor -g ""']
+  " Use ag in CtrlP for listing files.
+  let g:ctrlp_user_command = ['ag %s -l --nocolor -g ""']
 
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
@@ -284,8 +284,8 @@ set complete=.,w,b,u,t,i
 "-------------------------
 " Airline
 set laststatus=2
-let g:airline_theme='onedark'
-let g:airline_powerline_fonts=0
+let g:airline_theme = 'onedark'
+let g:airline_powerline_fonts = 0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_symbols = { 'linenr': '␤ ', 'branch': '⎇ ' }
@@ -325,10 +325,10 @@ nmap <leader>- <Plug>AirlineSelectPrevTab
 nmap <leader>+ <Plug>AirlineSelectNextTabs#tabline#enabled = 1
 
 "-------------------------
-" CTRL+p
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*
+" CTRLp
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*,*/dist/*
 let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\v[\/]\.(git|hg|svn|gitkeep)|(node_modules|bower_components|tmp)$',
+      \ 'dir':  '\v[\/]\.(git|hg|svn|gitkeep)|(node_modules|bower_components|tmp|dist)$',
       \ 'file': '\v\.(exe|so|dll|log|gif|jpg|jpeg|png|psd|DS_Store|ctags|gitattributes)$'
       \ }
 

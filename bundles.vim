@@ -58,7 +58,7 @@ Plug 'corntrace/bufexplorer'
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'majutsushi/tagbar'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-scripts/ctags.vim'
 Plug 'mileszs/ack.vim'
 Plug 'epmatsw/ag.vim'
