@@ -1,6 +1,7 @@
 # Awesome vimfiles for Ruby and Javascript development
 
-Support for Javascript, Ember, React, Ruby, Rails, Git, Sparkup, Slim, Sass, JSX, CoffeeScript, Markdown, and more with nice colour schemes.
+Support for Javascript, Ember, React, Ruby, Rails, Git, Sparkup, Slim, Sass,
+JSX, CoffeeScript, Markdown, and more with nice color schemes.
 
 **Neovim compatible!**
 
@@ -11,7 +12,7 @@ Support for Javascript, Ember, React, Ruby, Rails, Git, Sparkup, Slim, Sass, JSX
 
 ```curl https://raw.github.com/josemarluedke/vimfiles/master/install.sh -o - | sh```
 
-Please check also [install dependencies](#install-dependencies) section.
+Please also check [install dependencies](#install-dependencies) section.
 
 ## Usage
 
@@ -50,6 +51,8 @@ Auto complete or expand snippet                           | `<tab>`
 Expand CSS selectors `div.event` in to markup             | `ctrl+e`
 Split a one-liner into multiple lines (splitjoin.vim)     | `gS`
 Join a block into a single-line statement (splitjoin.vim) | `gJ`
+Paste from yank history using append (neoyank.vim)        | `leader p`
+Paste from yank history using insert (neoyank.vim)        | `leader P`
 
 See `.vimrc` for more.
 
@@ -62,9 +65,9 @@ See `.vimrc` for more.
 
 `:help rails`
 
-### [CoffeeScript](https://github.com/kchmck/vim-coffee-script)
+### [Ember.js](https://github.com/AndrewRadev/ember_tools.vim)
 
-CoffeeScript support
+Similar to vim-rails, but for Ember.js.
 
 ### [Sparkup](https://github.com/rstacruz/sparkup) (`ctrl+e`)
 
