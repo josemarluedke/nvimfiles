@@ -522,7 +522,7 @@ autocmd BufNewFile,BufRead *.slim,*.haml,*.emblem setlocal list listchars=extend
 " ---------------------------------------------------------------------------
 
 set colorcolumn=80
-highlight ColorColumn guibg=#1e1e1e
+" highlight ColorColumn guibg=#1e1e1e
 highlight clear SignColumn
 
 set fillchars+=vert:│
