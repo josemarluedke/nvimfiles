@@ -131,8 +131,7 @@ vnoremap <silent> K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 nnoremap <Leader>e :echo expand('%')<CR>
 
 " Show yank history
-nmap <leader>p :Unite history/yank -default-action=append<CR>
-nmap <leader>P :Unite history/yank -default-action=insert<CR>
+nmap <leader>p :Denite neoyank<CR>
 
 " The Silver Searcher
 if executable('ag')
