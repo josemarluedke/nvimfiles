@@ -82,6 +82,10 @@ Plug 'evanmiller/nginx-vim-syntax'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'leafgarland/typescript-vim'
 
+" TypeScript
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'Quramy/tsuquyomi'
+
 "--------------------------
 " color scheme
 "--------------------------
