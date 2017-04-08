@@ -343,7 +343,12 @@ autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()
 
 "-------------------------
 " Markdown
-let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_fenced_languages = [
+  \ 'js=javascript',
+  \ 'ts=typescript=ts',
+  \ 'rb=ruby',
+  \ 'hbs=html']
 
 "-------------------------
 " Closetag

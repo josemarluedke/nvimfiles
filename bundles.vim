@@ -49,6 +49,7 @@ Plug 'sickill/vim-pasta'
 Plug 'AndrewRadev/ember_tools.vim'
 Plug 'Shougo/denite.nvim'
 Plug 'Shougo/neoyank.vim'
+Plug 'junegunn/goyo.vim'
 
 "--------------------------
 " tool for explorer
