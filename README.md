@@ -24,7 +24,7 @@ Action | Hotkey
 --------------------------------------------------------- | -----------------
 **▶ File operations**                                     |
 File browser (NerdTree)                                   | `leader m`
-FuzzyFinder fo files (CtrlP)                              | `leader f`
+FuzzyFinder fo files (FZF)                                | `leader f` or just `t`
 Switch between the last two files                         | `leader leader`
 Toggle Tagbar                                             | `leader l`
 View buffer files on current window                       | `leader be`
@@ -126,7 +126,7 @@ With bufexplorer, you can quickly and easily switch between buffers
 
 `:BufOnly` with an argument will close all buffers but the supplied buffer name/number.
 
-### [CtrlP](https://github.com/kien/ctrlp.vim) (`<leader>f`)
+### [FZF](https://github.com/junegunn/fzf) (`<leader>f`)
 
 Find files in your project with minimal keypresses
 
@@ -193,7 +193,7 @@ Project file browser
 
 `?` Help
 
-I use nerdtree for creating or moving files, but find CtrlP quicker for
+I use nerdtree for creating or moving files, but I find FuzzyFinders quicker for
 opening files.
 
 ### [Surround](https://github.com/tpope/vim-surround) (`ys`/`cs`/`ds`)
