@@ -52,17 +52,17 @@ Plug 'Shougo/neoyank.vim'
 Plug 'junegunn/goyo.vim'
 
 "--------------------------
-" tool for explorer
+" tools to explore the file system
 "--------------------------
 Plug 'corntrace/bufexplorer'
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'majutsushi/tagbar'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-scripts/ctags.vim'
 Plug 'mileszs/ack.vim'
 Plug 'epmatsw/ag.vim'
 Plug 'vim-scripts/BufOnly.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 "--------------------------
 " filetype syntax highlight
@@ -77,7 +77,7 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'elixir-lang/vim-elixir'
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'barboza/vim-cucumber-string-highlight'
-Plug 'pangloss/vim-javascript'", { 'for': 'javascript' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': ['jsx', 'javascript'] }
 Plug 'evanmiller/nginx-vim-syntax'
 Plug 'ekalinin/Dockerfile.vim'

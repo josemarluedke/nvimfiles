@@ -135,27 +135,18 @@ nmap <leader>p :Denite neoyank<CR>
 
 " The Silver Searcher
 if executable('ag')
+  let $FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files.
-  let g:ctrlp_user_command = ['ag %s -l --nocolor -g ""']
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-
-  " dont jump to an open tab/split if file already oppen
-  let g:ctrlp_switch_buffer = 0
-
-  let g:ctrlp_working_path_mode = 'ra'
 
   " \a to Silver Searcher
   nnoremap <leader>a :Ag!<space>
 endif
 
-" Map <leader>f and t to CtrlP
-nnoremap <unique> <leader>f :CtrlP<cr>
-nnoremap <silent> t :CtrlP<cr>
+" Map <leader>f and t to FZF
+nnoremap <unique> <leader>f :FZF<cr>
+nnoremap <silent> t :FZF<cr>
 
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
@@ -222,12 +213,12 @@ map <Leader>rl :call RunLastSpec()<CR>
 " Ember
 " ---------------------------------------------------------------------------
 
-map <leader>ec :CtrlP app/components<cr>
-map <leader>et :CtrlP app/templates<cr>
-map <leader>em :CtrlP app/models<cr>
-map <leader>eh :CtrlP app/helpers<cr>
-map <leader>eo :CtrlP app/routes<cr>
-map <leader>es :CtrlP app/services<cr>
+map <leader>ec :FZF app/components<cr>
+map <leader>et :FZF app/templates<cr>
+map <leader>em :FZF app/models<cr>
+map <leader>eh :FZF app/helpers<cr>
+map <leader>eo :FZF app/routes<cr>
+map <leader>es :FZF app/services<cr>
 map <leader>ep :topleft :split package.json<cr>
 
 " ---------------------------------------------------------------------------
@@ -322,14 +313,6 @@ nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
 nmap <leader>- <Plug>AirlineSelectPrevTab
 nmap <leader>+ <Plug>AirlineSelectNextTabs#tabline#enabled = 1
-
-"-------------------------
-" CTRLp
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*,*/dist/*
-let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\v[\/]\.(git|hg|svn|gitkeep)|(node_modules|bower_components|tmp|dist)$',
-      \ 'file': '\v\.(exe|so|dll|log|gif|jpg|jpeg|png|psd|DS_Store|ctags|gitattributes)$'
-      \ }
 
 " Sparkup
 " Enable sparkup in handlebars files
