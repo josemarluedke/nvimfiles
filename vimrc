@@ -41,6 +41,7 @@ set t_Co=256
 
 " Spell
 autocmd FileType gitcommit setlocal spell
+autocmd FileType markdown setlocal spell
 set complete+=kspell
 
 " Copy to osx clipboard
