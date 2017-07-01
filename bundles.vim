@@ -50,6 +50,9 @@ Plug 'AndrewRadev/ember_tools.vim'
 Plug 'Shougo/denite.nvim'
 Plug 'Shougo/neoyank.vim'
 Plug 'junegunn/goyo.vim'
+Plug 'mitermayer/vim-prettier', {
+    \ 'do': 'npm install',
+    \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
 
 "--------------------------
 " tools to explore the file system
@@ -96,6 +99,7 @@ Plug 'daylerees/colour-schemes', { 'rtp': 'vim' }
 Plug 'chriskempson/base16-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/seoul256.vim'
+Plug 'AlessandroYorba/Monrovia'
 
 "--------------------------
 " snippets

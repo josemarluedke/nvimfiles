@@ -132,7 +132,7 @@ vnoremap <silent> K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 nnoremap <Leader>e :echo expand('%')<CR>
 
 " Show yank history
-nmap <leader>p :Denite neoyank<CR>
+nmap <leader>h :Denite neoyank<CR>
 
 " The Silver Searcher
 if executable('ag')
@@ -176,6 +176,14 @@ nnoremap <leader><space> :noh<cr>
 
 " Format json strings
 com! FormatJSON %!python -m json.tool
+
+" ---------------------------------------------------------------------------
+" Prettier
+" ---------------------------------------------------------------------------
+let g:prettier#exec_cmd_async = 1
+let g:prettier#config#trailing_comma = 'none'
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#parser = 'typescript'
 
 " ---------------------------------------------------------------------------
 " Tabularize

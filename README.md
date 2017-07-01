@@ -51,7 +51,7 @@ Auto complete or expand snippet                           | `<tab>`
 Expand CSS selectors `div.event` in to markup             | `ctrl+e`
 Split a one-liner into multiple lines (splitjoin.vim)     | `gS`
 Join a block into a single-line statement (splitjoin.vim) | `gJ`
-Paste from yank history using append (neoyank.vim)        | `leader p`
+Paste from yank history using append (neoyank.vim)        | `leader h`
 
 See `.vimrc` for more.
 
