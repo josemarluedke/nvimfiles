@@ -85,6 +85,8 @@ Plug 'mxw/vim-jsx', { 'for': ['jsx', 'javascript'] }
 Plug 'evanmiller/nginx-vim-syntax'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'leafgarland/typescript-vim'
+Plug 'fatih/vim-go'
+" Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 " TypeScript
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}

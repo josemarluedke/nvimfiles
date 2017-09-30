@@ -231,6 +231,17 @@ map <leader>es :FZF app/services<cr>
 map <leader>ep :topleft :split package.json<cr>
 
 " ---------------------------------------------------------------------------
+" Golang configs
+" ---------------------------------------------------------------------------
+
+" For .go files, use tabs instead of spaces
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=2 shiftwidth=2
+au FileType go nmap gf <Plug>(go-def)
+let g:go_fmt_command = "goimports"
+let g:go_addtags_transform = "snakecase"
+let g:go_auto_type_info = 1
+
+" ---------------------------------------------------------------------------
 " Syntax highlight for unsual filetypes
 " ---------------------------------------------------------------------------
 
