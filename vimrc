@@ -360,6 +360,14 @@ endif
 
 if has('nvim')
   let g:deoplete#enable_at_startup = 1
+   " Disable deoplete when in multi cursor mode
+  function! Multiple_cursors_before()
+    let b:deoplete_disable_auto_complete = 1
+  endfunction
+
+  function! Multiple_cursors_after()
+    let b:deoplete_disable_auto_complete = 0
+    endfunction
 endif
 
 " <C-h>, <BS>: close popup and delete backword char.
