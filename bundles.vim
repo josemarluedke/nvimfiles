@@ -82,7 +82,7 @@ Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'barboza/vim-cucumber-string-highlight'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': ['jsx', 'javascript'] }
-Plug 'evanmiller/nginx-vim-syntax'
+Plug 'rhowardiv/nginx-vim-syntax'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'fatih/vim-go'
@@ -101,7 +101,6 @@ Plug 'daylerees/colour-schemes', { 'rtp': 'vim' }
 Plug 'chriskempson/base16-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/seoul256.vim'
-Plug 'AlessandroYorba/Monrovia'
 
 "--------------------------
 " snippets
