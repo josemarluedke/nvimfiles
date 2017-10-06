@@ -100,6 +100,7 @@ Plug 'tomasr/molokai'
 Plug 'daylerees/colour-schemes', { 'rtp': 'vim' }
 Plug 'chriskempson/base16-vim'
 Plug 'joshdick/onedark.vim'
+Plug 'tomasiser/vim-code-dark'
 Plug 'junegunn/seoul256.vim'
 
 "--------------------------
