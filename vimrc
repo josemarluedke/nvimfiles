@@ -72,6 +72,8 @@ set nonumber
 set relativenumber number " show relative numbers
 set splitbelow
 set splitright
+set list
+set listchars=trail:·
 
 " some stuff to get the mouse going in term
 set mouse=a
