@@ -57,6 +57,8 @@ nnoremap Y "*Y<CR>
 set title        " make your xterm inherit the title from Vim
 set autoindent
 set smartindent
+set showmode     " show current mode down the bottom
+set showcmd      " show incomplete cmds down the bottom
 set hidden       " hides buffers instead of closing them
 set wildmenu
 set wildmode=list:longest
@@ -65,6 +67,7 @@ set visualbell t_vb=
 set cursorline   " highlight current line
 set ttyfast
 set backspace=indent,eol,start  "allow backspacing over everything in insert mode
+set laststatus=2 " display the status line always
 set nonumber
 set relativenumber number " show relative numbers
 set splitbelow
@@ -84,6 +87,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab!
+
 set nowrap
 set textwidth=79
 set formatoptions=n
@@ -319,6 +323,7 @@ set complete=.,w,b,u,t,i
 
 "-------------------------
 " Airline
+set laststatus=2
 let g:airline_theme = 'onedark'
 let g:airline_powerline_fonts = 0
 let g:airline_left_sep = ''
@@ -562,18 +567,6 @@ endif
 
 " listchars only for slim and haml files
 autocmd BufNewFile,BufRead *.slim,*.haml,*.emblem setlocal list listchars=extends:>,precedes:<,eol:¬
-
-" If Onivim, turn off statusbar, because it is externalized
-if exists("g:gui_oni")
-  set noshowmode
-  set noruler
-  set noshowcmd
-  set laststatus=0
-else
-  set laststatus=2 " display the status line
-  set showmode     " show current mode down the bottom
-  set showcmd      " show incomplete cmds down the bottom
-end
 
 " ---------------------------------------------------------------------------
 " Column color
