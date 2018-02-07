@@ -16,7 +16,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-rails'
+" Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-bundler'
@@ -87,6 +87,7 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'fatih/vim-go'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'jparise/vim-graphql', { 'for': 'graphql' }
 
 " TypeScript
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
