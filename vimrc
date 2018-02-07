@@ -115,6 +115,16 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+if exists(':tnoremap')
+  tnoremap <C-H> <C-\><C-N><C-W>h
+  tnoremap <C-J> <C-\><C-N><C-W>j
+  tnoremap <C-K> <C-\><C-N><C-W>k
+  tnoremap <C-L> <C-\><C-N><C-W>l
+
+  " Use Esc to enter normal mode in term
+  tnoremap <Esc> <C-\><C-n>
+endif
+
 " Workaround for Neovim
 if has('nvim')
   nmap <BS> <C-W>h
