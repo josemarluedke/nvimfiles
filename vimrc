@@ -198,7 +198,7 @@ let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#parser = 'typescript'
 let g:prettier#config#single_quote = 'true'
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.css,*.scss,*.less PrettierAsync
+autocmd BufWritePre *.js,*.ts,*.css,*.scss,*.less PrettierAsync
 
 " ---------------------------------------------------------------------------
 " Tabularize
