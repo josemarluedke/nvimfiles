@@ -511,7 +511,7 @@ if has("termguicolors") && !($TERM_PROGRAM == "Apple_Terminal")
 endif
 
 " colorscheme
-color onedark
+color base16-nord
 
 if has("gui_running")
   set guioptions-=T " no toolbar set guioptions-=m " no menus
