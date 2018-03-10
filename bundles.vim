@@ -49,9 +49,9 @@ Plug 'AndrewRadev/ember_tools.vim'
 Plug 'Shougo/denite.nvim'
 Plug 'Shougo/neoyank.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'mitermayer/vim-prettier', {
+Plug 'prettier/vim-prettier', {
     \ 'do': 'npm install',
-    \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
+    \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'graphql'] }
 
 "--------------------------
 " tools to explore the file system
