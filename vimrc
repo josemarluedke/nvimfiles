@@ -326,7 +326,7 @@ set complete=.,w,b,u,t,i
 "-------------------------
 " Airline
 set laststatus=2
-let g:airline_theme = 'onedark'
+let g:airline_theme = 'base16'
 let g:airline_powerline_fonts = 0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
@@ -511,7 +511,11 @@ if has("termguicolors") && !($TERM_PROGRAM == "Apple_Terminal")
 endif
 
 " colorscheme
-color base16-nord
+if has('nvim')
+  color base16-nord
+else
+  color onedark
+endif
 
 if has("gui_running")
   set guioptions-=T " no toolbar set guioptions-=m " no menus
