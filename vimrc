@@ -309,7 +309,6 @@ if has("gui_macvim") && has("gui_running")
   imap <D-/> <Esc><plug>NERDCommenterToggle<CR>
 else
   map <leader>/ <plug>NERDCommenterToggle<CR>
-  imap <leader>/ <Esc><plug>NERDCommenterToggle<CR>
 endif
 
 "-------------------------
