@@ -285,6 +285,9 @@ au BufRead,BufNewFile Dockerfile.dev if &ft == '' | setfiletype Dockerfile | end
 " Plugins
 " ---------------------------------------------------------------------------
 
+" Auto Pairs
+let g:AutoPairsOnlyBeforeClose = 1
+
 "-------------------------
 " NERDTree
 let NERDTreeShowBookmarks = 0

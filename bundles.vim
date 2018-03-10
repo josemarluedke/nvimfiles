@@ -28,7 +28,7 @@ Plug 'tpope/vim-projectionist'
 "--------------------------
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neocomplete.vim'
-Plug 'jiangmiao/auto-pairs'
+Plug 'optroot/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'godlygeek/tabular'
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
