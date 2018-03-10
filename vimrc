@@ -410,7 +410,7 @@ if has('nvim')
 
   function! Multiple_cursors_after()
     let b:deoplete_disable_auto_complete = 0
-    endfunction
+  endfunction
 endif
 
 " <C-h>, <BS>: close popup and delete backword char.
