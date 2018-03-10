@@ -13,6 +13,7 @@ let mapleader = ","
 let g:mapleader = ","
 syntax enable
 set autoread
+set timeoutlen=500 ttimeoutlen=0 " Avoid delays
 
 " do not create backup, swap file, use git for version management
 set nobackup
