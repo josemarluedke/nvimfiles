@@ -287,6 +287,11 @@ noremap <right> :echoerr 'Use L to go right'<CR>
 
 ### Install Vim (if not already installed)
 
+#### MacOS: vim
+
+    brew install vim --with-cscope --with-python --with-lua --override-system-vim
+
+
 #### MacOS: MacVim
 
     brew install macvim --with-override-system-vim --enable-clipboard  --with-cscope --with-lua
@@ -312,7 +317,7 @@ Note: You will already have a `~/.vim` folder, either delete or move it.
 
 or run:
 
-    curl https://raw.github.com/josemarluedke/vimfiles/master/install.sh -o - | sh
+    sh -c "$(curl -fsSL https://raw.github.com/josemarluedke/vimfiles/master/install.sh)"
 
 #### To update to the latest vimfiles
 
