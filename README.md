@@ -10,7 +10,9 @@ JSX, CoffeeScript, Markdown, and more with nice color schemes.
 
 ## Quick Install
 
-```curl https://raw.github.com/josemarluedke/vimfiles/master/install.sh -o - | sh```
+```
+sh -c "$(curl -fsSL https://raw.github.com/josemarluedke/vimfiles/master/install.sh)"
+```
 
 Please also check [install dependencies](#install-dependencies) section.
 
