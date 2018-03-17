@@ -324,6 +324,16 @@ or run:
     cd ~/.vim
     rake update
 
+#### Neovim
+
+##### Symlink the vimfiles to work with neovim
+    ln -s ~/.vim ~/.config/nvim
+    ln -s ~/.vim/vimrc ~/.config/nvim/init.vim
+
+##### Install python for neovim
+
+`pip install neovim` or `pip3 install neovim`
+
 #### Install Dependencies
 
 ##### MacOS
