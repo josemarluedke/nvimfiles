@@ -69,21 +69,10 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 "--------------------------
 " filetype syntax highlight
 "--------------------------
-Plug 'vim-ruby/vim-ruby'
-Plug 'solarnz/thrift.vim', { 'for': 'thrift' }
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'sheerun/vim-polyglot'
 Plug 'joukevandermaas/vim-ember-hbs', { 'for': 'handlebars' }
-Plug 'slim-template/vim-slim', { 'for': 'slim' }
-Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'hail2u/vim-css3-syntax'
-Plug 'elixir-lang/vim-elixir'
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'barboza/vim-cucumber-string-highlight'
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'mxw/vim-jsx', { 'for': ['jsx', 'javascript'] }
-Plug 'rhowardiv/nginx-vim-syntax'
-Plug 'ekalinin/Dockerfile.vim'
-Plug 'leafgarland/typescript-vim'
 Plug 'fatih/vim-go'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'jparise/vim-graphql', { 'for': 'graphql' }
