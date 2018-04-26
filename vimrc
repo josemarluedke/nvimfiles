@@ -144,9 +144,6 @@ vnoremap <silent> K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " Show the path of the current file
 nnoremap <Leader>e :echo expand('%')<CR>
 
-" Show yank history
-nmap <leader>h :Denite neoyank<CR>
-
 " The Silver Searcher
 if executable('ag')
   let $FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
