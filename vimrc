@@ -74,7 +74,7 @@ set relativenumber number " show relative numbers
 set splitbelow
 set splitright
 set list
-set listchars=trail:·
+" set listchars=trail:·
 
 " some stuff to get the mouse going in term
 set mouse=a
@@ -289,6 +289,9 @@ au BufRead,BufNewFile Dockerfile.dev if &ft == '' | setfiletype Dockerfile | end
 " Plugins
 " ---------------------------------------------------------------------------
 
+" Polyglot
+" let g:polyglot_disabled = ['handlebars']
+
 " Auto Pairs
 let g:AutoPairsOnlyBeforeClose = 1
 
@@ -376,12 +379,6 @@ nmap <leader>+ <Plug>AirlineSelectNextTabs#tabline#enabled = 1
 " Sparkup
 " Enable sparkup in handlebars files
 autocmd FileType handlebars runtime! ftplugin/html/sparkup.vim
-
-"-------------------------
-" TypeScript
-autocmd FileType typescript nmap <buffer> <Leader>e <Plug>(TsuquyomiRenameSymbol)
-autocmd FileType typescript nmap <buffer> <Leader>E <Plug>(TsuquyomiRenameSymbolC)
-autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
 
 "-------------------------
 " Markdown

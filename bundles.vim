@@ -77,10 +77,6 @@ Plug 'fatih/vim-go'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'jparise/vim-graphql', { 'for': 'graphql' }
 
-" TypeScript
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'Quramy/tsuquyomi'
-
 "--------------------------
 " color scheme
 "--------------------------
