@@ -516,8 +516,12 @@ if has("termguicolors") && !($TERM_PROGRAM == "Apple_Terminal")
 endif
 
 " colorscheme
-if !has('nvim')
-  color onedark
+if !exists("g:gui_oni")
+  if has('nvim')
+    color base16-nord
+  elseif
+    color onedark
+  endif
 endif
 
 if has("gui_running")
