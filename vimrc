@@ -400,9 +400,13 @@ if !has('nvim')
   let g:neocomplete#enable_at_startup = 1
   " Use smartcase.
   let g:neocomplete#enable_smart_case = 1
+
+  " <C-h>, <BS>: close popup and delete backword char.
+  inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+  inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 endif
 
-if has('nvim')
+if has('nvim') && !exists("g:gui_oni")
   let g:deoplete#enable_at_startup = 1
    " Disable deoplete when in multi cursor mode
   function! Multiple_cursors_before()
@@ -414,46 +418,46 @@ if has('nvim')
   endfunction
 endif
 
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-" go back on one item with Shift-Tab <S-TAB>
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
-"-------------------------
-" UltiSnips
+if !exists("g:gui_oni")
+  " go back on one item with Shift-Tab <S-TAB>
+  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
-let g:UltiSnipsExpandTrigger="<C-k>"
-let g:UltiSnipsJumpForwardTrigger="<TAB>"
-let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
-let g:ulti_expand_or_jump_res = 0
+  "-------------------------
+  " UltiSnips
 
-inoremap <silent> <CR> <C-r>=<SID>expand_snippet_or_return()<CR>
-function! s:expand_snippet_or_return()
-  if pumvisible()
+  let g:UltiSnipsExpandTrigger="<C-k>"
+  let g:UltiSnipsJumpForwardTrigger="<TAB>"
+  let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
+  let g:ulti_expand_or_jump_res = 0
+
+  inoremap <silent> <CR> <C-r>=<SID>expand_snippet_or_return()<CR>
+  function! s:expand_snippet_or_return()
+    if pumvisible()
+      let snippet = UltiSnips#ExpandSnippetOrJump()
+      if g:ulti_expand_or_jump_res > 0
+        return snippet
+      endif
+      return "\<C-y>"
+    else
+      return "\<CR>"
+    endif
+  endfunction
+
+  inoremap <silent> <TAB> <C-r>=<SID>expand_snippet_or_tab()<CR>
+  function! s:expand_snippet_or_tab()
     let snippet = UltiSnips#ExpandSnippetOrJump()
     if g:ulti_expand_or_jump_res > 0
       return snippet
     endif
-    return "\<C-y>"
-  else
-    return "\<CR>"
-  endif
-endfunction
 
-inoremap <silent> <TAB> <C-r>=<SID>expand_snippet_or_tab()<CR>
-function! s:expand_snippet_or_tab()
-  let snippet = UltiSnips#ExpandSnippetOrJump()
-  if g:ulti_expand_or_jump_res > 0
-    return snippet
-  endif
-
-  if pumvisible()
-    return "\<C-n>"
-  else
-    return "\<TAB>"
-  endif
-endfunction
+    if pumvisible()
+      return "\<C-n>"
+    else
+      return "\<TAB>"
+    endif
+  endfunction
+endif
 
 "-------------------------
 " vim-multiple-cursors
@@ -512,9 +516,7 @@ if has("termguicolors") && !($TERM_PROGRAM == "Apple_Terminal")
 endif
 
 " colorscheme
-if has('nvim')
-  color base16-nord
-else
+if !has('nvim')
   color onedark
 endif
 
@@ -550,26 +552,6 @@ else
       set term=xterm-256color
     endif
   endif
-endif
-
-if has("gui_macvim")
-  " Press Ctrl-Tab to switch between open tabs (like browser tabs) to
-  " the right side. Ctrl-Shift-Tab goes the other way.
-  noremap <C-Tab> :tabnext<CR>
-  noremap <C-S-Tab> :tabprev<CR>
-
-  " Switch to specific tab numbers with Command-number
-  noremap <D-1> :tabn 1<CR>
-  noremap <D-2> :tabn 2<CR>
-  noremap <D-3> :tabn 3<CR>
-  noremap <D-4> :tabn 4<CR>
-  noremap <D-5> :tabn 5<CR>
-  noremap <D-6> :tabn 6<CR>
-  noremap <D-7> :tabn 7<CR>
-  noremap <D-8> :tabn 8<CR>
-  noremap <D-9> :tabn 9<CR>
-  " Command-0 goes to the last tab
-  noremap <D-0> :tablast<CR>
 endif
 
 " listchars only for slim and haml files
