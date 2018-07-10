@@ -155,8 +155,7 @@ if executable('ag')
   nnoremap <leader>a :Ag!<space>
 endif
 
-" Map <leader>f and t to FZF
-nnoremap <unique> <leader>f :FZF<cr>
+" Map t to FZF
 nnoremap <silent> t :FZF<cr>
 
 " Switch between the last two files
@@ -304,6 +303,7 @@ let NERDTreeChDirMode = 2
 let NERDTreeDirArrows = 1
 let NERDTreeMinimalUI=1
 silent! nmap <silent> <Leader>m :NERDTreeToggle<CR>
+silent! nmap <silent> <leader>f :NERDTreeFind<cr>
 
 "-------------------------
 " NERDCommenter
