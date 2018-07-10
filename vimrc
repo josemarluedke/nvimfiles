@@ -521,7 +521,7 @@ endif
 if !exists("g:gui_oni")
   if has('nvim')
     color base16-nord
-  elseif
+  else
     color onedark
   endif
 endif
