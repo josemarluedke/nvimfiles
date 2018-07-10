@@ -62,7 +62,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " filetype syntax highlight
 "--------------------------
 Plug 'sheerun/vim-polyglot'
-Plug 'joukevandermaas/vim-ember-hbs', { 'for': 'handlebars' }
+Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'barboza/vim-cucumber-string-highlight'
 Plug 'fatih/vim-go'

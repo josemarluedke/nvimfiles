@@ -287,7 +287,7 @@ au BufRead,BufNewFile Dockerfile.dev if &ft == '' | setfiletype Dockerfile | end
 " ---------------------------------------------------------------------------
 
 " Polyglot
-" let g:polyglot_disabled = ['handlebars']
+let g:polyglot_disabled = ['handlebars']
 
 " Auto Pairs
 let g:AutoPairsOnlyBeforeClose = 1
