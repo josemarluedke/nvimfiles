@@ -116,12 +116,6 @@ nmap <silent> <leader>rv :so $MYVIMRC<CR>
 nmap :E :e
 nmap :W :w
 
-" Move between splits using ctrl+j/k/h/l
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
 if exists(':tnoremap')
   tnoremap <C-H> <C-\><C-N><C-W>h
   tnoremap <C-J> <C-\><C-N><C-W>j
