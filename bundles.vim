@@ -78,6 +78,7 @@ Plug 'daylerees/colour-schemes', { 'rtp': 'vim' }
 Plug 'chriskempson/base16-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'tomasiser/vim-code-dark'
+Plug 'dracula/vim'
 Plug 'junegunn/seoul256.vim'
 
 "--------------------------
