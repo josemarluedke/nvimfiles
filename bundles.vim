@@ -45,6 +45,7 @@ Plug 'prettier/vim-prettier', {
     \ 'do': 'npm install',
     \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'graphql'] }
 Plug 'w0rp/ale'
+Plug 'mhinz/vim-mix-format'
 
 "--------------------------
 " tools to explore the file system
