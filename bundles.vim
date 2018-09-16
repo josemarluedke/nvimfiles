@@ -44,6 +44,7 @@ Plug 'Shougo/denite.nvim'
 Plug 'prettier/vim-prettier', {
     \ 'do': 'npm install',
     \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'graphql'] }
+Plug 'w0rp/ale'
 
 "--------------------------
 " tools to explore the file system

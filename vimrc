@@ -381,6 +381,10 @@ let g:vim_markdown_fenced_languages = [
   \ 'hbs=html']
 
 "-------------------------
+" ALE Linting
+let g:ale_sign_column_always = 1
+
+"-------------------------
 " Closetag
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.jsx,*.hbs"
 
