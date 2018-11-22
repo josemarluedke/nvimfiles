@@ -69,7 +69,7 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'barboza/vim-cucumber-string-highlight'
 Plug 'fatih/vim-go'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
-Plug 'jparise/vim-graphql', { 'for': 'graphql' }
+Plug 'jparise/vim-graphql'
 
 "--------------------------
 " color scheme
@@ -82,6 +82,9 @@ Plug 'joshdick/onedark.vim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'dracula/vim'
 Plug 'junegunn/seoul256.vim'
+Plug 'mhartington/oceanic-next'
+" Need to test it out
+" Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 
 "--------------------------
 " snippets

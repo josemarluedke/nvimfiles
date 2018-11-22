@@ -524,9 +524,10 @@ endif
 " colorscheme
 if !exists("g:gui_oni")
   if has('nvim')
-    color base16-nord
+    color OceanicNext
   else
-    color onedark
+    " color onedark
+    color OceanicNext
   endif
 endif
 
