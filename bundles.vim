@@ -67,7 +67,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'barboza/vim-cucumber-string-highlight'
-Plug 'fatih/vim-go'
+" vim-go is included by vim-polyglot
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'jparise/vim-graphql'
 
