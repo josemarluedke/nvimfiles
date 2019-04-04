@@ -22,8 +22,6 @@ Plug 'tpope/vim-projectionist'
 "--------------------------
 " utility
 "--------------------------
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/neocomplete.vim'
 Plug 'optroot/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'godlygeek/tabular'
@@ -46,6 +44,8 @@ Plug 'prettier/vim-prettier', {
     \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'graphql'] }
 Plug 'w0rp/ale'
 Plug 'mhinz/vim-mix-format'
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'ervandew/supertab'
 
 "--------------------------
 " tools to explore the file system
@@ -69,7 +69,6 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'barboza/vim-cucumber-string-highlight'
 " vim-go is included by vim-polyglot
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'jparise/vim-graphql'
 
 "--------------------------

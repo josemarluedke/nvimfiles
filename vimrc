@@ -74,6 +74,7 @@ set relativenumber number " show relative numbers
 set splitbelow
 set splitright
 set list
+set completeopt=longest,menuone
 " set listchars=trail:·
 
 " some stuff to get the mouse going in term
@@ -394,75 +395,6 @@ let g:ale_sign_column_always = 1
 " Closetag
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.jsx,*.hbs"
 
-if !has('nvim')
-  "-------------------------
-  " Neocomplete
-  " Disable AutoComplPop.
-
-  let g:acp_enableAtStartup = 0
-  " Use neocomplete.
-  let g:neocomplete#enable_at_startup = 1
-  " Use smartcase.
-  let g:neocomplete#enable_smart_case = 1
-
-  " <C-h>, <BS>: close popup and delete backword char.
-  inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-  inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-endif
-
-if has('nvim') && !exists("g:gui_oni")
-  let g:deoplete#enable_at_startup = 1
-   " Disable deoplete when in multi cursor mode
-  function! Multiple_cursors_before()
-    let b:deoplete_disable_auto_complete = 1
-  endfunction
-
-  function! Multiple_cursors_after()
-    let b:deoplete_disable_auto_complete = 0
-  endfunction
-endif
-
-
-if !exists("g:gui_oni") && !exists("veonim")
-  " go back on one item with Shift-Tab <S-TAB>
-  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
-
-  "-------------------------
-  " UltiSnips
-
-  let g:UltiSnipsExpandTrigger="<C-k>"
-  let g:UltiSnipsJumpForwardTrigger="<TAB>"
-  let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
-  let g:ulti_expand_or_jump_res = 0
-
-  inoremap <silent> <CR> <C-r>=<SID>expand_snippet_or_return()<CR>
-  function! s:expand_snippet_or_return()
-    if pumvisible()
-      let snippet = UltiSnips#ExpandSnippetOrJump()
-      if g:ulti_expand_or_jump_res > 0
-        return snippet
-      endif
-      return "\<C-y>"
-    else
-      return "\<CR>"
-    endif
-  endfunction
-
-  inoremap <silent> <TAB> <C-r>=<SID>expand_snippet_or_tab()<CR>
-  function! s:expand_snippet_or_tab()
-    let snippet = UltiSnips#ExpandSnippetOrJump()
-    if g:ulti_expand_or_jump_res > 0
-      return snippet
-    endif
-
-    if pumvisible()
-      return "\<C-n>"
-    else
-      return "\<TAB>"
-    endif
-  endfunction
-endif
-
 "-------------------------
 " vim-multiple-cursors
 map <leader>d :call multiple_cursors#quit()<CR>
@@ -582,82 +514,97 @@ set fillchars+=vert:│
 autocmd ColorScheme * highlight VertSplit guibg=NONE
 autocmd ColorScheme * highlight NonText guifg=bg
 
-if exists('veonim')
-" extensions for web dev
-VeonimExt 'veonim/ext-css'
-VeonimExt 'veonim/ext-json'
-VeonimExt 'veonim/ext-html'
-" VeonimExt 'vscode:extension/sourcegraph.javascript-typescript'
-VeonimExt 'veonim/ext-typescript-javascript'
 
+" ---------------------------------------------------------------------------
+" SuperTab & Auto Complete
+" ---------------------------------------------------------------------------
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
-"ctrl/cmd + v
-" call VK('D-v', 'normal', {->execute(':put +')})
-" call VK('D-v', 'insert', {->execute(':put +')})
-" call VK('S-D-V', 'insert', {->execute(':put +')})
-" call VK('S-D-V', 'normal', {->execute(':put +')})
+function! s:AcceptAutoCompleteOrReturnNewline()
+    if pumvisible()
+        return "\<C-y>"
+    else
+        return "\<C-g>u\<CR>"
+    endif
+endfunction
+inoremap <silent> <CR> <C-r>=<SID>AcceptAutoCompleteOrReturnNewline()<CR>
 
-nmap <silent> <leader>v :put +<cr>
+" ---------------------------------------------------------------------------
+" coc.nvim
+" https://github.com/neoclide/coc.nvim
+" ---------------------------------------------------------------------------
 
+" Default Extensions:
+let g:coc_global_extensions = [
+      \ "coc-tsserver",
+      \ "coc-json",
+      \ "coc-html",
+      \ "coc-css",
+      \ "coc-highlight",
+      \ "coc-snippets",
+      \ "coc-emmet",
+      \ "coc-yaml" ]
 
-let g:vn_font = 'Fira Code'
-let g:vn_font_size = 16
-let g:vn_line_height = '1.5'
+" Use <c-space> for trigger completion.
+imap <silent><expr> <c-space> coc#refresh()
 
-set guicursor=n:block-CursorNormal,i:hor10-CursorInsert,v:block-CursorVisual
-hi! CursorNormal guibg=#f3a082
-hi! CursorInsert guibg=#f3a082
-hi! CursorVisual guibg=#6d33ff
+" Use `[c` and `]c` for navigate diagnostics
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
-" workspace management
-let g:vn_project_root = '~/code/neighborly'
-nno <silent> <c-t>p :call Veonim('vim-create-dir', g:vn_project_root)<cr>
-nno <silent> ,r :call Veonim('change-dir', g:vn_project_root)<cr>
+function! s:show_documentation()
+  if &filetype == 'vim'
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 
-" multiplexed vim instance management
-nno <silent> <c-t>c :Veonim vim-create<cr>
-nno <silent> <c-g> :Veonim vim-switch<cr>
-nno <silent> <c-t>, :Veonim vim-rename<cr>
+" Use sh for show documentation in preview window
+nnoremap <silent> sh :call <SID>show_documentation()<CR>
 
-" workspace functions
-nno <silent> ,f :Veonim files<cr>
-nno <silent> ,e :Veonim explorer<cr>
-nno <silent> ,b :Veonim buffers<cr>
-nno <silent> ,d :Veonim change-dir<cr>
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" searching text
-nno <silent> <space>fw :Veonim grep-word<cr>
-vno <silent> <space>fw :Veonim grep-selection<cr>
-nno <silent> <space>fa :Veonim grep<cr>
-nno <silent> <space>ff :Veonim grep-resume<cr>
-nno <silent> <space>fb :Veonim buffer-search<cr>
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
 
-" color picker
-nno <silent> sc :Veonim pick-color<cr>
+" Remap for format selected region
+vmap <leader>F  <Plug>(coc-format-selected)
+nmap <leader>F  <Plug>(coc-format-selected)
 
-" language server functions
-nno <silent> sr :Veonim rename<cr>
-nno <silent> sd :Veonim definition<cr>
-nno <silent> st :Veonim type-definition<cr>
-nno <silent> si :Veonim implementation<cr>
-nno <silent> sf :Veonim references<cr>
-nno <silent> sh :Veonim hover<cr>
-nno <silent> sl :Veonim symbols<cr>
-nno <silent> so :Veonim workspace-symbols<cr>
-nno <silent> sq :Veonim code-action<cr>
-nno <silent> sp :Veonim show-problem<cr>
-nno <silent> sk :Veonim highlight<cr>
-nno <silent> sK :Veonim highlight-clear<cr>
-nno <silent> <c-n> :Veonim next-problem<cr>
-nno <silent> <c-p> :Veonim prev-problem<cr>
-nno <silent> ,n :Veonim next-usage<cr>
-nno <silent> ,p :Veonim prev-usage<cr>
-nno <silent> <space>pt :Veonim problems-toggle<cr>
-nno <silent> <space>pf :Veonim problems-focus<cr>
-nno <silent> <d-o> :Veonim buffer-prev<cr>
-nno <silent> <d-i> :Veonim buffer-next<cr>
-endif
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
+vmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap for do codeAction of current line
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Fix autofix problem of current line
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Use `:Format` for format current buffer
+command! -nargs=0 Format :call CocAction('format')
+
+" Use `:Fold` for fold current buffer
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
+let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
+
 
 " ---------------------------------------------------------------------------
 " Load custom configs
