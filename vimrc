@@ -249,14 +249,9 @@ map <leader>ep :topleft :split package.json<cr>
 
 " For .go files, use tabs instead of spaces
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=2 shiftwidth=2 nolist
-au FileType go nmap gf <Plug>(go-def)
+
 let g:go_fmt_command = "goimports"
 let g:go_addtags_transform = "snakecase"
-if exists("g:gui_oni") || exists("veonim")
-  let g:go_auto_type_info = 0
-else
-  let g:go_auto_type_info = 1
-endif
 
 let g:go_highlight_array_whitespace_error = 1
 let g:go_highlight_chan_whitespace_error = 1
@@ -287,7 +282,7 @@ au BufRead,BufNewFile Dockerfile.dev if &ft == '' | setfiletype Dockerfile | end
 " ---------------------------------------------------------------------------
 
 " Polyglot
-let g:polyglot_disabled = ['handlebars']
+let g:polyglot_disabled = ['handlebars', 'go']
 
 " Auto Pairs
 let g:AutoPairsOnlyBeforeClose = 1

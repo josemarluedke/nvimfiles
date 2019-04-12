@@ -63,12 +63,12 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 "--------------------------
 " filetype syntax highlight
 "--------------------------
+" vim-go must be before vim-polyglot
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'sheerun/vim-polyglot'
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'barboza/vim-cucumber-string-highlight'
-" vim-go is included by vim-polyglot
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'jparise/vim-graphql'
 
 "--------------------------
