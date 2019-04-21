@@ -135,27 +135,6 @@ Find files in your project with minimal keypresses
 For example `conadus` would find `controllers/admin/users`
 
 
-### [Snipmate](https://github.com/garbas/vim-snipmate) (`TAB`)
-
-Snippets, press `TAB` to expand
-
-Examples (in a Ruby file):
-
-`def<tab>`
-
-`.each<tab>`
-
-`.eado<tab>`
-
-`ife<tab>`
-
-### [Gist](https://github.com/vim-scripts/Gist.vim) (`:Gist`)
-
-Gist current file/selection
-
-Requires setting GITHUB_TOKEN and GITHUB_USER Env's
-
-
 ### [Tabular](https://github.com/godlygeek/tabular)
 
 Align stuff
@@ -226,13 +205,6 @@ correct text object or motion.
 
 `cst<div>` - change surround tag to `<div>`
 
-### [Solarized](https://github.com/altercation/vim-colors-solarized)
-
-A colour scheme, both light and dark version
-
-`:set background=dark`
-
-`:set background=light`
 
 ### [Tagbar](https://github.com/majutsushi/tagbar) (`<leader>l`)
 
@@ -248,11 +220,6 @@ Lean & mean status/tabline for vim that's light as air
 
 Plugin manager and part of the reason why my vimfiles are so compact
 
-### [Rspec](https://github.com/josemarluedke/vim-rspec)
-
-Run Rspec specs from Vim
-
-This version of vim-rspec uses iTerm as default terminal. The original version uses the Terminal app.
 
 ### [Multiple cursors](http://github.com/terryma/vim-multiple-cursors)
 
