@@ -26,7 +26,7 @@ Action | Hotkey
 --------------------------------------------------------- | -----------------
 **▶ File operations**                                     |
 File browser (NerdTree)                                   | `leader m`
-FuzzyFinder fo files (FZF)                                | `leader f` or just `t`
+FuzzyFinder fo files (FZF)                                | `t`
 Switch between the last two files                         | `leader leader`
 Toggle Tagbar                                             | `leader l`
 View buffer files on current window                       | `leader be`
@@ -128,7 +128,7 @@ With bufexplorer, you can quickly and easily switch between buffers
 
 `:BufOnly` with an argument will close all buffers but the supplied buffer name/number.
 
-### [FZF](https://github.com/junegunn/fzf) (`<leader>f`)
+### [FZF](https://github.com/junegunn/fzf) (`t`)
 
 Find files in your project with minimal keypresses
 
