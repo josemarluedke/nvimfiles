@@ -22,14 +22,13 @@ Plug 'tpope/vim-projectionist'
 "--------------------------
 " utility
 "--------------------------
-Plug 'optroot/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'godlygeek/tabular'
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plug 'danro/rename.vim'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'josemarluedke/airline-tabline-folder-formatter.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
@@ -40,7 +39,6 @@ Plug 'sickill/vim-pasta'
 Plug 'AndrewRadev/ember_tools.vim'
 Plug 'Shougo/denite.nvim'
 Plug 'w0rp/ale'
-Plug 'mhinz/vim-mix-format'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'ervandew/supertab'
 

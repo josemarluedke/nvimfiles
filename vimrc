@@ -181,11 +181,6 @@ nnoremap <leader><space> :noh<cr>
 " Format json strings
 com! FormatJSON %!python -m json.tool
 
-" ---------------------------------------------------------------------------
-" Elixir Mix Format (vim-mix-format)
-" ---------------------------------------------------------------------------
-let g:mix_format_on_save = 1
-
 
 " ---------------------------------------------------------------------------
 " Tabularize
@@ -371,7 +366,8 @@ let g:ale_fixers = {
 \  'go': ['goimports', 'gofmt'],
 \  'yaml': ['prettier'],
 \  'scss': ['prettier'],
-\  'css': ['prettier']
+\  'css': ['prettier'],
+\  'elixir': ['mix_format']
 \}
 
 let g:ale_fix_on_save = 1
