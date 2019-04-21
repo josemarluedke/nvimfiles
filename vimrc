@@ -337,6 +337,14 @@ let g:airline_mode_map = {
 autocmd FileType handlebars runtime! ftplugin/html/sparkup.vim
 
 "-------------------------
+" Gitgutter
+let g:gitgutter_sign_added = '•'
+let g:gitgutter_sign_modified = '›'
+let g:gitgutter_sign_removed = '▪'
+let g:gitgutter_sign_removed_first_line = g:gitgutter_sign_removed
+let g:gitgutter_sign_modified_removed = g:gitgutter_sign_removed
+
+"-------------------------
 " Markdown
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_fenced_languages = [
