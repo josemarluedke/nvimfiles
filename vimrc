@@ -241,7 +241,9 @@ autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=2 shiftwidth=2 noli
 
 let g:go_fmt_command = "goimports"
 let g:go_addtags_transform = "snakecase"
+let g:go_def_mapping_enabled = 0
 
+" Enhanced Go syntax highlighting
 let g:go_highlight_array_whitespace_error = 1
 let g:go_highlight_chan_whitespace_error = 1
 let g:go_highlight_extra_types = 1
@@ -366,7 +368,7 @@ let g:ale_fixers = {
 \  'json': ['prettier'],
 \  'typescript': ['prettier'],
 \  'graphql': ['prettier'],
-\  'go': ['gofmt'],
+\  'go': ['goimports', 'gofmt'],
 \  'yaml': ['prettier'],
 \  'scss': ['prettier'],
 \  'css': ['prettier']
