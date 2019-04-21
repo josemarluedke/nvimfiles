@@ -1,5 +1,6 @@
 {
   "javascript.suggestionActions.enabled": false,
+  "suggest.enablePreview": true,
   "languageserver": {
     "golang": {
       "command": "gopls",
