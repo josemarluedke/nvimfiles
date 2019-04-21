@@ -1,7 +1,7 @@
-# Awesome vimfiles for Ruby and Javascript development
+# Vimfiles
 
-Support for Javascript, Ember, React, Ruby, Rails, Git, Sparkup, Slim, Sass,
-JSX, CoffeeScript, Markdown, and more with nice color schemes.
+Support for Javascript, Ember, React, Golang, Ruby, Elixir, Git, Sparkup, Slim, Sass,
+JSX, Markdown, and more with nice color schemes.
 
 **Neovim compatible!**
 
@@ -32,18 +32,13 @@ Toggle Tagbar                                             | `leader l`
 View buffer files on current window                       | `leader be`
 View buffer files on horizontal split                     | `leader bs`
 View buffer files on vertical split                       | `leader bs`
+Navigate to current open file in NerdTree                 | `leader f`
 **▶ Search & Find/replace**                               |
 Multiple Cursor                                           | `ctrl+n`
 Search in files (Ag/Silver Searcher)                      | `leader a`
 Remove search highlighting                                | `leader Space`
 Toggle search highlighting                                | `leader hs`
 Find and replace                                          | `leader s`
-**▶ Ruby on Rails**                                       |
-Open routes in split                                      | `leader gr`
-Open Gemfile in split                                     | `leader gg`
-Run rspec on current test file                            | `leader rt`
-Run rspec on current line                                 | `leader rs`
-Run last rspec file                                       | `leader rl`
 **▶ Others**                                              |
 Indent                                                    | `>>` or `Command ]`
 Reverse Indent                                            | `<<` or `Command [`
@@ -58,13 +53,6 @@ Paste from yank history using append (neoyank.vim)        | `leader h`
 See `.vimrc` for more.
 
 ## Plugins
-
-### [Rails](https://github.com/tpope/vim-rails)
-
-*Lots* of stuff - get to know this plugin!
-
-
-`:help rails`
 
 ### [Ember.js](https://github.com/AndrewRadev/ember_tools.vim)
 
@@ -266,11 +254,6 @@ noremap <right> :echoerr 'Use L to go right'<CR>
 #### Ubuntu: gVim
 
     apt-get install vim-gnome
-
-#### Ruby and NeoVim users
-
-Remember to install the `neovim` gem to get deoplete completing ruby code.
-Execute: `sudo gem install neovim`
 
 ### Install these vimfiles
 
