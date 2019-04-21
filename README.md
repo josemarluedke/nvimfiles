@@ -157,12 +157,12 @@ Comment/Uncomment stuff out
 Search project for text (aka find in files)
 
 
-### [Ag](https://github.com/epmatsw/ag.vim) (`<leader>a`)
+### [Ag](https://github.com/epmatsw/ag.vim)
 
 Alternative of Ack, using 'the_silver_searcher' on homebrew.
 
 
-### [Nerdtree](https://github.com/scrooloose/nerdtree) (`<leader>]`)
+### [Nerdtree](https://github.com/scrooloose/nerdtree) (`<leader>m`)
 
 Project file browser
 
