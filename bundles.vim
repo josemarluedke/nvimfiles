@@ -39,9 +39,6 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'sickill/vim-pasta'
 Plug 'AndrewRadev/ember_tools.vim'
 Plug 'Shougo/denite.nvim'
-Plug 'prettier/vim-prettier', {
-    \ 'do': 'npm install',
-    \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'graphql'] }
 Plug 'w0rp/ale'
 Plug 'mhinz/vim-mix-format'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}

@@ -182,17 +182,6 @@ nnoremap <leader><space> :noh<cr>
 com! FormatJSON %!python -m json.tool
 
 " ---------------------------------------------------------------------------
-" Prettier
-" ---------------------------------------------------------------------------
-let g:prettier#exec_cmd_async = 1
-let g:prettier#config#trailing_comma = 'none'
-let g:prettier#config#bracket_spacing = 'true'
-let g:prettier#config#parser = 'typescript'
-let g:prettier#config#single_quote = 'true'
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.ts,*.css,*.scss,*.less,*.graphql,*.gql PrettierAsync
-
-" ---------------------------------------------------------------------------
 " Elixir Mix Format (vim-mix-format)
 " ---------------------------------------------------------------------------
 let g:mix_format_on_save = 1
