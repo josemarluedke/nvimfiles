@@ -284,6 +284,7 @@ let NERDTreeWinSize = 30
 let NERDTreeChDirMode = 2
 let NERDTreeDirArrows = 1
 let NERDTreeMinimalUI=1
+
 silent! nmap <silent> <Leader>m :NERDTreeToggle<CR>
 silent! nmap <silent> <leader>f :NERDTreeFind<cr>
 
@@ -315,9 +316,10 @@ set complete=.,w,b,u,t,i
 "-------------------------
 " Airline
 set laststatus=2
-let g:airline_theme = 'base16'
+let g:airline_theme = 'base16_nord'
 let g:airline_powerline_fonts = 0
 let g:airline_symbols = { 'linenr': '␤ ', 'branch': '⎇ ' }
+let g:airline_inactive_collapse=0
 let g:airline#extensions#branch#enabled = 1
 let g:airline_mode_map = {
       \ 'n' : 'N',
@@ -437,7 +439,8 @@ endif
 " colorscheme
 if !exists("g:gui_oni")
   if has('nvim')
-    color base16-oceanicnext
+    color challenger_deep
+    " color base16-oceanicnext
   else
     " color onedark
     color OceanicNext
@@ -490,11 +493,6 @@ set colorcolumn=80
 highlight clear SignColumn
 
 set fillchars+=vert:│
-
-" Override color scheme
-autocmd ColorScheme * highlight VertSplit guibg=NONE
-autocmd ColorScheme * highlight NonText guifg=bg
-
 
 " ---------------------------------------------------------------------------
 " SuperTab & Auto Complete
