@@ -516,6 +516,7 @@ inoremap <silent> <CR> <C-r>=<SID>AcceptAutoCompleteOrReturnNewline()<CR>
 " Default Extensions:
 let g:coc_global_extensions = [
       \ "coc-tsserver",
+      \ "coc-go",
       \ "coc-json",
       \ "coc-html",
       \ "coc-css",
