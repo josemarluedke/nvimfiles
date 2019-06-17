@@ -522,10 +522,15 @@ let g:coc_global_extensions = [
       \ "coc-highlight",
       \ "coc-snippets",
       \ "coc-emmet",
-      \ "coc-yaml" ]
+      \ "coc-yaml",
+      \ "coc-pairs",
+      \ "coc-yank"]
 
 " Use <c-space> for trigger completion.
 imap <silent><expr> <c-space> coc#refresh()
+
+" Use <space> + y to show the list of yank
+nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
 
 " Use `[c` and `]c` for navigate diagnostics
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
