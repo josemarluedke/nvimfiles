@@ -42,6 +42,7 @@ Plug 'w0rp/ale'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'ervandew/supertab'
 Plug 'nullvoxpopuli/coc-ember', {'do': 'yarn install --frozen-lockfile'}
+Plug 'Quramy/vim-js-pretty-template'
 
 "--------------------------
 " tools to explore the file system

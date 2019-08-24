@@ -382,6 +382,27 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.jsx,*.hbs"
 " vim-multiple-cursors
 map <leader>d :call multiple_cursors#quit()<CR>
 
+
+
+"-------------------------
+" vim-js-pretty-template
+
+" Allow for named template literals to be highlighted
+" in a different syntax than the main buffer.
+" https://github.com/Quramy/vim-js-pretty-template
+function EnableTemplateLiteralColors()
+  " list of named template literal tags and their syntax here
+  call jspretmpl#register_tag('hbs', 'handlebars')
+
+  autocmd FileType javascript JsPreTmpl
+  autocmd FileType typescript JsPreTmpl
+
+  " compat with leafgarland/typescript-vim
+  autocmd FileType typescript syn clear foldBraces
+endfunction
+
+call EnableTemplateLiteralColors()
+
 " ---------------------------------------------------------------------------
 " Strip trailing whitespace
 " ---------------------------------------------------------------------------
