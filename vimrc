@@ -422,12 +422,10 @@ map <leader>d :call multiple_cursors#quit()<CR>
 function EnableTemplateLiteralColors()
   " list of named template literal tags and their syntax here
   call jspretmpl#register_tag('hbs', 'handlebars')
+  call jspretmpl#register_tag('gql', 'graphql')
 
   autocmd FileType javascript JsPreTmpl
   autocmd FileType typescript JsPreTmpl
-
-  " compat with leafgarland/typescript-vim
-  autocmd FileType typescript syn clear foldBraces
 endfunction
 
 call EnableTemplateLiteralColors()
