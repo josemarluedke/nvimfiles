@@ -398,7 +398,8 @@ let g:ale_fixers = {
 \  'yaml': ['prettier'],
 \  'scss': ['prettier'],
 \  'css': ['prettier'],
-\  'elixir': ['mix_format']
+\  'elixir': ['mix_format'],
+\  'terraform': ['terraform']
 \}
 
 let g:ale_fix_on_save = 1
