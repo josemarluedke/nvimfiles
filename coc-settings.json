@@ -1,4 +1,31 @@
 {
   "javascript.suggestionActions.enabled": false,
-  "suggest.enablePreview": true
+  "suggest.enablePreview": true,
+  "tailwindCSS.htmlLanguages": [
+    "blade",
+    "edge",
+    "eelixir",
+    "ejs",
+    "elixir",
+    "erb",
+    "eruby",
+    "haml",
+    "handlebars",
+    "html.handlebars",
+    "html",
+    "HTML (EEx)",
+    "HTML (Eex)",
+    "html.twig",
+    "jade",
+    "leaf",
+    "markdown",
+    "njk",
+    "nunjucks",
+    "php",
+    "razor",
+    "slim",
+    "svelte",
+    "twig",
+    "vue"
+  ]
 }

@@ -574,6 +574,8 @@ let g:coc_global_extensions = [
       \ "coc-emmet",
       \ "coc-yaml",
       \ "coc-pairs",
+      \ "coc-tailwindcss",
+      \ "coc-ember",
       \ "coc-yank"]
 
 " Use <c-space> for trigger completion.
