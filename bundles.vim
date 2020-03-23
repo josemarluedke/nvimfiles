@@ -38,7 +38,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'sickill/vim-pasta'
 Plug 'AndrewRadev/ember_tools.vim'
 Plug 'Shougo/denite.nvim'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'ervandew/supertab'
 Plug 'Quramy/vim-js-pretty-template'
