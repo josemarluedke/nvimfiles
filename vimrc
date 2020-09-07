@@ -292,6 +292,8 @@ let g:go_highlight_variable_assignments = 1
 au BufRead,BufNewFile nginx.conf if &ft == '' | setfiletype nginx | endif
 au BufRead,BufNewFile Dockerfile.dev if &ft == '' | setfiletype Dockerfile | endif
 
+au BufRead,BufNewFile *.go.tpl set filetype=gotexttmpl
+
 " ---------------------------------------------------------------------------
 " Plugins
 " ---------------------------------------------------------------------------
@@ -345,7 +347,8 @@ set complete=.,w,b,u,t,i
 "-------------------------
 " Airline
 set laststatus=2
-let g:airline_theme = 'base16_nord'
+let g:airline_theme = "palenight"
+ " let g:airline_theme = 'base16_nord'
 let g:airline_powerline_fonts = 0
 let g:airline_symbols = { 'linenr': '␤ ', 'branch': '⎇ ' }
 let g:airline_inactive_collapse=0
@@ -374,12 +377,15 @@ let g:gitgutter_sign_modified_removed = g:gitgutter_sign_removed
 
 "-------------------------
 " Markdown
+let g:vim_markdown_new_list_item_indent = 2
+let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_fenced_languages = [
   \ 'js=javascript',
   \ 'ts=typescript=ts',
   \ 'rb=ruby',
-  \ 'hbs=html']
+  \ 'hbs=handlebars'
+  \ ]
 
 "-------------------------
 " ALE Linting
@@ -488,8 +494,12 @@ endif
 " colorscheme
 if !exists("g:gui_oni")
   if has('nvim')
-    color challenger_deep
-    " color base16-oceanicnext
+    set background=dark
+    " colorscheme palenight
+    " colorscheme onedark
+    colorscheme challenger_deep
+    let g:neodark#background = '#202020'
+    let g:palenight_terminal_italics=1
   else
     " color onedark
     color OceanicNext
@@ -595,7 +605,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 function! s:show_documentation()
-  if &filetype == 'vim'
+  if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
   else
     call CocAction('doHover')

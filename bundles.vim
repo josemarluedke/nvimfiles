@@ -75,11 +75,13 @@ Plug 'tomasr/molokai'
 Plug 'daylerees/colour-schemes', { 'rtp': 'vim' }
 Plug 'chriskempson/base16-vim'
 Plug 'joshdick/onedark.vim'
+Plug 'KeitaNakamura/neodark.vim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'dracula/vim'
 Plug 'junegunn/seoul256.vim'
 Plug 'mhartington/oceanic-next'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+Plug 'drewtempelmeyer/palenight.vim'
 
 "--------------------------
 " snippets
