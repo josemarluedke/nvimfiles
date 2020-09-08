@@ -28,10 +28,6 @@ Action | Hotkey
 File browser (NerdTree)                                   | `leader m`
 FuzzyFinder fo files (FZF)                                | `t`
 Switch between the last two files                         | `leader leader`
-Toggle Tagbar                                             | `leader l`
-View buffer files on current window                       | `leader be`
-View buffer files on horizontal split                     | `leader bs`
-View buffer files on vertical split                       | `leader bs`
 Navigate to current open file in NerdTree                 | `leader f`
 **▶ Search & Find/replace**                               |
 Multiple Cursor                                           | `ctrl+n`
@@ -43,16 +39,21 @@ Find and replace                                          | `leader s`
 Indent                                                    | `>>` or `Command ]`
 Reverse Indent                                            | `<<` or `Command [`
 Switching between windows                                 | `ctrl+h` `ctrl+j` `ctrl+k` `ctrl+l`
-Toggle comments                                           | `leader /` or `Command + /`
+Toggle comments                                           | `leader /`
 Auto complete or expand snippet                           | `<tab>`
 Expand CSS selectors `div.event` in to markup             | `ctrl+e`
 Split a one-liner into multiple lines (splitjoin.vim)     | `gS`
 Join a block into a single-line statement (splitjoin.vim) | `gJ`
-Paste from yank history using append (neoyank.vim)        | `leader h`
+Start Multiline Cursor using Coc                          | `ctrl-d`
 
 See `.vimrc` for more.
 
 ## Plugins
+
+
+### [Coc](https://github.com/neoclide/coc.nvim)
+
+Intellisense engine for Vim8 & Neovim, full language server protocol support as VSCode.
 
 ### [Ember.js](https://github.com/AndrewRadev/ember_tools.vim)
 
@@ -105,50 +106,19 @@ Insert a dummy text of a certain length
 
   :Loremipsum[!] [WORD  COUNT] [PARAGRAPH_TEMPLATE] [PREFIX POSTFIX]
 
-### [Bufexplorer](https://github.com/corntrace/bufexplorer)
-
-With bufexplorer, you can quickly and easily switch between buffers
-
-
-### [BufOnly](https://github.com/vim-scripts/BufOnly.vim)
-
-`:BufOnly` without an argument will unload all buffers but the current one.
-
-`:BufOnly` with an argument will close all buffers but the supplied buffer name/number.
-
 ### [FZF](https://github.com/junegunn/fzf) (`t`)
 
 Find files in your project with minimal keypresses
 
 For example `conadus` would find `controllers/admin/users`
 
-
-### [Tabular](https://github.com/godlygeek/tabular)
-
-Align stuff
-
-   <leader>a= :Tabularize /=
-   <leader>a: :Tabularize /:
-   <leader>a:: :Tabularize /:\zs
-   <leader>a, :Tabularize /,
-   <Bar> :Tabularize /<Bar>
-
-http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
-
 ### [Neerd Commenter](https://github.com/scrooloose/nerdcommenter) (`Command + /` or `<leader>/`)
 
 Comment/Uncomment stuff out
 
-
-### [Ack](https://github.com/mileszs/ack.vim)
-
-Search project for text (aka find in files)
-
-
 ### [Ag](https://github.com/epmatsw/ag.vim)
 
-Alternative of Ack, using 'the_silver_searcher' on homebrew.
-
+Search project for text (aka find in files)
 
 ### [Nerdtree](https://github.com/scrooloose/nerdtree) (`<leader>m`)
 
@@ -194,12 +164,6 @@ correct text object or motion.
 `cst<div>` - change surround tag to `<div>`
 
 
-### [Tagbar](https://github.com/majutsushi/tagbar) (`<leader>l`)
-
-Lists method names, provide auto complete
-
-Run `ctags -R` or `<leader>rtg` in project root to generate tags
-
 ### [Airline](https://github.com/bling/vim-airline)
 
 Lean & mean status/tabline for vim that's light as air
@@ -207,15 +171,6 @@ Lean & mean status/tabline for vim that's light as air
 ### [Plug](https://github.com/junegunn/vim-plug)
 
 Plugin manager and part of the reason why my vimfiles are so compact
-
-
-### [Multiple cursors](http://github.com/terryma/vim-multiple-cursors)
-
-This is similar to Command + d from Atom/Sublime.
-
-`Ctrl-n` to activate and to go to the next match. When you are tired, simply change the word under the cursor the usual way.
-
-`<Leader>d` to clean highlight.
 
 ### Format JSON strings
 

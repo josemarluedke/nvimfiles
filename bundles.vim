@@ -24,14 +24,10 @@ Plug 'tpope/vim-projectionist'
 "--------------------------
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
-Plug 'godlygeek/tabular'
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plug 'danro/rename.vim'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'airblade/vim-gitgutter'
-Plug 'alvan/vim-closetag'
 Plug 'jszakmeister/vim-togglecursor'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'AndrewRadev/splitjoin.vim'
@@ -46,12 +42,8 @@ Plug 'Quramy/vim-js-pretty-template'
 "--------------------------
 " tools to explore the file system
 "--------------------------
-Plug 'corntrace/bufexplorer'
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
-Plug 'majutsushi/tagbar'
-Plug 'vim-scripts/ctags.vim'
-Plug 'mileszs/ack.vim'
 Plug 'epmatsw/ag.vim'
 Plug 'vim-scripts/BufOnly.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -64,21 +56,13 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'sheerun/vim-polyglot'
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'hail2u/vim-css3-syntax'
-Plug 'barboza/vim-cucumber-string-highlight'
-Plug 'jparise/vim-graphql'
 
 "--------------------------
 " color scheme
 "--------------------------
-Plug 'endel/vim-github-colorscheme'
-Plug 'tomasr/molokai'
-Plug 'daylerees/colour-schemes', { 'rtp': 'vim' }
 Plug 'chriskempson/base16-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'KeitaNakamura/neodark.vim'
-Plug 'tomasiser/vim-code-dark'
-Plug 'dracula/vim'
-Plug 'junegunn/seoul256.vim'
 Plug 'mhartington/oceanic-next'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'drewtempelmeyer/palenight.vim'

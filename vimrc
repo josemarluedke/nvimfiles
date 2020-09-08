@@ -210,40 +210,6 @@ nnoremap <leader><space> :noh<cr>
 " Format json strings
 com! FormatJSON %!python -m json.tool
 
-
-" ---------------------------------------------------------------------------
-" Tabularize
-" ---------------------------------------------------------------------------
-
-nmap <Leader>a& :Tabularize /&<CR>
-vmap <Leader>a& :Tabularize /&<CR>
-nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a: :Tabularize /:<CR>
-vmap <Leader>a: :Tabularize /:<CR>
-nmap <Leader>a:: :Tabularize /:\zs<CR>
-vmap <Leader>a:: :Tabularize /:\zs<CR>
-nmap <Leader>a, :Tabularize /,<CR>
-vmap <Leader>a, :Tabularize /,<CR>
-nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-
-" ---------------------------------------------------------------------------
-" Ruby/Rails
-" ---------------------------------------------------------------------------
-
-" Execute current buffer as ruby
-map <S-r> :w !ruby<CR>
-
-" View routes or Gemfile in large split
-map <leader>gr :topleft :split config/routes.rb<cr>
-map <leader>gg :topleft :split Gemfile<cr>
-
-" Rspec.vim mappings
-map <Leader>rt :call RunCurrentSpecFile()<CR>
-map <Leader>rs :call RunNearestSpec()<CR>
-map <Leader>rl :call RunLastSpec()<CR>
-
 " ---------------------------------------------------------------------------
 " Ember
 " ---------------------------------------------------------------------------
@@ -291,7 +257,6 @@ let g:go_highlight_variable_assignments = 1
 
 au BufRead,BufNewFile nginx.conf if &ft == '' | setfiletype nginx | endif
 au BufRead,BufNewFile Dockerfile.dev if &ft == '' | setfiletype Dockerfile | endif
-
 au BufRead,BufNewFile *.go.tpl set filetype=gotexttmpl
 
 " ---------------------------------------------------------------------------
@@ -325,24 +290,7 @@ silent! nmap <silent> <leader>f :NERDTreeFind<cr>
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 
-if has("gui_macvim") && has("gui_running")
-  map <D-/> <plug>NERDCommenterToggle<CR>
-  imap <D-/> <Esc><plug>NERDCommenterToggle<CR>
-else
-  map <leader>/ <plug>NERDCommenterToggle<CR>
-endif
-
-"-------------------------
-" Tagbar
-map <leader>l :TagbarToggle <cr>
-let g:tagbar_autofocus=1
-
-" Generate ctags for all bundled gems as well
-map <leader>rtg :!ctags --extra=+f --languages=-javascript --exclude=.git --exclude=log -R * `rvm gemdir`/gems/* `rvm gemdir`/bundler/gems/*<CR><C-M>
-
-" Use only current file to autocomplete from tags
-" set complete=.,t
-set complete=.,w,b,u,t,i
+map <leader>/ <plug>NERDCommenterToggle<CR>
 
 "-------------------------
 " Airline
@@ -366,14 +314,7 @@ let g:airline_mode_map = {
 " Sparkup
 " Enable sparkup in handlebars files
 autocmd FileType handlebars runtime! ftplugin/html/sparkup.vim
-
-"-------------------------
-" Gitgutter
-let g:gitgutter_sign_added = '•'
-let g:gitgutter_sign_modified = '›'
-let g:gitgutter_sign_removed = '▪'
-let g:gitgutter_sign_removed_first_line = g:gitgutter_sign_removed
-let g:gitgutter_sign_modified_removed = g:gitgutter_sign_removed
+autocmd FileType html.handlebars runtime! ftplugin/html/sparkup.vim
 
 "-------------------------
 " Markdown
@@ -409,16 +350,6 @@ let g:ale_fixers = {
 \}
 
 let g:ale_fix_on_save = 1
-
-"-------------------------
-" Closetag
-let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.jsx,*.hbs"
-
-"-------------------------
-" vim-multiple-cursors
-map <leader>d :call multiple_cursors#quit()<CR>
-
-
 
 "-------------------------
 " vim-js-pretty-template
@@ -495,9 +426,9 @@ endif
 if !exists("g:gui_oni")
   if has('nvim')
     set background=dark
-    " colorscheme palenight
+    colorscheme palenight
     " colorscheme onedark
-    colorscheme challenger_deep
+    " colorscheme challenger_deep
     let g:neodark#background = '#202020'
     let g:palenight_terminal_italics=1
   else
@@ -586,6 +517,7 @@ let g:coc_global_extensions = [
       \ "coc-pairs",
       \ "coc-tailwindcss",
       \ "coc-ember",
+      \ "coc-git",
       \ "coc-yank"]
 
 " Use <c-space> for trigger completion.
@@ -651,6 +583,14 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
 let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 
+" Coc Multiline Cursor
+nmap <expr> <silent> <c-d> <SID>select_current_word()
+function! s:select_current_word()
+  if !get(g:, 'coc_cursors_activated', 0)
+    return "\<Plug>(coc-cursors-word)"
+  endif
+  return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
+endfunc
 
 " ---------------------------------------------------------------------------
 " Load custom configs
