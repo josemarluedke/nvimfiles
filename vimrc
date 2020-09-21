@@ -139,17 +139,6 @@ vnoremap <silent> K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " Show the path of the current file
 nnoremap <Leader>e :echo expand('%')<CR>
 
-" The Silver Searcher
-if executable('ag')
-  let $FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
-
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " \a to Silver Searcher
-  nnoremap <leader>a :Ag!<space>
-endif
-
 if has('nvim')
   let $FZF_DEFAULT_OPTS=' --color=dark --color=fg:15,bg:8,hl:1,fg+:14,bg+:8,hl+:9 --color=info:7,prompt:7,pointer:12,marker:4,spinner:11,header:-1 --layout=reverse --margin=1,2'
 
@@ -263,11 +252,6 @@ au BufRead,BufNewFile *.go.tpl set filetype=gotexttmpl
 " Plugins
 " ---------------------------------------------------------------------------
 
-" Polyglot
-let g:polyglot_disabled = ['handlebars', 'go']
-
-" Auto Pairs
-let g:AutoPairsOnlyBeforeClose = 1
 
 "-------------------------
 " NERDTree
@@ -356,7 +340,6 @@ let g:ale_fix_on_save = 1
 
 " Allow for named template literals to be highlighted
 " in a different syntax than the main buffer.
-" https://github.com/Quramy/vim-js-pretty-template
 function EnableTemplateLiteralColors()
   " list of named template literal tags and their syntax here
   call jspretmpl#register_tag('hbs', 'handlebars')
@@ -371,16 +354,13 @@ call EnableTemplateLiteralColors()
 " ---------------------------------------------------------------------------
 " Strip trailing whitespace
 " ---------------------------------------------------------------------------
+"
 function! <SID>StripTrailingWhitespaces()
   " Don't try to strip whitespace in non buffers
   if (!empty(&buftype))
     return
   endif
 
-  " Only strip whitespace if isn't a slim, haml or emblem file
-  if &filetype =~ 'slim' || &filetype =~ 'haml' || &filetype =~ 'emblem'
-    return
-  endif
   " Preparation: save last search, and cursor position.
   let _s=@/
   let l = line(".")
