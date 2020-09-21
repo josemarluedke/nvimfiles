@@ -491,8 +491,8 @@ function! s:show_documentation()
   endif
 endfunction
 
-" Use sh for show documentation in preview window
-nnoremap <silent> sh :call <SID>show_documentation()<CR>
+" Use K for show documentation in preview window
+nmap <silent> K :call <SID>show_documentation()<CR>
 
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
