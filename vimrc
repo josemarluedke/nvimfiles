@@ -139,37 +139,8 @@ vnoremap <silent> K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " Show the path of the current file
 nnoremap <Leader>e :echo expand('%')<CR>
 
-if has('nvim')
-  let $FZF_DEFAULT_OPTS=' --color=dark --color=fg:15,bg:8,hl:1,fg+:14,bg+:8,hl+:9 --color=info:7,prompt:7,pointer:12,marker:4,spinner:11,header:-1 --layout=reverse --margin=1,2'
-
-
-  let g:fzf_layout = { 'window': 'call FloatingFZF()' }
-
-  function! FloatingFZF()
-    let buf = nvim_create_buf(v:false, v:true)
-    call setbufvar(buf, '&signcolumn', 'no')
-
-    let height = float2nr(20)
-    let width = float2nr(80)
-    let horizontal = float2nr((&columns - width) / 2)
-    let vertical = 1
-
-    let opts = {
-          \ 'relative': 'editor',
-          \ 'row': vertical,
-          \ 'col': horizontal,
-          \ 'width': width,
-          \ 'height': height,
-          \ 'style': 'minimal'
-          \ }
-
-    call nvim_open_win(buf, v:true, opts)
-  endfunction
-endif
-
-
-" Map t to FZF
-nnoremap <silent> t :FZF<cr>
+" Map t to FZF's Files
+nnoremap <silent> t :Files<cr>
 
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
@@ -252,6 +223,12 @@ au BufRead,BufNewFile *.go.tpl set filetype=gotexttmpl
 " Plugins
 " ---------------------------------------------------------------------------
 
+"-------------------------
+" FZF
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+let g:fzf_preview_window = 'right:50%'
+let $FZF_DEFAULT_OPTS='--reverse --color=bg+:-1'
+let $FZF_DEFAULT_COMMAND = "rg --files --hidden --glob '!.git/**'"
 
 "-------------------------
 " NERDTree
