@@ -1,5 +1,8 @@
 {
-  "javascript.suggestionActions.enabled": false,
+  "diagnostic.displayByAle": false,
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextPrefix": " ☵ ",
+  "diagnostic.enableMessage": "never",
   "suggest.enablePreview": true,
 
   // TS server
