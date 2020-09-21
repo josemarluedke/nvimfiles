@@ -135,6 +135,11 @@ endif
 " bind K to grep word under cursor
 nnoremap <silent> K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 vnoremap <silent> K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+" Move selected line / block of text in visual mode
+" shift + k to move up
+xnoremap K :move '<-2<CR>gv-gv
+" shift + j to move down
+xnoremap J :move '>+1<CR>gv-gv
 
 " Show the path of the current file
 nnoremap <Leader>e :echo expand('%')<CR>
