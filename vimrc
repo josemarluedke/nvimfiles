@@ -432,16 +432,6 @@ endif
 autocmd BufNewFile,BufRead *.slim,*.haml,*.emblem setlocal list listchars=extends:>,precedes:<,eol:¬
 
 " ---------------------------------------------------------------------------
-" Column color
-" ---------------------------------------------------------------------------
-
-set colorcolumn=80
-" highlight ColorColumn guibg=#1e1e1e
-highlight clear SignColumn
-
-set fillchars+=vert:│
-
-" ---------------------------------------------------------------------------
 " SuperTab & Auto Complete
 " ---------------------------------------------------------------------------
 let g:SuperTabDefaultCompletionType = "<c-n>"
