@@ -171,18 +171,6 @@ nnoremap <leader><space> :noh<cr>
 com! FormatJSON %!python -m json.tool
 
 " ---------------------------------------------------------------------------
-" Ember
-" ---------------------------------------------------------------------------
-
-map <leader>ec :FZF app/components<cr>
-map <leader>et :FZF app/templates<cr>
-map <leader>em :FZF app/models<cr>
-map <leader>eh :FZF app/helpers<cr>
-map <leader>eo :FZF app/routes<cr>
-map <leader>es :FZF app/services<cr>
-map <leader>ep :topleft :split package.json<cr>
-
-" ---------------------------------------------------------------------------
 " Golang configs
 " ---------------------------------------------------------------------------
 
