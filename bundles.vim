@@ -1,5 +1,3 @@
-set nocompatible " be iMproved
-
 if !isdirectory(expand("~/.vim/plug/.git"))
   !git clone git://github.com/junegunn/vim-plug.git ~/.vim/plug
         \ && mkdir ~/.vim/autoload
@@ -36,6 +34,7 @@ Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'ervandew/supertab'
 Plug 'Quramy/vim-js-pretty-template'
+Plug 'gregsexton/MatchTag'
 
 "--------------------------
 " tools to explore the file system
