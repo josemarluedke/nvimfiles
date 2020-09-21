@@ -291,11 +291,11 @@ let g:vim_markdown_fenced_languages = [
 
 "-------------------------
 " ALE Linting
-let g:airline#extensions#ale#enabled = 1
-
+let g:ale_disable_lsp = 1 " Let Coc manage LSP
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
+let g:ale_fix_on_save = 1
 
 let g:ale_fixers = {
 \  'javascript': ['prettier'],
@@ -309,8 +309,6 @@ let g:ale_fixers = {
 \  'elixir': ['mix_format'],
 \  'terraform': ['terraform']
 \}
-
-let g:ale_fix_on_save = 1
 
 "-------------------------
 " vim-js-pretty-template
