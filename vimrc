@@ -1,6 +1,3 @@
-" Use Vim settings, rather then Vi settings (much better!).
-set nocompatible
-
 " Plugins
 silent! runtime bundles.vim
 
@@ -8,100 +5,72 @@ silent! runtime bundles.vim
 " General
 " ---------------------------------------------------------------------------
 
-filetype plugin indent on
-let mapleader = ","
-let g:mapleader = ","
-syntax enable
-set autoread
-set timeoutlen=500 ttimeoutlen=0 " Avoid delays
+filetype plugin indent on                       " enable indentations
+syntax enable                                   " enable syntax  highlighting
+set termguicolors                               " Opaque Background
+set mouse=a                                     " enable mouse interaction
+" set clipboard+=unnamedplus                      " use system clipboard by default
+set expandtab smarttab                          " tab key actions
+set incsearch ignorecase smartcase hlsearch     " highlight text while searching
+set list listchars=trail:»,tab:»-               " use tab to navigate in list mode
+set fillchars+=vert:\▏                          " requires a patched nerd font (try FiraCode)
+set tabstop=2 shiftwidth=2 softtabstop=2        " use 2 spaces for tab
+set nowrap                                      " don't wrap text
+set encoding=utf-8                              " text encoding
+set number                                      " enable numbers on the left
+set relativenumber                              " current line is 0
+set title                                       " tab title as file name
+set autoindent smartindent                      " enable indentation
+set conceallevel=2                              " set this so we wont break indentation plugin
+set splitright                                  " open vertical split to the right
+set splitbelow                                  " open horizontal split to the bottom
+set emoji                                       " enable emojis
+set history=1000                                " history limit
+set backspace=indent,eol,start                  " allow backspacing over everything in insert mode
+set undofile                                    " enable persistent undo
+set undodir=/tmp                                " undo temp file directory
+set nobackup nowritebackup noswapfile           " do not create backup, swap file, use git for version management
+set inccommand=nosplit                          " visual feedback while substituting
+set laststatus=2                                " display the status line always
+set autoread                                    " auto read file changes
+set timeoutlen=500 ttimeoutlen=0                " avoid delays
+set iskeyword+=-                                " add '-' as recognized word symbol. e.g  'foo-bar' instead just 'foo'
+set complete+=kspell                            " auto complete spell words
+set updatetime=300                              " default is 4000 ms which leads to noticeable delays and poor user experience.
+set shortmess+=c                                " don't pass messages to |ins-completion-menu|.
+set noshowmode                                  " don't show modes at the bottom, let airline do it
+set hidden                                      " hides buffers instead of closing them
+set backspace=indent,eol,start                  " allow backspacing over everything in insert mode
+set completeopt=longest,menuone                 " show menu even if there is only one item
+set showmatch                                   " show matching brackets
+set matchpairs+=<:>                             " make < and > to match
+set grepprg=rg\ --vimgrep                       " use rg as default grepper
+set colorcolumn=80                              " column width with color
+highlight clear SignColumn                      " clear the color for signcolumn
 
-" do not create backup, swap file, use git for version management
-set nobackup
-set nowritebackup
-set noswapfile
+" performance tweaks
+set nocursorline
+set nocursorcolumn
+set lazyredraw
+set redrawtime=10000
+set synmaxcol=180
+set re=1
 
-" This means that you can have unwritten changes to a file and open a new file
-" using :e, without being forced to write or undo your changes first.
-set hidden
-
-set history=1000  "store lots of :cmdline history
-
-" Set character encoding to use in vim
-set encoding=utf-8
-set termencoding=utf-8
-
-" Add '-' as recognized word symbol. e.g dw delete all 'foo-bar' instead just 'foo'
-set iskeyword+=-
-
-" Show matching brackets
-set showmatch
-set matchpairs+=<:> " Make < and > to match
-
-" Use 256 colors in vim
-set t_Co=256
-
-" Spell
-autocmd FileType gitcommit setlocal spell
-autocmd FileType markdown setlocal spell
-set complete+=kspell
-
-" Copy to osx clipboard
-vnoremap <C-c> "*y<CR><Paste>
-vnoremap <C-c> "*y<CR>
-vnoremap y "*y<CR>
-nnoremap Y "*Y<CR>
-
-" ---------------------------------------------------------------------------
-" UI
-" ---------------------------------------------------------------------------
-
-set title        " make your xterm inherit the title from Vim
-set autoindent
-set smartindent
-set showmode     " show current mode down the bottom
-set showcmd      " show incomplete cmds down the bottom
-set hidden       " hides buffers instead of closing them
-set wildmenu
-set wildmode=list:longest
-set wildcharm=<TAB> " Autocmpletion hotkey
-set visualbell t_vb=
-set cursorline   " highlight current line
-set ttyfast
-set backspace=indent,eol,start  "allow backspacing over everything in insert mode
-set laststatus=2 " display the status line always
-set nonumber
-set relativenumber number " show relative numbers
-set splitbelow
-set splitright
-set list
-set completeopt=longest,menuone
-" set listchars=trail:·
-
-" some stuff to get the mouse going in term
-set mouse=a
-if !has('nvim')
-  set ttymouse=xterm2
-endif
-
-" ---------------------------------------------------------------------------
-" Text Formatting
-" ---------------------------------------------------------------------------
-
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab!
-
-set nowrap
-set textwidth=79
-set formatoptions=n
+" Spell: enable spell only if file type is normal text
+let spellable = ['markdown', 'gitcommit', 'txt', 'text', 'liquid', 'rst']
+autocmd BufEnter * if index(spellable, &ft) < 0 | set nospell | else | set spell | endif
 
 " ---------------------------------------------------------------------------
 " Mappings
 " ---------------------------------------------------------------------------
 
+let mapleader = ","
+
 " Remap ; to :
 nnoremap ; :
+nmap :E :e
+nmap :W :w
+nmap :Q :q
 
 " Open new tab
 nmap <silent><leader>t :tabnew<CR>
@@ -110,27 +79,29 @@ nmap <silent><leader>t :tabnew<CR>
 nmap <leader>s :%s//<left>
 vmap <leader>s :s//<left>
 
+" Copy to osx clipboard
+vnoremap <C-c> "*y<CR><Paste>
+vnoremap <C-c> "*y<CR>
+vnoremap y "*y<CR>
+nnoremap Y "*Y<CR>
+
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>rv :so $MYVIMRC<CR>
+nmap <silent> <leader>rv :source $MYVIMRC<CR>
 
-nmap :E :e
-nmap :W :w
+" Better window navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
-if exists(':tnoremap')
-  tnoremap <C-H> <C-\><C-N><C-W>h
-  tnoremap <C-J> <C-\><C-N><C-W>j
-  tnoremap <C-K> <C-\><C-N><C-W>k
-  tnoremap <C-L> <C-\><C-N><C-W>l
-
-  " Use Esc to enter normal mode in term
-  tnoremap <Esc> <C-\><C-n>
-endif
-
-" Workaround for Neovim
-if has('nvim')
-  nmap <BS> <C-W>h
-endif
+" Terminal mappings
+tnoremap <C-h> <C-\><C-N><C-W>h
+tnoremap <C-j> <C-\><C-N><C-W>j
+tnoremap <C-k> <C-\><C-N><C-W>k
+tnoremap <C-l> <C-\><C-N><C-W>l
+" Use Esc to enter normal mode in term
+tnoremap <Esc> <C-\><C-n>
 
 " Move selected line / block of text in visual mode
 " shift + k to move up
@@ -157,12 +128,6 @@ nmap > >>
 vmap < <gv
 vmap > >gv
 
-" Searching
-set hlsearch                    " highlight matches
-set incsearch                   " incremental searching
-set ignorecase                  " searches are case insensitive...
-set smartcase                   " ... unless they contain at least one capital letter
-
 " Toggle hlsearch with <leader>hs
 nmap <leader>hs :set hlsearch! hlsearch?<CR>
 
@@ -176,9 +141,6 @@ com! FormatJSON %!python -m json.tool
 " Golang configs
 " ---------------------------------------------------------------------------
 
-" For .go files, use tabs instead of spaces
-autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=2 shiftwidth=2 nolist
-
 " Enhanced Go syntax highlighting
 let g:go_highlight_array_whitespace_error = 1
 let g:go_highlight_chan_whitespace_error = 1
@@ -191,11 +153,15 @@ let g:go_highlight_methods = 1
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_build_constraints = 1
-let g:go_highlight_generate_tags = 1
+" let g:go_highlight_generate_tags = 1
 let g:go_highlight_string_spellcheck = 2
 let g:go_highlight_format_strings = 1
 let g:go_highlight_variable_declarations = 1
 let g:go_highlight_variable_assignments = 1
+let g:go_highlight_function_calls = 1
+
+" For .go files, use tabs instead of spaces
+autocmd BufNewFile,BufRead *.go,*.go.tpl setlocal noexpandtab tabstop=2 shiftwidth=2 nolist
 
 " ---------------------------------------------------------------------------
 " Syntax highlight for unsual filetypes
@@ -241,13 +207,13 @@ map <leader>/ <plug>NERDCommenterToggle<CR>
 
 "-------------------------
 " Airline
-set laststatus=2
 let g:airline_theme = "palenight"
  " let g:airline_theme = 'base16_nord'
 let g:airline_powerline_fonts = 0
 let g:airline_symbols = { 'linenr': '␤ ', 'branch': '⎇ ' }
 let g:airline_inactive_collapse=0
-let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#branch#enabled = 1 " enable branch extention
+let g:airline#extensions#ale#enabled = 1 " enable ale extention
 let g:airline_mode_map = {
       \ 'n' : 'N',
       \ 'i' : 'I',
@@ -335,6 +301,14 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
+"
+" ---------------------------------------------------------------------------
+" Autosave
+" ---------------------------------------------------------------------------
+
+" Strip trailing whitespaces then save all files on focus lost
+autocmd FocusLost * :call <SID>StripTrailingWhitespaces() | silent! wa
+
 " ---------------------------------------------------------------------------
 " Add support to go to file in JS without file extention
 " ---------------------------------------------------------------------------
@@ -349,12 +323,6 @@ augroup suffixes
   endfor
 augroup END
 
-" ---------------------------------------------------------------------------
-" Autosave
-" ---------------------------------------------------------------------------
-
-" Strip trailing whitespaces then save all files on focus lost
-autocmd FocusLost * :call <SID>StripTrailingWhitespaces() | silent! wa
 
 " ---------------------------------------------------------------------------
 " GUI
@@ -377,17 +345,16 @@ autocmd BufNewFile,BufRead *.slim,*.haml,*.emblem setlocal list listchars=extend
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
 function! s:AcceptAutoCompleteOrReturnNewline()
-    if pumvisible()
-        return "\<C-y>"
-    else
-        return "\<C-g>u\<CR>"
-    endif
+  if pumvisible()
+    return "\<C-y>"
+  else
+    return "\<C-g>u\<CR>"
+  endif
 endfunction
 inoremap <silent> <CR> <C-r>=<SID>AcceptAutoCompleteOrReturnNewline()<CR>
 
 " ---------------------------------------------------------------------------
 " coc.nvim
-" https://github.com/neoclide/coc.nvim
 " ---------------------------------------------------------------------------
 
 " Default Extensions:
@@ -441,8 +408,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Remap for format selected region
-vmap <leader>F  <Plug>(coc-format-selected)
-nmap <leader>F  <Plug>(coc-format-selected)
+vmap <leader>F <Plug>(coc-format-selected)
+nmap <leader>F <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
