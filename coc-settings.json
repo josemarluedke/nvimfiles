@@ -1,34 +1,12 @@
 {
   "javascript.suggestionActions.enabled": false,
   "suggest.enablePreview": true,
-  "tailwindCSS.htmlLanguages": [
-    "blade",
-    "edge",
-    "eelixir",
-    "ejs",
-    "elixir",
-    "erb",
-    "eruby",
-    "haml",
-    "handlebars",
-    "html.handlebars",
-    "html",
-    "HTML (EEx)",
-    "HTML (Eex)",
-    "html.twig",
-    "jade",
-    "leaf",
-    "markdown",
-    "njk",
-    "nunjucks",
-    "php",
-    "razor",
-    "slim",
-    "svelte",
-    "twig",
-    "vue"
-  ],
-  "html.filetypes":["html", "handlebars", "htmldjango", "html.handlebars"],
+
+  // TS server
+  "tsserver.implicitProjectConfig.experimentalDecorators": true,
+  "javascript.suggestionActions.enabled": false,
+
+  // Git
   "git.addedSign.text": "•",
   "git.changedSign.text": "›",
   "git.removedSign.text": "▪",
@@ -37,5 +15,18 @@
   "git.changedSign.hlGroup": "GitGutterChange",
   "git.removedSign.hlGroup": "GitGutterDelete",
   "git.topRemovedSign.hlGroup": "GitGutterDelete",
-  "git.changeRemovedSign.hlGroup": "GitGutterChangeDelete"
+  "git.changeRemovedSign.hlGroup": "GitGutterChangeDelete",
+
+  // TailwindCSS
+  "tailwindCSS.htmlLanguages": [
+    "handlebars",
+    "html.handlebars",
+    "html",
+    "markdown"
+  ],
+  "html.filetypes": [
+    "html",
+    "handlebars",
+    "html.handlebars"
+  ]
 }
