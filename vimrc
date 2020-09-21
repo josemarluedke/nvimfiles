@@ -132,14 +132,15 @@ if has('nvim')
   nmap <BS> <C-W>h
 endif
 
-" bind K to grep word under cursor
-nnoremap <silent> K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-vnoremap <silent> K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " Move selected line / block of text in visual mode
 " shift + k to move up
 xnoremap K :move '<-2<CR>gv-gv
 " shift + j to move down
 xnoremap J :move '>+1<CR>gv-gv
+
+" bind F to grep word under cursor
+nnoremap <silent> F :Ag <C-R><C-W><CR>
+vnoremap <silent> F :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " Show the path of the current file
 nnoremap <Leader>e :echo expand('%')<CR>
