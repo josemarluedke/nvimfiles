@@ -145,13 +145,9 @@ nnoremap <silent> t :Files<cr>
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
-"Key mapping for textmate-like indentation
-nmap <D-[> <<
-nmap <D-]> >>
-vmap <D-[> <gv
-vmap <D-]> >gv
-
-" Align blocks of text and keep them selected
+" Indent lines
+nmap < <<
+nmap > >>
 vmap < <gv
 vmap > >gv
 
