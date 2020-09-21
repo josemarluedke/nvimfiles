@@ -361,53 +361,12 @@ autocmd FocusLost * :call <SID>StripTrailingWhitespaces() | silent! wa
 " ---------------------------------------------------------------------------
 
 " colorscheme
-if !exists("g:gui_oni")
-  if has('nvim')
-    set background=dark
-    colorscheme palenight
-    " colorscheme onedark
-    " colorscheme challenger_deep
-    let g:neodark#background = '#202020'
-    let g:palenight_terminal_italics=1
-  else
-    " color onedark
-    color OceanicNext
-  endif
-endif
-
-if has("gui_running")
-  set guioptions-=T " no toolbar set guioptions-=m " no menus
-  set guioptions-=r " no scrollbar on the right
-  set guioptions-=R " no scrollbar on the right
-  set guioptions-=l " no scrollbar on the left
-  set guioptions-=b " no scrollbar on the bottom
-  set guioptions-=L "no scrollbar on the nerdtree"
-
-  set guitablabel=%M%t
-
-  if has("gui_gnome")
-    set term=gnome-256color
-    set guifont=Ubuntu\ Mono\ 12
-  endif
-
-  if has("gui_mac") || has("gui_macvim")
-    set guifont=Menlo:h12
-  endif
-
-  if has("gui_win32") || has("gui_win32s")
-    set guifont=Consolas:h12
-  endif
-else
-  set novisualbell " Mute error bell
-
-  if $COLORTERM == 'gnome-terminal'
-    set term=gnome-256color
-  else
-    if $TERM == 'xterm'
-      set term=xterm-256color
-    endif
-  endif
-endif
+set background=dark
+colorscheme palenight
+" colorscheme challenger_deep
+" colorscheme onedark
+let g:neodark#background = '#202020'
+let g:palenight_terminal_italics=1
 
 " listchars only for slim and haml files
 autocmd BufNewFile,BufRead *.slim,*.haml,*.emblem setlocal list listchars=extends:>,precedes:<,eol:¬
