@@ -51,10 +51,7 @@ highlight clear SignColumn                      " clear the color for signcolumn
 " performance tweaks
 set nocursorline
 set nocursorcolumn
-set lazyredraw
-set redrawtime=10000
 set synmaxcol=180
-set re=1
 
 " Spell: enable spell only if file type is normal text
 let spellable = ['markdown', 'gitcommit', 'txt', 'text', 'liquid', 'rst']
