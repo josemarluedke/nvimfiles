@@ -1,5 +1,3 @@
-set nocompatible " be iMproved
-
 if !isdirectory(expand("~/.vim/plug/.git"))
   !git clone git://github.com/junegunn/vim-plug.git ~/.vim/plug
         \ && mkdir ~/.vim/autoload
@@ -22,7 +20,6 @@ Plug 'tpope/vim-projectionist'
 "--------------------------
 " utility
 "--------------------------
-Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plug 'danro/rename.vim'
@@ -33,27 +30,28 @@ Plug 'nelstrom/vim-visual-star-search'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'sickill/vim-pasta'
 Plug 'AndrewRadev/ember_tools.vim'
-Plug 'Shougo/denite.nvim'
 Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'ervandew/supertab'
 Plug 'Quramy/vim-js-pretty-template'
+Plug 'gregsexton/MatchTag'
 
 "--------------------------
 " tools to explore the file system
 "--------------------------
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
-Plug 'epmatsw/ag.vim'
-Plug 'vim-scripts/BufOnly.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 "--------------------------
 " filetype syntax highlight
 "--------------------------
-" vim-go must be before vim-polyglot
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'nvim-treesitter/nvim-treesitter'
+" Polyglot
+let g:polyglot_disabled = ['handlebars']
 Plug 'sheerun/vim-polyglot'
+
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'hail2u/vim-css3-syntax'
 
@@ -66,6 +64,7 @@ Plug 'KeitaNakamura/neodark.vim'
 Plug 'mhartington/oceanic-next'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'ajmwagar/vim-deus'
 
 "--------------------------
 " snippets

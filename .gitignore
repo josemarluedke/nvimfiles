@@ -3,4 +3,4 @@ plug/
 plugged/
 .netrwhist
 .init.vim-rplugin~
-init.vim
+init.local.vim

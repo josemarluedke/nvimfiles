@@ -1,12 +1,9 @@
 # Vimfiles
 
-Support for Javascript, Ember, React, Golang, Ruby, Elixir, Git, Sparkup, Slim, Sass,
-JSX, Markdown, and more with nice color schemes.
+Support for JavaScript, TypeScript, Ember, React, Golang, Ruby, Elixir, Git,
+Sparkup, Sass, JSX, Markdown, and more with nice color schemes.
 
-**Neovim compatible!**
-
-![MacVim with these vimfiles](https://cloud.githubusercontent.com/assets/230476/18639884/8db13666-7e4a-11e6-99ad-01ebaaf7432e.png)
-
+**Neovim only!**
 
 ## Quick Install
 
@@ -20,17 +17,17 @@ Please also check [install dependencies](#install-dependencies) section.
 
 ### Basic Mappings
 
-The leader key is mapped to `,`, you can change it in your `.vimrc.local`.
+The leader key is mapped to `,`, you can change it in your `~/.config/nvim/init.local.vim`.
 
 Action | Hotkey
 --------------------------------------------------------- | -----------------
 **▶ File operations**                                     |
 File browser (NerdTree)                                   | `leader m`
-FuzzyFinder fo files (FZF)                                | `t`
+uzzyFinder (FZF)                                          | `t`
 Switch between the last two files                         | `leader leader`
 Navigate to current open file in NerdTree                 | `leader f`
 **▶ Search & Find/replace**                               |
-Multiple Cursor                                           | `ctrl+n`
+Multiple Cursor                                           | `ctrl+d`
 Search in files (Ag/Silver Searcher)                      | `leader a`
 Remove search highlighting                                | `leader Space`
 Toggle search highlighting                                | `leader hs`
@@ -44,7 +41,6 @@ Auto complete or expand snippet                           | `<tab>`
 Expand CSS selectors `div.event` in to markup             | `ctrl+e`
 Split a one-liner into multiple lines (splitjoin.vim)     | `gS`
 Join a block into a single-line statement (splitjoin.vim) | `gJ`
-Start Multiline Cursor using Coc                          | `ctrl-d`
 
 See `.vimrc` for more.
 
@@ -53,7 +49,7 @@ See `.vimrc` for more.
 
 ### [Coc](https://github.com/neoclide/coc.nvim)
 
-Intellisense engine for Vim8 & Neovim, full language server protocol support as VSCode.
+Intellisense engine for Neovim, full language server protocol support as VSCode.
 
 ### [Ember.js](https://github.com/AndrewRadev/ember_tools.vim)
 
@@ -91,7 +87,12 @@ Instead:
 
 #### Coercion
 
-Want to turn `fooBar` into `foo_bar`?  Press `crs` (coerce to snake\_case).  MixedCase (`crm`), camelCase (`crc`), snake\_case (`crs`), and UPPER\_CASE (`cru`) are all just 3 keystrokes away.
+Want to turn `fooBar` into `foo_bar`? Press `crs` (coerce to snake\_case).
+
+- MixedCase (`crm`)
+- camelCase (`crc`)
+- snake\_case (`crs`)
+- and UPPER\_CASE (`cru`)
 
 ### [Rename](https://github.com/danro/rename.vim)
 
@@ -100,25 +101,15 @@ Rename the current file
   :rename[!] {newname}
 
 
-### [Loremipsum](https://github.com/vim-scripts/loremipsum)
-
-Insert a dummy text of a certain length
-
-  :Loremipsum[!] [WORD  COUNT] [PARAGRAPH_TEMPLATE] [PREFIX POSTFIX]
-
 ### [FZF](https://github.com/junegunn/fzf) (`t`)
 
-Find files in your project with minimal keypresses
+Find files in your project with minimal key presses
 
 For example `conadus` would find `controllers/admin/users`
 
 ### [Neerd Commenter](https://github.com/scrooloose/nerdcommenter) (`Command + /` or `<leader>/`)
 
 Comment/Uncomment stuff out
-
-### [Ag](https://github.com/epmatsw/ag.vim)
-
-Search project for text (aka find in files)
 
 ### [Nerdtree](https://github.com/scrooloose/nerdtree) (`<leader>m`)
 
@@ -183,7 +174,7 @@ this command:
 ### Disable directions key navigation
 
 If you are not used to use hjkl keys to navigate throught files, I recommend adding the
-following code to your `~/.vimrc.local` to disable navigation using the
+following code to your `~/.config/nvim/init.local.vim` to disable navigation using the
 arrows keys. This will make you use hjkl keys instead of arrows.
 
 ```
@@ -195,30 +186,20 @@ noremap <right> :echoerr 'Use L to go right'<CR>
 
 ## Installation
 
-### Install Vim (if not already installed)
+### Install Neovim (if not already installed)
 
-#### MacOS: vim
-
-    brew install vim --with-cscope --with-python --with-lua --override-system-vim
-
-
-#### MacOS: MacVim
-
-    brew install macvim --with-override-system-vim --enable-clipboard  --with-cscope --with-lua
-
-#### Ubuntu: gVim
-
-    apt-get install vim-gnome
+```
+brew install neovim
+```
 
 ### Install these vimfiles
 
-Note: You will already have a `~/.vim` folder, either delete or move it.
+Note: You will already have a `~/.config/nvim` folder, either delete or move it.
 
-    mv ~/.vim ~/.vim.old
-    git clone https://github.com/josemarluedke/vimfiles ~/.vim
-    cd ~/.vim
+    mv ~/.config/nvim ~/.config/nvim.old
+    git clone https://github.com/josemarluedke/vimfiles ~/.config/nvim
+    cd ~/.config/nvim
     rake install
-    ln -s ~/.vim/vimrc ~/.vimrc
 
 or run:
 
@@ -226,7 +207,7 @@ or run:
 
 #### To update to the latest vimfiles
 
-    cd ~/.vim
+    cd ~/.config/nvim
     rake update
 
 #### Neovim
@@ -243,12 +224,7 @@ or run:
 
 ##### MacOS
 
-    brew install ack ctags the_silver_searcher
-
-##### Ubuntu
-
-    sudo apt-get install ncurses-term exuberant-ctags silversearcher-ag ack-grep
-    sudo ln -s /usr/bin/ack-grep /usr/local/bin/ack
+    brew install fzf ripgrep the_silver_searcher
 
 ## Thanks for inspiration
 

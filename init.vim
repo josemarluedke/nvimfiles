@@ -1,6 +1,3 @@
-" Use Vim settings, rather then Vi settings (much better!).
-set nocompatible
-
 " Plugins
 silent! runtime bundles.vim
 
@@ -8,100 +5,68 @@ silent! runtime bundles.vim
 " General
 " ---------------------------------------------------------------------------
 
-filetype plugin indent on
-let mapleader = ","
-let g:mapleader = ","
-syntax enable
-set autoread
-set timeoutlen=500 ttimeoutlen=0 " Avoid delays
+filetype plugin indent on                       " enable indentations
+syntax enable                                   " enable syntax  highlighting
+set termguicolors                               " Opaque Background
+set mouse=a                                     " enable mouse interaction
+" set clipboard+=unnamedplus                      " use system clipboard by default
+set expandtab smarttab                          " tab key actions
+set incsearch ignorecase smartcase hlsearch     " highlight text while searching
+set list listchars=trail:»,tab:»-               " use tab to navigate in list mode
+set fillchars+=vert:\▏                          " requires a patched nerd font (try FiraCode)
+set tabstop=2 shiftwidth=2 softtabstop=2        " use 2 spaces for tab
+set nowrap                                      " don't wrap text
+set encoding=utf-8                              " text encoding
+set number                                      " enable numbers on the left
+set relativenumber                              " current line is 0
+set title                                       " tab title as file name
+set autoindent smartindent                      " enable indentation
+set conceallevel=2                              " set this so we wont break indentation plugin
+set splitright                                  " open vertical split to the right
+set splitbelow                                  " open horizontal split to the bottom
+set emoji                                       " enable emojis
+set history=1000                                " history limit
+set backspace=indent,eol,start                  " allow backspacing over everything in insert mode
+set undofile                                    " enable persistent undo
+set undodir=/tmp                                " undo temp file directory
+set nobackup nowritebackup noswapfile           " do not create backup, swap file, use git for version management
+set inccommand=nosplit                          " visual feedback while substituting
+set laststatus=2                                " display the status line always
+set autoread                                    " auto read file changes
+set timeoutlen=500 ttimeoutlen=0                " avoid delays
+set iskeyword+=-                                " add '-' as recognized word symbol. e.g  'foo-bar' instead just 'foo'
+set complete+=kspell                            " auto complete spell words
+set updatetime=300                              " default is 4000 ms which leads to noticeable delays and poor user experience.
+set shortmess+=c                                " don't pass messages to |ins-completion-menu|.
+set noshowmode                                  " don't show modes at the bottom, let airline do it
+set hidden                                      " hides buffers instead of closing them
+set completeopt=longest,menuone                 " show menu even if there is only one item
+set showmatch                                   " show matching brackets
+set matchpairs+=<:>                             " make < and > to match
+set grepprg=rg\ --vimgrep                       " use rg as default grepper
+set colorcolumn=80                              " column width with color
+highlight clear SignColumn                      " clear the color for signcolumn
 
-" do not create backup, swap file, use git for version management
-set nobackup
-set nowritebackup
-set noswapfile
+" performance tweaks
+set nocursorline
+set nocursorcolumn
+set synmaxcol=180
 
-" This means that you can have unwritten changes to a file and open a new file
-" using :e, without being forced to write or undo your changes first.
-set hidden
-
-set history=1000  "store lots of :cmdline history
-
-" Set character encoding to use in vim
-set encoding=utf-8
-set termencoding=utf-8
-
-" Add '-' as recognized word symbol. e.g dw delete all 'foo-bar' instead just 'foo'
-set iskeyword+=-
-
-" Show matching brackets
-set showmatch
-set matchpairs+=<:> " Make < and > to match
-
-" Use 256 colors in vim
-set t_Co=256
-
-" Spell
-autocmd FileType gitcommit setlocal spell
-autocmd FileType markdown setlocal spell
-set complete+=kspell
-
-" Copy to osx clipboard
-vnoremap <C-c> "*y<CR><Paste>
-vnoremap <C-c> "*y<CR>
-vnoremap y "*y<CR>
-nnoremap Y "*Y<CR>
-
-" ---------------------------------------------------------------------------
-" UI
-" ---------------------------------------------------------------------------
-
-set title        " make your xterm inherit the title from Vim
-set autoindent
-set smartindent
-set showmode     " show current mode down the bottom
-set showcmd      " show incomplete cmds down the bottom
-set hidden       " hides buffers instead of closing them
-set wildmenu
-set wildmode=list:longest
-set wildcharm=<TAB> " Autocmpletion hotkey
-set visualbell t_vb=
-set cursorline   " highlight current line
-set ttyfast
-set backspace=indent,eol,start  "allow backspacing over everything in insert mode
-set laststatus=2 " display the status line always
-set nonumber
-set relativenumber number " show relative numbers
-set splitbelow
-set splitright
-set list
-set completeopt=longest,menuone
-" set listchars=trail:·
-
-" some stuff to get the mouse going in term
-set mouse=a
-if !has('nvim')
-  set ttymouse=xterm2
-endif
-
-" ---------------------------------------------------------------------------
-" Text Formatting
-" ---------------------------------------------------------------------------
-
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab!
-
-set nowrap
-set textwidth=79
-set formatoptions=n
+" Spell: enable spell only if file type is normal text
+let spellable = ['markdown', 'gitcommit', 'txt', 'text', 'liquid', 'rst']
+autocmd BufEnter * if index(spellable, &ft) < 0 | set nospell | else | set spell | endif
 
 " ---------------------------------------------------------------------------
 " Mappings
 " ---------------------------------------------------------------------------
 
+let mapleader = ","
+
 " Remap ; to :
 nnoremap ; :
+nmap :E :e
+nmap :W :w
+nmap :Q :q
 
 " Open new tab
 nmap <silent><leader>t :tabnew<CR>
@@ -110,96 +75,54 @@ nmap <silent><leader>t :tabnew<CR>
 nmap <leader>s :%s//<left>
 vmap <leader>s :s//<left>
 
+" Copy to osx clipboard
+vnoremap <C-c> "*y<CR><Paste>
+vnoremap <C-c> "*y<CR>
+vnoremap y "*y<CR>
+nnoremap Y "*Y<CR>
+
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>rv :so $MYVIMRC<CR>
+nmap <silent> <leader>rv :source $MYVIMRC<CR>
 
-nmap :E :e
-nmap :W :w
+" Better window navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
-if exists(':tnoremap')
-  tnoremap <C-H> <C-\><C-N><C-W>h
-  tnoremap <C-J> <C-\><C-N><C-W>j
-  tnoremap <C-K> <C-\><C-N><C-W>k
-  tnoremap <C-L> <C-\><C-N><C-W>l
+" Terminal mappings
+tnoremap <C-h> <C-\><C-N><C-W>h
+tnoremap <C-j> <C-\><C-N><C-W>j
+tnoremap <C-k> <C-\><C-N><C-W>k
+tnoremap <C-l> <C-\><C-N><C-W>l
+" Use Esc to enter normal mode in term
+tnoremap <Esc> <C-\><C-n>
 
-  " Use Esc to enter normal mode in term
-  tnoremap <Esc> <C-\><C-n>
-endif
+" Move selected line / block of text in visual mode
+" shift + k to move up
+xnoremap K :move '<-2<CR>gv-gv
+" shift + j to move down
+xnoremap J :move '>+1<CR>gv-gv
 
-" Workaround for Neovim
-if has('nvim')
-  nmap <BS> <C-W>h
-endif
-
-" bind K to grep word under cursor
-nnoremap <silent> K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-vnoremap <silent> K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+" bind F to grep word under cursor
+nnoremap <silent> F :Ag <C-R><C-W><CR>
+vnoremap <silent> F :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " Show the path of the current file
 nnoremap <Leader>e :echo expand('%')<CR>
 
-" The Silver Searcher
-if executable('ag')
-  let $FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
-
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " \a to Silver Searcher
-  nnoremap <leader>a :Ag!<space>
-endif
-
-if has('nvim')
-  let $FZF_DEFAULT_OPTS=' --color=dark --color=fg:15,bg:8,hl:1,fg+:14,bg+:8,hl+:9 --color=info:7,prompt:7,pointer:12,marker:4,spinner:11,header:-1 --layout=reverse --margin=1,2'
-
-
-  let g:fzf_layout = { 'window': 'call FloatingFZF()' }
-
-  function! FloatingFZF()
-    let buf = nvim_create_buf(v:false, v:true)
-    call setbufvar(buf, '&signcolumn', 'no')
-
-    let height = float2nr(20)
-    let width = float2nr(80)
-    let horizontal = float2nr((&columns - width) / 2)
-    let vertical = 1
-
-    let opts = {
-          \ 'relative': 'editor',
-          \ 'row': vertical,
-          \ 'col': horizontal,
-          \ 'width': width,
-          \ 'height': height,
-          \ 'style': 'minimal'
-          \ }
-
-    call nvim_open_win(buf, v:true, opts)
-  endfunction
-endif
-
-
-" Map t to FZF
-nnoremap <silent> t :FZF<cr>
+" Map t to FZF's Files
+nnoremap <silent> t :Files<cr>
 
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
-"Key mapping for textmate-like indentation
-nmap <D-[> <<
-nmap <D-]> >>
-vmap <D-[> <gv
-vmap <D-]> >gv
-
-" Align blocks of text and keep them selected
+" Indent lines
+nmap < <<
+nmap > >>
 vmap < <gv
 vmap > >gv
-
-" Searching
-set hlsearch                    " highlight matches
-set incsearch                   " incremental searching
-set ignorecase                  " searches are case insensitive...
-set smartcase                   " ... unless they contain at least one capital letter
 
 " Toggle hlsearch with <leader>hs
 nmap <leader>hs :set hlsearch! hlsearch?<CR>
@@ -211,27 +134,8 @@ nnoremap <leader><space> :noh<cr>
 com! FormatJSON %!python -m json.tool
 
 " ---------------------------------------------------------------------------
-" Ember
-" ---------------------------------------------------------------------------
-
-map <leader>ec :FZF app/components<cr>
-map <leader>et :FZF app/templates<cr>
-map <leader>em :FZF app/models<cr>
-map <leader>eh :FZF app/helpers<cr>
-map <leader>eo :FZF app/routes<cr>
-map <leader>es :FZF app/services<cr>
-map <leader>ep :topleft :split package.json<cr>
-
-" ---------------------------------------------------------------------------
 " Golang configs
 " ---------------------------------------------------------------------------
-
-" For .go files, use tabs instead of spaces
-autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=2 shiftwidth=2 nolist
-
-let g:go_fmt_command = "goimports"
-let g:go_addtags_transform = "snakecase"
-let g:go_def_mapping_enabled = 0
 
 " Enhanced Go syntax highlighting
 let g:go_highlight_array_whitespace_error = 1
@@ -245,11 +149,15 @@ let g:go_highlight_methods = 1
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_build_constraints = 1
-let g:go_highlight_generate_tags = 1
+" let g:go_highlight_generate_tags = 1
 let g:go_highlight_string_spellcheck = 2
 let g:go_highlight_format_strings = 1
 let g:go_highlight_variable_declarations = 1
 let g:go_highlight_variable_assignments = 1
+let g:go_highlight_function_calls = 1
+
+" For .go files, use tabs instead of spaces
+autocmd BufNewFile,BufRead *.go,*.go.tpl setlocal noexpandtab tabstop=2 shiftwidth=2 nolist
 
 " ---------------------------------------------------------------------------
 " Syntax highlight for unsual filetypes
@@ -263,11 +171,12 @@ au BufRead,BufNewFile *.go.tpl set filetype=gotexttmpl
 " Plugins
 " ---------------------------------------------------------------------------
 
-" Polyglot
-let g:polyglot_disabled = ['handlebars', 'go']
-
-" Auto Pairs
-let g:AutoPairsOnlyBeforeClose = 1
+"-------------------------
+" FZF
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+let g:fzf_preview_window = 'right:50%'
+let $FZF_DEFAULT_OPTS='--reverse --color=bg+:-1'
+let $FZF_DEFAULT_COMMAND = "rg --files --hidden --glob '!.git/**'"
 
 "-------------------------
 " NERDTree
@@ -294,13 +203,13 @@ map <leader>/ <plug>NERDCommenterToggle<CR>
 
 "-------------------------
 " Airline
-set laststatus=2
 let g:airline_theme = "palenight"
  " let g:airline_theme = 'base16_nord'
 let g:airline_powerline_fonts = 0
 let g:airline_symbols = { 'linenr': '␤ ', 'branch': '⎇ ' }
 let g:airline_inactive_collapse=0
-let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#branch#enabled = 1 " enable branch extention
+let g:airline#extensions#ale#enabled = 1 " enable ale extention
 let g:airline_mode_map = {
       \ 'n' : 'N',
       \ 'i' : 'I',
@@ -321,25 +230,27 @@ autocmd FileType html.handlebars runtime! ftplugin/html/sparkup.vim
 let g:vim_markdown_new_list_item_indent = 2
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_fenced_languages = [
   \ 'js=javascript',
-  \ 'ts=typescript=ts',
+  \ 'ts=typescript',
   \ 'rb=ruby',
   \ 'hbs=handlebars'
   \ ]
 
 "-------------------------
 " ALE Linting
-let g:airline#extensions#ale#enabled = 1
-
+let g:ale_disable_lsp = 1 " Let Coc manage LSP
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
+let g:ale_fix_on_save = 1
 
 let g:ale_fixers = {
 \  'javascript': ['prettier'],
 \  'json': ['prettier'],
 \  'typescript': ['prettier'],
+\  'handlebars': ['prettier'],
 \  'graphql': ['prettier'],
 \  'go': ['goimports', 'gofmt'],
 \  'yaml': ['prettier'],
@@ -349,14 +260,11 @@ let g:ale_fixers = {
 \  'terraform': ['terraform']
 \}
 
-let g:ale_fix_on_save = 1
-
 "-------------------------
 " vim-js-pretty-template
 
 " Allow for named template literals to be highlighted
 " in a different syntax than the main buffer.
-" https://github.com/Quramy/vim-js-pretty-template
 function EnableTemplateLiteralColors()
   " list of named template literal tags and their syntax here
   call jspretmpl#register_tag('hbs', 'handlebars')
@@ -371,16 +279,13 @@ call EnableTemplateLiteralColors()
 " ---------------------------------------------------------------------------
 " Strip trailing whitespace
 " ---------------------------------------------------------------------------
+"
 function! <SID>StripTrailingWhitespaces()
   " Don't try to strip whitespace in non buffers
   if (!empty(&buftype))
     return
   endif
 
-  " Only strip whitespace if isn't a slim, haml or emblem file
-  if &filetype =~ 'slim' || &filetype =~ 'haml' || &filetype =~ 'emblem'
-    return
-  endif
   " Preparation: save last search, and cursor position.
   let _s=@/
   let l = line(".")
@@ -392,6 +297,16 @@ function! <SID>StripTrailingWhitespaces()
   call cursor(l, c)
 endfunction
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
+autocmd BufNewFile,BufRead *.hbs set nofixeol noeol
+
+"
+" ---------------------------------------------------------------------------
+" Autosave
+" ---------------------------------------------------------------------------
+
+" Strip trailing whitespaces then save all files on focus lost
+autocmd FocusLost * :call <SID>StripTrailingWhitespaces() | silent! wa
 
 " ---------------------------------------------------------------------------
 " Add support to go to file in JS without file extention
@@ -407,82 +322,22 @@ augroup suffixes
   endfor
 augroup END
 
-" ---------------------------------------------------------------------------
-" Autosave
-" ---------------------------------------------------------------------------
-
-" Strip trailing whitespaces then save all files on focus lost
-autocmd FocusLost * :call <SID>StripTrailingWhitespaces() | silent! wa
 
 " ---------------------------------------------------------------------------
 " GUI
 " ---------------------------------------------------------------------------
 
-if has("termguicolors") && !($TERM_PROGRAM == "Apple_Terminal")
-  set termguicolors
-endif
-
 " colorscheme
-if !exists("g:gui_oni")
-  if has('nvim')
-    set background=dark
-    colorscheme palenight
-    " colorscheme onedark
-    " colorscheme challenger_deep
-    let g:neodark#background = '#202020'
-    let g:palenight_terminal_italics=1
-  else
-    " color onedark
-    color OceanicNext
-  endif
-endif
-
-if has("gui_running")
-  set guioptions-=T " no toolbar set guioptions-=m " no menus
-  set guioptions-=r " no scrollbar on the right
-  set guioptions-=R " no scrollbar on the right
-  set guioptions-=l " no scrollbar on the left
-  set guioptions-=b " no scrollbar on the bottom
-  set guioptions-=L "no scrollbar on the nerdtree"
-
-  set guitablabel=%M%t
-
-  if has("gui_gnome")
-    set term=gnome-256color
-    set guifont=Ubuntu\ Mono\ 12
-  endif
-
-  if has("gui_mac") || has("gui_macvim")
-    set guifont=Menlo:h12
-  endif
-
-  if has("gui_win32") || has("gui_win32s")
-    set guifont=Consolas:h12
-  endif
-else
-  set novisualbell " Mute error bell
-
-  if $COLORTERM == 'gnome-terminal'
-    set term=gnome-256color
-  else
-    if $TERM == 'xterm'
-      set term=xterm-256color
-    endif
-  endif
-endif
+set background=dark
+colorscheme deus
+" colorscheme palenight
+" colorscheme challenger_deep
+" colorscheme onedark
+let g:neodark#background = '#202020'
+let g:palenight_terminal_italics=1
 
 " listchars only for slim and haml files
 autocmd BufNewFile,BufRead *.slim,*.haml,*.emblem setlocal list listchars=extends:>,precedes:<,eol:¬
-
-" ---------------------------------------------------------------------------
-" Column color
-" ---------------------------------------------------------------------------
-
-set colorcolumn=80
-" highlight ColorColumn guibg=#1e1e1e
-highlight clear SignColumn
-
-set fillchars+=vert:│
 
 " ---------------------------------------------------------------------------
 " SuperTab & Auto Complete
@@ -490,17 +345,16 @@ set fillchars+=vert:│
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
 function! s:AcceptAutoCompleteOrReturnNewline()
-    if pumvisible()
-        return "\<C-y>"
-    else
-        return "\<C-g>u\<CR>"
-    endif
+  if pumvisible()
+    return "\<C-y>"
+  else
+    return "\<C-g>u\<CR>"
+  endif
 endfunction
 inoremap <silent> <CR> <C-r>=<SID>AcceptAutoCompleteOrReturnNewline()<CR>
 
 " ---------------------------------------------------------------------------
 " coc.nvim
-" https://github.com/neoclide/coc.nvim
 " ---------------------------------------------------------------------------
 
 " Default Extensions:
@@ -544,8 +398,8 @@ function! s:show_documentation()
   endif
 endfunction
 
-" Use sh for show documentation in preview window
-nnoremap <silent> sh :call <SID>show_documentation()<CR>
+" Use K for show documentation in preview window
+nmap <silent> K :call <SID>show_documentation()<CR>
 
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
@@ -554,8 +408,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Remap for format selected region
-vmap <leader>F  <Plug>(coc-format-selected)
-nmap <leader>F  <Plug>(coc-format-selected)
+vmap <leader>F <Plug>(coc-format-selected)
+nmap <leader>F <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -596,8 +450,8 @@ endfunc
 " Load custom configs
 " ---------------------------------------------------------------------------
 
-if filereadable(expand("$HOME/") . '.vimrc.local')
-  source ~/.vimrc.local
+if filereadable(expand("$HOME/.config/nvim") . 'init.local.vim')
+  source ~/.config/nvim/init.local.vim
 endif
 
 " ---------------------------------------------------------------------------
