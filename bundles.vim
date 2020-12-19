@@ -64,6 +64,7 @@ Plug 'KeitaNakamura/neodark.vim'
 Plug 'mhartington/oceanic-next'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'ajmwagar/vim-deus'
 
 "--------------------------
 " snippets

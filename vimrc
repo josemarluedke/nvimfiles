@@ -298,6 +298,8 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
+autocmd BufNewFile,BufRead *.hbs set nofixeol noeol
+
 "
 " ---------------------------------------------------------------------------
 " Autosave
@@ -327,7 +329,8 @@ augroup END
 
 " colorscheme
 set background=dark
-colorscheme palenight
+colorscheme deus
+" colorscheme palenight
 " colorscheme challenger_deep
 " colorscheme onedark
 let g:neodark#background = '#202020'
