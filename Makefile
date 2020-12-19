@@ -5,7 +5,7 @@ install:
 	@echo "*******************************************************************"
 	@echo "All done!"
 	@echo "Be sure to checkout the helpful links in the README"
-	@echo "GitHub: https://github.com/josemarluedke/vimfiles"
+	@echo "GitHub: https://github.com/josemarluedke/nvimfiles"
 	@echo "*******************************************************************"
 
 .PHONY: update

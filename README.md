@@ -1,4 +1,4 @@
-# Vimfiles
+# Nvimfiles
 
 Support for JavaScript, TypeScript, Ember, React, Golang, Ruby, Elixir, Git,
 Sparkup, Sass, JSX, Markdown, and more with nice color schemes.
@@ -8,7 +8,7 @@ Sparkup, Sass, JSX, Markdown, and more with nice color schemes.
 ## Quick Install
 
 ```
-sh -c "$(curl -fsSL https://raw.github.com/josemarluedke/vimfiles/master/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/josemarluedke/nvimfiles/master/install.sh)"
 ```
 
 Please also check [install dependencies](#install-dependencies) section.
@@ -161,7 +161,7 @@ Lean & mean status/tabline for vim that's light as air
 
 ### [Plug](https://github.com/junegunn/vim-plug)
 
-Plugin manager and part of the reason why my vimfiles are so compact
+Plugin manager and part of the reason why my nvimfiles are so compact
 
 ### Format JSON strings
 
@@ -192,27 +192,27 @@ noremap <right> :echoerr 'Use L to go right'<CR>
 brew install neovim
 ```
 
-### Install these vimfiles
+### Install these nvimfiles
 
 Note: You will already have a `~/.config/nvim` folder, either delete or move it.
 
     mv ~/.config/nvim ~/.config/nvim.old
-    git clone https://github.com/josemarluedke/vimfiles ~/.config/nvim
+    git clone https://github.com/josemarluedke/nvimfiles ~/.config/nvim
     cd ~/.config/nvim
     make install
 
 or run:
 
-    sh -c "$(curl -fsSL https://raw.github.com/josemarluedke/vimfiles/master/install.sh)"
+    sh -c "$(curl -fsSL https://raw.github.com/josemarluedke/nvimfiles/master/install.sh)"
 
-#### To update to the latest vimfiles
+#### To update to the latest nvimfiles
 
     cd ~/.config/nvim
     make update
 
 #### Neovim
 
-##### Symlink the vimfiles to work with neovim
+##### Symlink the nvimfiles to work with neovim
     ln -s ~/.vim ~/.config/nvim
     ln -s ~/.vim/vimrc ~/.config/nvim/init.vim
 
@@ -228,6 +228,6 @@ or run:
 
 ## Thanks for inspiration
 
-- [@krisleech](https://github.com/krisleech) for his [vimfiles](https://github.com/krisleech/vimfiles/)
-- [@wongyouth](https://github.com/wongyouth) for his [vimfiles](https://github.com/wongyouth/vimfiles)
-- [@dcrec1](https://github.com/dcrec1) for [strip trailing whitespace](https://github.com/akitaonrails/vimfiles/commit/b9299f3570653ea70870a7b208eccd553523bddb)
+- [@krisleech](https://github.com/krisleech) for his [nvimfiles](https://github.com/krisleech/nvimfiles/)
+- [@wongyouth](https://github.com/wongyouth) for his [nvimfiles](https://github.com/wongyouth/nvimfiles)
+- [@dcrec1](https://github.com/dcrec1) for [strip trailing whitespace](https://github.com/akitaonrails/nvimfiles/commit/b9299f3570653ea70870a7b208eccd553523bddb)
