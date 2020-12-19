@@ -40,7 +40,6 @@ set updatetime=300                              " default is 4000 ms which leads
 set shortmess+=c                                " don't pass messages to |ins-completion-menu|.
 set noshowmode                                  " don't show modes at the bottom, let airline do it
 set hidden                                      " hides buffers instead of closing them
-set backspace=indent,eol,start                  " allow backspacing over everything in insert mode
 set completeopt=longest,menuone                 " show menu even if there is only one item
 set showmatch                                   " show matching brackets
 set matchpairs+=<:>                             " make < and > to match
