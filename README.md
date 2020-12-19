@@ -17,7 +17,7 @@ Please also check [install dependencies](#install-dependencies) section.
 
 ### Basic Mappings
 
-The leader key is mapped to `,`, you can change it in your `.vimrc.local`.
+The leader key is mapped to `,`, you can change it in your `~/.config/nvim/init.local.vim`.
 
 Action | Hotkey
 --------------------------------------------------------- | -----------------
@@ -174,7 +174,7 @@ this command:
 ### Disable directions key navigation
 
 If you are not used to use hjkl keys to navigate throught files, I recommend adding the
-following code to your `~/.vimrc.local` to disable navigation using the
+following code to your `~/.config/nvim/init.local.vim` to disable navigation using the
 arrows keys. This will make you use hjkl keys instead of arrows.
 
 ```
@@ -194,11 +194,11 @@ brew install neovim
 
 ### Install these vimfiles
 
-Note: You will already have a `~/.vim` folder, either delete or move it.
+Note: You will already have a `~/.config/nvim` folder, either delete or move it.
 
-    mv ~/.vim ~/.vim.old
-    git clone https://github.com/josemarluedke/vimfiles ~/.vim
-    cd ~/.vim
+    mv ~/.config/nvim ~/.config/nvim.old
+    git clone https://github.com/josemarluedke/vimfiles ~/.config/nvim
+    cd ~/.config/nvim
     rake install
 
 or run:
@@ -207,7 +207,7 @@ or run:
 
 #### To update to the latest vimfiles
 
-    cd ~/.vim
+    cd ~/.config/nvim
     rake update
 
 #### Neovim

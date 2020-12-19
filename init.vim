@@ -450,8 +450,8 @@ endfunc
 " Load custom configs
 " ---------------------------------------------------------------------------
 
-if filereadable(expand("$HOME/") . '.vimrc.local')
-  source ~/.vimrc.local
+if filereadable(expand("$HOME/.config/nvim") . 'init.local.vim')
+  source ~/.config/nvim/init.local.vim
 endif
 
 " ---------------------------------------------------------------------------
