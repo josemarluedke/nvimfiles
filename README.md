@@ -199,7 +199,7 @@ Note: You will already have a `~/.config/nvim` folder, either delete or move it.
     mv ~/.config/nvim ~/.config/nvim.old
     git clone https://github.com/josemarluedke/vimfiles ~/.config/nvim
     cd ~/.config/nvim
-    rake install
+    make install
 
 or run:
 
@@ -208,7 +208,7 @@ or run:
 #### To update to the latest vimfiles
 
     cd ~/.config/nvim
-    rake update
+    make update
 
 #### Neovim
 
