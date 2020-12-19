@@ -251,6 +251,7 @@ let g:ale_fixers = {
 \  'javascript': ['prettier'],
 \  'json': ['prettier'],
 \  'typescript': ['prettier'],
+\  'handlebars': ['prettier'],
 \  'graphql': ['prettier'],
 \  'go': ['goimports', 'gofmt'],
 \  'yaml': ['prettier'],
