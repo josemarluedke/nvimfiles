@@ -4,11 +4,9 @@
   "diagnostic.virtualTextPrefix": " ☵ ",
   "diagnostic.enableMessage": "never",
   "suggest.enablePreview": true,
-
   // TS server
   "tsserver.implicitProjectConfig.experimentalDecorators": true,
   "javascript.suggestionActions.enabled": false,
-
   // Git
   "git.addedSign.text": "•",
   "git.changedSign.text": "›",
@@ -19,7 +17,6 @@
   "git.removedSign.hlGroup": "GitGutterDelete",
   "git.topRemovedSign.hlGroup": "GitGutterDelete",
   "git.changeRemovedSign.hlGroup": "GitGutterChangeDelete",
-
   // TailwindCSS
   "tailwindCSS.htmlLanguages": [
     "handlebars",
@@ -32,5 +29,9 @@
     "html",
     "handlebars",
     "html.handlebars"
-  ]
+  ],
+  "go.goplsOptions": {
+    "usePlaceholders": true,
+    "completeUnimported": true
+  }
 }
