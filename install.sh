@@ -13,4 +13,4 @@ for i in .config/nvim; do
   fi
 done
 
-git clone https://github.com/josemarluedke/vimfiles ~/.config/nvim && cd ~/.config/nvim && rake install
+git clone https://github.com/josemarluedke/vimfiles ~/.config/nvim && cd ~/.config/nvim && make install
