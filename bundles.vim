@@ -1,7 +1,7 @@
-if !isdirectory(expand("~/.vim/plug/.git"))
-  !git clone git://github.com/junegunn/vim-plug.git ~/.vim/plug
-        \ && mkdir ~/.vim/autoload
-        \ && cp ~/.vim/plug/plug.vim ~/.vim/autoload/plug.vim
+if !isdirectory(expand("~/.config/nvim/plug/.git"))
+  !git clone git://github.com/junegunn/vim-plug.git ~/.config/nvim/plug
+        \ && mkdir ~/.config/nvim/autoload
+        \ && cp ~/.config/nvim/plug/plug.vim ~/.config/nvim/autoload/plug.vim
 endif
 
 call plug#begin('~/.vim/plugged')
