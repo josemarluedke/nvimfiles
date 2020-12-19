@@ -27,6 +27,7 @@
     "html",
     "markdown"
   ],
+  "tailwindCSS.headwind.runOnSave": false,
   "html.filetypes": [
     "html",
     "handlebars",
