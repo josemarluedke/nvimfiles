@@ -329,7 +329,9 @@ augroup END
 
 " colorscheme
 set background=dark
-colorscheme deus
+" colorscheme deus
+colorscheme night-owl
+
 " colorscheme palenight
 " colorscheme challenger_deep
 " colorscheme onedark

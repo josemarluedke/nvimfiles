@@ -61,10 +61,10 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'chriskempson/base16-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'KeitaNakamura/neodark.vim'
-Plug 'mhartington/oceanic-next'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'ajmwagar/vim-deus'
+Plug 'haishanh/night-owl.vim'
 
 "--------------------------
 " snippets
