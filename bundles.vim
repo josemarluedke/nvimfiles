@@ -4,7 +4,7 @@ if !isdirectory(expand("~/.config/nvim/plug/.git"))
         \ && cp ~/.config/nvim/plug/plug.vim ~/.config/nvim/autoload/plug.vim
 endif
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 "--------------------------
 " tpope plugins
