@@ -372,6 +372,7 @@ let g:coc_global_extensions = [
       \ "coc-tailwindcss",
       \ "coc-ember",
       \ "coc-git",
+      \ "coc-graphql",
       \ "coc-yank"]
 
 " Use <c-space> for trigger completion.

@@ -33,5 +33,9 @@
   "go.goplsOptions": {
     "usePlaceholders": true,
     "completeUnimported": true
-  }
+  },
+  "graphql.filetypes": [
+    "graphql"
+  ],
+  "graphql.watcherPattern": "**/*.{graphql,gql}"
 }
