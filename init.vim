@@ -148,9 +148,6 @@ require'nvim-treesitter.configs'.setup {
       ["doctype"] = "Comment",
     },
   },
-  indent = {
-    enable = true
-  },
 }
 EOF
 
