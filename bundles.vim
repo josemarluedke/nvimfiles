@@ -4,7 +4,7 @@ if !isdirectory(expand("~/.config/nvim/plug/.git"))
         \ && cp ~/.config/nvim/plug/plug.vim ~/.config/nvim/autoload/plug.vim
 endif
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 "--------------------------
 " tpope plugins
@@ -33,8 +33,10 @@ Plug 'AndrewRadev/ember_tools.vim'
 Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'ervandew/supertab'
-Plug 'Quramy/vim-js-pretty-template'
+" Plug 'Quramy/vim-js-pretty-template'
 Plug 'gregsexton/MatchTag'
+Plug 'godlygeek/tabular',                 { 'for': 'markdown' } " Needed for vim-markdown
+Plug 'plasticboy/vim-markdown',           { 'for': 'markdown' }
 
 "--------------------------
 " tools to explore the file system
@@ -47,13 +49,8 @@ Plug 'junegunn/fzf.vim'
 "--------------------------
 " filetype syntax highlight
 "--------------------------
-" Plug 'nvim-treesitter/nvim-treesitter'
-" Polyglot
-let g:polyglot_disabled = ['handlebars']
-Plug 'sheerun/vim-polyglot'
-
-Plug 'joukevandermaas/vim-ember-hbs'
-Plug 'hail2u/vim-css3-syntax'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Plug 'joukevandermaas/vim-ember-hbs'
 
 "--------------------------
 " color scheme
@@ -61,10 +58,10 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'chriskempson/base16-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'KeitaNakamura/neodark.vim'
-Plug 'mhartington/oceanic-next'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'ajmwagar/vim-deus'
+Plug 'haishanh/night-owl.vim'
 
 "--------------------------
 " snippets

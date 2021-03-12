@@ -56,6 +56,8 @@ set synmaxcol=180
 let spellable = ['markdown', 'gitcommit', 'txt', 'text', 'liquid', 'rst']
 autocmd BufEnter * if index(spellable, &ft) < 0 | set nospell | else | set spell | endif
 
+let g:vimsyn_embed = 'lPr' " enable embedded script highlighting in vimscript
+
 " ---------------------------------------------------------------------------
 " Mappings
 " ---------------------------------------------------------------------------
@@ -134,6 +136,44 @@ nnoremap <leader><space> :noh<cr>
 com! FormatJSON %!python -m json.tool
 
 " ---------------------------------------------------------------------------
+" TreeSitter
+" ---------------------------------------------------------------------------
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "all",
+  highlight = {
+    enable = true,
+
+    custom_captures = {
+      ["doctype"] = "Comment",
+    },
+  },
+}
+EOF
+
+" TreeSitter for Glimmer Handlbars
+" ---------------------------------------------------------------------------
+au BufNewFile,BufRead ,*.hbs set filetype=html.handlebars " syntax=hbs
+
+lua <<EOF
+local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+parser_config.glimmer = {
+  install_info = {
+    url = "~/code/oss/tree-sitter-glimmer",
+    files = {
+      "src/parser.c",
+      "src/scanner.c",
+    },
+  },
+  filetype = "hbs",
+  used_by = {
+    "handlebars",
+    "html.handlebars",
+  }
+}
+EOF
+
+" ---------------------------------------------------------------------------
 " Golang configs
 " ---------------------------------------------------------------------------
 
@@ -160,12 +200,13 @@ let g:go_highlight_function_calls = 1
 autocmd BufNewFile,BufRead *.go,*.go.tpl setlocal noexpandtab tabstop=2 shiftwidth=2 nolist
 
 " ---------------------------------------------------------------------------
-" Syntax highlight for unsual filetypes
+" Syntax highlight for unsual filetypes or incorect
 " ---------------------------------------------------------------------------
 
 au BufRead,BufNewFile nginx.conf if &ft == '' | setfiletype nginx | endif
 au BufRead,BufNewFile Dockerfile.dev if &ft == '' | setfiletype Dockerfile | endif
 au BufRead,BufNewFile *.go.tpl set filetype=gotexttmpl
+au BufNewFile,BufRead *.gql,*.graphql set filetype=graphql
 
 " ---------------------------------------------------------------------------
 " Plugins
@@ -260,22 +301,6 @@ let g:ale_fixers = {
 \  'terraform': ['terraform']
 \}
 
-"-------------------------
-" vim-js-pretty-template
-
-" Allow for named template literals to be highlighted
-" in a different syntax than the main buffer.
-function EnableTemplateLiteralColors()
-  " list of named template literal tags and their syntax here
-  call jspretmpl#register_tag('hbs', 'handlebars')
-  call jspretmpl#register_tag('gql', 'graphql')
-
-  autocmd FileType javascript JsPreTmpl
-  autocmd FileType typescript JsPreTmpl
-endfunction
-
-call EnableTemplateLiteralColors()
-
 " ---------------------------------------------------------------------------
 " Strip trailing whitespace
 " ---------------------------------------------------------------------------
@@ -329,7 +354,9 @@ augroup END
 
 " colorscheme
 set background=dark
-colorscheme deus
+" colorscheme deus
+colorscheme night-owl
+
 " colorscheme palenight
 " colorscheme challenger_deep
 " colorscheme onedark
@@ -372,6 +399,7 @@ let g:coc_global_extensions = [
       \ "coc-tailwindcss",
       \ "coc-ember",
       \ "coc-git",
+      \ "coc-graphql",
       \ "coc-yank"]
 
 " Use <c-space> for trigger completion.
