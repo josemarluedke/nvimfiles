@@ -153,25 +153,7 @@ EOF
 
 " TreeSitter for Glimmer Handlbars
 " ---------------------------------------------------------------------------
-au BufNewFile,BufRead ,*.hbs set filetype=html.handlebars " syntax=hbs
-
-lua <<EOF
-local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
-parser_config.glimmer = {
-  install_info = {
-    url = "~/code/oss/tree-sitter-glimmer",
-    files = {
-      "src/parser.c",
-      "src/scanner.c",
-    },
-  },
-  filetype = "hbs",
-  used_by = {
-    "handlebars",
-    "html.handlebars",
-  }
-}
-EOF
+autocmd BufNewFile,BufRead *.hbs setfiletype handlebars
 
 " ---------------------------------------------------------------------------
 " Golang configs
