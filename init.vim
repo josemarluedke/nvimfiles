@@ -151,10 +151,6 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
-" TreeSitter for Glimmer Handlbars
-" ---------------------------------------------------------------------------
-autocmd BufNewFile,BufRead *.hbs setfiletype handlebars
-
 " ---------------------------------------------------------------------------
 " Golang configs
 " ---------------------------------------------------------------------------
@@ -189,6 +185,9 @@ au BufRead,BufNewFile nginx.conf if &ft == '' | setfiletype nginx | endif
 au BufRead,BufNewFile Dockerfile.dev if &ft == '' | setfiletype Dockerfile | endif
 au BufRead,BufNewFile *.go.tpl set filetype=gotexttmpl
 au BufNewFile,BufRead *.gql,*.graphql set filetype=graphql
+au BufNewFile,BufRead *.hbs setfiletype handlebars
+au BufNewFile,BufRead *.gts setfiletype typescript.tsx
+au BufNewFile,BufRead *.gjs setfiletype javascript
 
 " ---------------------------------------------------------------------------
 " Plugins
