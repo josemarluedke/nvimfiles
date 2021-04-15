@@ -8,7 +8,7 @@ Sparkup, Sass, JSX, Markdown, and more with nice color schemes.
 ## Quick Install
 
 ```
-sh -c "$(curl -fsSL https://raw.github.com/josemarluedke/nvimfiles/master/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/josemarluedke/nvimfiles/main/install.sh)"
 ```
 
 Please also check [install dependencies](#install-dependencies) section.
@@ -203,7 +203,7 @@ Note: You will already have a `~/.config/nvim` folder, either delete or move it.
 
 or run:
 
-    sh -c "$(curl -fsSL https://raw.github.com/josemarluedke/nvimfiles/master/install.sh)"
+    sh -c "$(curl -fsSL https://raw.github.com/josemarluedke/nvimfiles/main/install.sh)"
 
 #### To update to the latest nvimfiles
 

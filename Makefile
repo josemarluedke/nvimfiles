@@ -11,7 +11,7 @@ install:
 .PHONY: update
 update:
 	@echo "Updating to latest and greatest..\n"
-	@(which git-up > /dev/null && git-up) || git pull origin master
+	@(which git-up > /dev/null && git-up) || git pull origin main
 	@echo "Updating Bundles\n"
 	@nvim  -c PlugClean! -c PlugUpgrade -c PlugUpdate
 	@echo "*******************************************************************"
