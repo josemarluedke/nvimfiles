@@ -16,4 +16,6 @@ require('lsp.efm')
 
 -- Plugin configs
 
-require('plugins.compe')
+require('plugins.nvim-compe')
+require('plugins.telescope')
+

@@ -56,7 +56,7 @@ vim.o.autoread = true -- auto read file changes
 vim.o.timeoutlen = 500
 vim.o.ttimeoutlen = 0
 vim.o.updatetime = 300 -- default is 4000 ms which leads to noticeable delays and poor user experience.
-vim.o.completeopt = "longest,menuone" -- show menu even if there is only one item
+vim.o.completeopt = "menuone,noselect" -- show menu
 
 vim.o.showmode = false -- don't show modes at the bottom, let airline do it
 vim.o.showmatch = true -- show matching brackets
