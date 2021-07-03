@@ -5,3 +5,4 @@ plugged/
 .init.vim-rplugin~
 init.local.vim
 queries/
+plugin/
