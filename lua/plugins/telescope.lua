@@ -2,8 +2,8 @@ local actions = require('telescope.actions')
 require('telescope').setup {
   defaults = {
     file_sorter = require('telescope.sorters').get_fzy_sorter,
-    prompt_prefix = " ",
-    selection_caret = " ",
+    prompt_prefix = ' ',
+    selection_caret = ' ',
     color_devicons = true,
 
     file_previewer = require('telescope.previewers').vim_buffer_cat.new,
@@ -12,10 +12,10 @@ require('telescope').setup {
 
     mappings = {
       i = {
-        ["<esc>"] = actions.close,
-        ["<CR>"] = actions.select_default + actions.center,
-        ["<C-j>"] = actions.move_selection_next,
-        ["<C-k>"] = actions.move_selection_previous
+        ['<esc>'] = actions.close,
+        ['<CR>'] = actions.select_default + actions.center,
+        ['<C-j>'] = actions.move_selection_next,
+        ['<C-k>'] = actions.move_selection_previous
       }
     }
   },

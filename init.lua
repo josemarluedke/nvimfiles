@@ -4,6 +4,7 @@ require('plugins')
 require('vim-settings')
 require('colors')
 require('key-map')
+require('auto')
 
 -- LSP
 require('lsp')
@@ -18,4 +19,6 @@ require('lsp.efm')
 
 require('plugins.nvim-compe')
 require('plugins.telescope')
+require('plugins.treesitter')
+require('plugins.lspsaga')
 

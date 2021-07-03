@@ -9,17 +9,17 @@ local _if = function(bool, a, b)
 end
 
 local format_disabled_var = function()
-  return string.format("format_disabled_%s", vim.bo.filetype)
+  return string.format('format_disabled_%s', vim.bo.filetype)
 end
 local format_options_var = function()
-  return string.format("format_options_%s", vim.bo.filetype)
+  return string.format('format_options_%s', vim.bo.filetype)
 end
 
 local format_options_prettier = {
   tabWidth = 2,
   singleQuote = true,
-  trailingComma = "all",
-  configPrecedence = "prefer-file"
+  trailingComma = 'all',
+  configPrecedence = 'prefer-file'
 }
 
 vim.g.format_options_typescript = format_options_prettier

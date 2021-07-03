@@ -13,7 +13,7 @@ table.insert(M, stylelint)
 
 local prettier = {
   formatCommand = string.format(
-      "prettier --stdin --stdin-filepath ${INPUT} --tab-width %s", TabSize),
+      'prettier --stdin --stdin-filepath ${INPUT} --tab-width %s', TabSize),
   formatStdin = true
 }
 

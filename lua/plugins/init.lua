@@ -22,7 +22,7 @@ return require('packer').startup(function(use)
   use 'glepnir/lspsaga.nvim'
   use 'kabouzeid/nvim-lspinstall'
   -- Autocomplete
-  use "hrsh7th/nvim-compe"
+  use 'hrsh7th/nvim-compe'
 
   --  use 'SirVer/ultisnips'
 
