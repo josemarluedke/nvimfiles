@@ -37,7 +37,7 @@ return require('packer').startup(function(use)
   ---- Convenience
   -- use 'folke/which-key.nvim'
   -- use 'windwp/nvim-autopairs'
-  -- use 'windwp/nvim-ts-autotag'
+  use 'windwp/nvim-ts-autotag'
   -- use 'blackCauldron7/surround.nvim'
   use 'terrortylor/nvim-comment'
 
@@ -62,7 +62,7 @@ return require('packer').startup(function(use)
   -- Theming
   use 'kyazdani42/nvim-web-devicons'
   use 'glepnir/galaxyline.nvim'
-  -- use 'romgrk/barbar.nvim'
+  use 'romgrk/barbar.nvim'
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   -- use 'glepnir/dashboard-nvim'
   use 'theniceboy/nvim-deus'

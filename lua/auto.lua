@@ -10,6 +10,13 @@ require('utils').define_augroups({
     {'BufNewFile,BufRead', '*.gql,*.graphql', 'set filetype=graphql'},
     {'BufNewFile,BufRead', '*.gts', 'setfiletype typescript.tsx'},
     {'BufNewFile,BufRead', '*.gjs', 'setfiletype javascript'}
+  },
+
+  yank = {
+    {
+      'TextYankPost', '*',
+      'lua require("vim.highlight").on_yank({higroup = "Search", timeout = 300})'
+    }
   }
 })
 
