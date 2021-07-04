@@ -22,4 +22,5 @@ require('plugins.nvim-compe')
 require('plugins.telescope')
 require('plugins.treesitter')
 require('plugins.lspsaga')
-
+require('plugins.comment')
+require('plugins.galaxyline')

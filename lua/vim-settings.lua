@@ -28,7 +28,7 @@ vim.o.tabstop = TabSize
 vim.o.shiftwidth = TabSize
 vim.o.softtabstop = TabSize
 
-vim.o.encoding = 'utf-8' -- text encoding
+-- vim.o.encoding = 'utf-8' -- text encoding
 vim.wo.wrap = false -- don't wrap text
 vim.wo.number = true -- enable numbers on the left
 vim.wo.relativenumber = true -- current line is 0

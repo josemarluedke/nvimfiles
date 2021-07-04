@@ -33,21 +33,24 @@ return require('packer').startup(function(use)
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
   }
-  use 'nvim-telescope/telescope-fzy-native.nvim'
-  use 'nvim-telescope/telescope-media-files.nvim'
 
   ---- Convenience
   -- use 'folke/which-key.nvim'
   -- use 'windwp/nvim-autopairs'
-  -- use 'terrortylor/nvim-comment'
+  -- use 'windwp/nvim-ts-autotag'
+  -- use 'blackCauldron7/surround.nvim'
+  use 'terrortylor/nvim-comment'
+
+  use 'norcalli/nvim-colorizer.lua'
+  -- nope
   -- use 'kevinhwang91/nvim-bqf'
   -- use {'iamcco/markdown-preview.nvim', run = ':call mkdp#util#install()'}
-  -- use 'norcalli/nvim-colorizer.lua'
-  -- use 'blackCauldron7/surround.nvim'
-  -- use 'akinsho/nvim-toggleterm.lua'
-  -- use 'windwp/nvim-ts-autotag'
   -- use 'bfredl/nvim-ipy'
+  --
   -- use {'kkoomen/vim-doge', run = ':call doge#install()'}
+  --
+  -- maybe
+  -- use 'akinsho/nvim-toggleterm.lua'
   use {
     'lewis6991/gitsigns.nvim',
     requires = {'nvim-lua/plenary.nvim'},
@@ -56,16 +59,9 @@ return require('packer').startup(function(use)
     end
   }
 
-  ---- Debugging
-  -- use 'mfussenegger/nvim-dap'
-  -- use 'rcarriga/nvim-dap-ui' -- temporary while nvim-dap lacks a built-in ui
-  -- use 'mfussenegger/nvim-dap-python'
-  -- use {'michaelb/sniprun', run = 'bash ./install.sh'}
-  -- use 'meain/vim-printer'
-
   -- Theming
-  -- use 'kyazdani42/nvim-web-devicons'
-  -- use 'glepnir/galaxyline.nvim'
+  use 'kyazdani42/nvim-web-devicons'
+  use 'glepnir/galaxyline.nvim'
   -- use 'romgrk/barbar.nvim'
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   -- use 'glepnir/dashboard-nvim'
