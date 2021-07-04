@@ -2,7 +2,9 @@ local map = vim.api.nvim_set_keymap
 
 vim.g.mapleader = ','
 
+-- NvimTree
 map('n', '<leader>m', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
+map('n', '<leader>n', ':NvimTreeFindFile<CR>', {noremap = true, silent = true})
 
 -- LSP
 map('n', 'K', ':Lspsaga hover_doc<CR>', {noremap = true, silent = true})
