@@ -16,6 +16,7 @@ require('lsp.lua')
 require('lsp.vim')
 require('lsp.efm')
 require('lsp.tailwindcss')
+require('lsp.graphql')
 
 -- Plugin configs
 
