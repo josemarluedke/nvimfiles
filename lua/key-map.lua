@@ -44,3 +44,6 @@ map('n', 't', ':Telescope find_files<CR>', {noremap = true, silent = true})
 
 -- Misc
 map('n', '<leader><space>', ':noh<CR>', {noremap = true, silent = true})
+
+-- BarBar
+map('n', '<C-s>', ':BufferPick<CR>', {noremap = true, silent = true})

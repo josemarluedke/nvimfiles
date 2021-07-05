@@ -15,6 +15,7 @@ require('lsp.json')
 require('lsp.lua')
 require('lsp.vim')
 require('lsp.efm')
+require('lsp.tailwindcss')
 
 -- Plugin configs
 
