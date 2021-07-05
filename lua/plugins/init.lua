@@ -36,7 +36,7 @@ return require('packer').startup(function(use)
 
   ---- Convenience
   -- use 'folke/which-key.nvim'
-  -- use 'windwp/nvim-autopairs'
+  use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
   -- use 'blackCauldron7/surround.nvim'
   use 'terrortylor/nvim-comment'
