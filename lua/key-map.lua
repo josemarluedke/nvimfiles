@@ -47,3 +47,7 @@ map('n', '<leader><space>', ':noh<CR>', {noremap = true, silent = true})
 
 -- BarBar
 map('n', '<C-s>', ':BufferPick<CR>', {noremap = true, silent = true})
+
+-- Replace
+map('n', '<leader>s', ':%s//<left>', {noremap = true})
+map('v', '<leader>s', ':s//<left>', {noremap = true})
