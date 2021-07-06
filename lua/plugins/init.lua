@@ -25,7 +25,6 @@ return require('packer').startup(function(use)
   use 'hrsh7th/nvim-compe'
 
   --  use 'SirVer/ultisnips'
-
   -- Navigation
   use 'kyazdani42/nvim-tree.lua'
 
@@ -34,19 +33,13 @@ return require('packer').startup(function(use)
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
   }
 
-  ---- Convenience
+  -- Convenience
   -- use 'folke/which-key.nvim'
   use 'windwp/nvim-autopairs'
-  use 'windwp/nvim-ts-autotag'
   -- use 'blackCauldron7/surround.nvim'
   use 'terrortylor/nvim-comment'
 
   use 'norcalli/nvim-colorizer.lua'
-  -- nope
-  -- use 'kevinhwang91/nvim-bqf'
-  -- use {'iamcco/markdown-preview.nvim', run = ':call mkdp#util#install()'}
-  -- use 'bfredl/nvim-ipy'
-  --
   -- use {'kkoomen/vim-doge', run = ':call doge#install()'}
   --
   -- maybe
@@ -59,9 +52,10 @@ return require('packer').startup(function(use)
     end
   }
 
-  ----- TreeSitter
+  -- TreeSitter
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use 'JoosepAlviste/nvim-ts-context-commentstring'
+  use 'windwp/nvim-ts-autotag'
 
   -- Theming
   use 'kyazdani42/nvim-web-devicons'
@@ -69,7 +63,7 @@ return require('packer').startup(function(use)
   use 'romgrk/barbar.nvim'
   -- use 'glepnir/dashboard-nvim'
   use 'theniceboy/nvim-deus'
-  -- use 'arcticicestudio/nord-vim'
-  -- use 'rakr/vim-two-firewatch'
-  -- use 'sainnhe/edge'
+  use 'haishanh/night-owl.vim'
+  use 'sainnhe/edge'
+  use 'sainnhe/sonokai'
 end)

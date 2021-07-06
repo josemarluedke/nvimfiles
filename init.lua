@@ -1,6 +1,6 @@
 vim.cmd('luafile ~/.config/nvim/settings.lua')
-require('plugins')
 
+require('plugins')
 require('vim-settings')
 require('colors')
 require('key-map')
@@ -20,7 +20,6 @@ require('lsp.graphql')
 require('lsp.ember')
 
 -- Plugin configs
-
 require('plugins.nvim-compe')
 require('plugins.telescope')
 require('plugins.treesitter')
@@ -29,3 +28,4 @@ require('plugins.comment')
 require('plugins.galaxyline')
 require('plugins.autopairs')
 require('plugins.nvim-tree')
+require('plugins.colorizer')

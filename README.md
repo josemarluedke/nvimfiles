@@ -225,3 +225,12 @@ or run:
 - [@krisleech](https://github.com/krisleech) for his [nvimfiles](https://github.com/krisleech/nvimfiles/)
 - [@wongyouth](https://github.com/wongyouth) for his [nvimfiles](https://github.com/wongyouth/nvimfiles)
 - [@dcrec1](https://github.com/dcrec1) for [strip trailing whitespace](https://github.com/akitaonrails/nvimfiles/commit/b9299f3570653ea70870a7b208eccd553523bddb)
+
+
+
+
+
+
+--- New STUFF
+
+https://github.com/epk/SF-Mono-Nerd-Font
