@@ -59,11 +59,14 @@ return require('packer').startup(function(use)
     end
   }
 
+  ----- TreeSitter
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
+
   -- Theming
   use 'kyazdani42/nvim-web-devicons'
   use 'glepnir/galaxyline.nvim'
   use 'romgrk/barbar.nvim'
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   -- use 'glepnir/dashboard-nvim'
   use 'theniceboy/nvim-deus'
   -- use 'arcticicestudio/nord-vim'
