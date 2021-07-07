@@ -4,8 +4,5 @@ require'nvim-treesitter.configs'.setup {
   highlight = {enable = true},
   indent = {enable = true},
   autotag = {enable = true}, -- requires windwp/nvim-ts-autotag
-  context_commentstring = {
-    enable = true,
-    config = {handlebars = '{{! %s }}', graphql = '# %s', glimmer = '{{! %s }}'}
-  } -- JoosepAlviste/nvim-ts-context-commentstring
+  context_commentstring = {enable = true} -- JoosepAlviste/nvim-ts-context-commentstring
 }
