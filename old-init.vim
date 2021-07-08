@@ -136,117 +136,8 @@ nnoremap <leader><space> :noh<cr>
 com! FormatJSON %!python -m json.tool
 
 " ---------------------------------------------------------------------------
-" TreeSitter
-" ---------------------------------------------------------------------------
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "all",
-  ignore_install = {"haskell"}, -- ignore due to error
-  highlight = {
-    enable = true,
-
-    custom_captures = {
-      ["doctype"] = "Comment",
-    },
-  },
-}
-EOF
-
-" ---------------------------------------------------------------------------
-" Golang configs
-" ---------------------------------------------------------------------------
-
-" Enhanced Go syntax highlighting
-let g:go_highlight_array_whitespace_error = 1
-let g:go_highlight_chan_whitespace_error = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_space_tab_error = 1
-let g:go_highlight_trailing_whitespace_error = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_build_constraints = 1
-" let g:go_highlight_generate_tags = 1
-let g:go_highlight_string_spellcheck = 2
-let g:go_highlight_format_strings = 1
-let g:go_highlight_variable_declarations = 1
-let g:go_highlight_variable_assignments = 1
-let g:go_highlight_function_calls = 1
-
-" For .go files, use tabs instead of spaces
-autocmd BufNewFile,BufRead *.go,*.go.tpl setlocal noexpandtab tabstop=2 shiftwidth=2 nolist
-
-" ---------------------------------------------------------------------------
-" Syntax highlight for unsual filetypes or incorect
-" ---------------------------------------------------------------------------
-
-au BufRead,BufNewFile nginx.conf if &ft == '' | setfiletype nginx | endif
-au BufRead,BufNewFile Dockerfile.dev if &ft == '' | setfiletype Dockerfile | endif
-au BufRead,BufNewFile *.go.tpl set filetype=gotexttmpl
-au BufNewFile,BufRead *.gql,*.graphql set filetype=graphql
-au BufNewFile,BufRead *.hbs setfiletype handlebars
-au BufNewFile,BufRead *.gts setfiletype typescript.tsx
-au BufNewFile,BufRead *.gjs setfiletype javascript
-
-" ---------------------------------------------------------------------------
 " Plugins
 " ---------------------------------------------------------------------------
-
-"-------------------------
-" FZF
-let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
-let g:fzf_preview_window = 'right:50%'
-let $FZF_DEFAULT_OPTS='--reverse --color=bg+:-1'
-let $FZF_DEFAULT_COMMAND = "rg --files --hidden --glob '!.git/**'"
-
-"-------------------------
-" NERDTree
-let NERDTreeShowBookmarks = 0
-let NERDChristmasTree = 1
-let NERDTreeWinPos = "left"
-let NERDTreeHijackNetrw = 1
-let NERDTreeQuitOnOpen = 1
-let NERDTreeWinSize = 30
-let NERDTreeChDirMode = 2
-let NERDTreeDirArrows = 1
-let NERDTreeMinimalUI=1
-
-silent! nmap <silent> <Leader>m :NERDTreeToggle<CR>
-silent! nmap <silent> <leader>f :NERDTreeFind<cr>
-
-"-------------------------
-" NERDCommenter
-
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-
-map <leader>/ <plug>NERDCommenterToggle<CR>
-
-"-------------------------
-" Airline
-let g:airline_theme = "palenight"
- " let g:airline_theme = 'base16_nord'
-let g:airline_powerline_fonts = 0
-let g:airline_symbols = { 'linenr': '␤ ', 'branch': '⎇ ' }
-let g:airline_inactive_collapse=0
-let g:airline#extensions#branch#enabled = 1 " enable branch extention
-let g:airline#extensions#ale#enabled = 1 " enable ale extention
-let g:airline_mode_map = {
-      \ 'n' : 'N',
-      \ 'i' : 'I',
-      \ 'R' : 'REPLACE',
-      \ 'v' : 'VISUAL',
-      \ 'V' : 'V-LINE',
-      \ 'c' : 'CMD   ',
-      \ '': 'V-BLCK',
-      \ }
-
-" Sparkup
-" Enable sparkup in handlebars files
-autocmd FileType handlebars runtime! ftplugin/html/sparkup.vim
-autocmd FileType html.handlebars runtime! ftplugin/html/sparkup.vim
 
 "-------------------------
 " Markdown
@@ -260,34 +151,6 @@ let g:vim_markdown_fenced_languages = [
   \ 'rb=ruby',
   \ 'hbs=handlebars'
   \ ]
-
-"-------------------------
-" ALE Linting
-let g:ale_disable_lsp = 1 " Let Coc manage LSP
-let g:ale_sign_column_always = 1
-let g:ale_sign_error = '✘'
-let g:ale_sign_warning = '⚠'
-let g:ale_fix_on_save = 1
-
-" https://github.com/mantoni/eslint_d.js
-let g:ale_javascript_eslint_executable = 'eslint_d'
-let g:ale_javascript_eslint_use_global = 1
-
-let g:ale_fixers = {
-\  'javascript': ['prettier'],
-\  'json': ['prettier'],
-\  'typescript': ['prettier'],
-\  'html': ['prettier'],
-\  'handlebars': ['prettier'],
-\  'graphql': ['prettier'],
-\  'markdown': ['prettier'],
-\  'go': ['goimports', 'gofmt'],
-\  'yaml': ['prettier'],
-\  'scss': ['prettier'],
-\  'css': ['prettier'],
-\  'elixir': ['mix_format'],
-\  'terraform': ['terraform']
-\}
 
 " ---------------------------------------------------------------------------
 " Strip trailing whitespace
@@ -321,20 +184,6 @@ autocmd BufNewFile,BufRead *.hbs set nofixeol noeol
 " Strip trailing whitespaces then save all files on focus lost
 autocmd FocusLost * :call <SID>StripTrailingWhitespaces() | silent! wa
 
-" ---------------------------------------------------------------------------
-" Add support to go to file in JS without file extention
-" ---------------------------------------------------------------------------
-augroup suffixes
-  autocmd!
-  let associations = [
-    \ ["javascript", ".js,.ts,.json,.jsx,.graphql"],
-    \ ["typescript", ".js,.ts,.json,.jsx,.graphql"]]
-
-  for ft in associations
-    execute "autocmd FileType " . ft[0] . " setlocal suffixesadd=" . ft[1]
-  endfor
-augroup END
-
 
 " ---------------------------------------------------------------------------
 " GUI
@@ -353,20 +202,6 @@ let g:palenight_terminal_italics=1
 
 " listchars only for slim and haml files
 autocmd BufNewFile,BufRead *.slim,*.haml,*.emblem setlocal list listchars=extends:>,precedes:<,eol:¬
-
-" ---------------------------------------------------------------------------
-" SuperTab & Auto Complete
-" ---------------------------------------------------------------------------
-let g:SuperTabDefaultCompletionType = "<c-n>"
-
-function! s:AcceptAutoCompleteOrReturnNewline()
-  if pumvisible()
-    return "\<C-y>"
-  else
-    return "\<C-g>u\<CR>"
-  endif
-endfunction
-inoremap <silent> <CR> <C-r>=<SID>AcceptAutoCompleteOrReturnNewline()<CR>
 
 " ---------------------------------------------------------------------------
 " coc.nvim
