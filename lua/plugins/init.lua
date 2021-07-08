@@ -78,7 +78,12 @@ return require('packer').startup(function(use)
   -- use {'kkoomen/vim-doge', run = ':call doge#install()'}
   --
   -- maybe
-  -- use 'akinsho/nvim-toggleterm.lua'
+  use {
+    'akinsho/nvim-toggleterm.lua',
+    config = function()
+      require('plugins.nvim-toggleterm')
+    end
+  }
   use {
     'lewis6991/gitsigns.nvim',
     requires = {'nvim-lua/plenary.nvim'},
