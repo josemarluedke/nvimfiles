@@ -19,27 +19,62 @@ return require('packer').startup(function(use)
 
   -- LSP
   use 'neovim/nvim-lspconfig'
-  use 'glepnir/lspsaga.nvim'
   use 'kabouzeid/nvim-lspinstall'
+  use {
+    'glepnir/lspsaga.nvim',
+    config = function()
+      require('plugins.lspsaga')
+    end
+  }
   -- Autocomplete
-  use 'hrsh7th/nvim-compe'
+  use {
+    'hrsh7th/nvim-compe',
+    config = function()
+      require('plugins.nvim-compe')
+    end
+  }
 
   --  use 'SirVer/ultisnips'
   -- Navigation
-  use 'kyazdani42/nvim-tree.lua'
+  use {
+    'kyazdani42/nvim-tree.lua',
+    config = function()
+      require('plugins.nvim-tree')
+    end
+  }
 
   use {
     'nvim-telescope/telescope.nvim',
-    requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+    requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
+    config = function()
+      require('plugins.telescope')
+    end
   }
 
   -- Convenience
   -- use 'folke/which-key.nvim'
-  use 'windwp/nvim-autopairs'
-  -- use 'blackCauldron7/surround.nvim'
-  use 'terrortylor/nvim-comment'
+  use 'tpope/vim-abolish'
+  use {
+    'windwp/nvim-autopairs',
+    config = function()
+      require('plugins.autopairs')
+    end
+  }
+  use {
+    'terrortylor/nvim-comment',
+    config = function()
+      require('plugins.nvim-comment')
+    end
+  }
 
-  use 'norcalli/nvim-colorizer.lua'
+  use 'AndrewRadev/splitjoin.vim'
+
+  use {
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+      require('plugins.colorizer')
+    end
+  }
   -- use {'kkoomen/vim-doge', run = ':call doge#install()'}
   --
   -- maybe
@@ -47,19 +82,31 @@ return require('packer').startup(function(use)
   use {
     'lewis6991/gitsigns.nvim',
     requires = {'nvim-lua/plenary.nvim'},
+
     config = function()
       require('gitsigns').setup()
     end
   }
 
   -- TreeSitter
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    config = function()
+      require('plugins.treesitter')
+    end
+  }
   use 'JoosepAlviste/nvim-ts-context-commentstring'
   use 'windwp/nvim-ts-autotag'
 
   -- Theming
   use 'kyazdani42/nvim-web-devicons'
-  use 'glepnir/galaxyline.nvim'
+  use {
+    'glepnir/galaxyline.nvim',
+    config = function()
+      require('plugins.galaxyline')
+    end
+  }
   use 'romgrk/barbar.nvim'
   -- use 'glepnir/dashboard-nvim'
   use 'theniceboy/nvim-deus'
