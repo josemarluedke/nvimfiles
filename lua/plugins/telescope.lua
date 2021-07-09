@@ -1,3 +1,5 @@
+local M = {}
+
 local actions = require('telescope.actions')
 require('telescope').setup {
   defaults = {
@@ -15,8 +17,13 @@ require('telescope').setup {
         ['<C-k>'] = actions.move_selection_previous
       }
     }
-  },
-  extensions = {
-    fzy_native = {override_generic_sorter = false, override_file_sorter = true}
   }
 }
+
+M.ag = function(folder)
+  require('telescope.builtin').live_grep({search_dirs = {folder}})
+end
+
+vim.cmd [[command! -nargs=1 -complete=dir Ag lua require'plugins.telescope'.ag(<f-args>)]]
+
+return M
