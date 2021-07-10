@@ -34,7 +34,6 @@ return require('packer').startup(function(use)
     end
   }
 
-  --  use 'SirVer/ultisnips'
   -- Navigation
   use {
     'kyazdani42/nvim-tree.lua',
@@ -54,6 +53,7 @@ return require('packer').startup(function(use)
   -- Convenience
   -- use 'folke/which-key.nvim'
   use 'tpope/vim-abolish'
+  use 'AndrewRadev/splitjoin.vim'
   use {
     'windwp/nvim-autopairs',
     config = function()
@@ -66,18 +66,12 @@ return require('packer').startup(function(use)
       require('plugins.nvim-comment')
     end
   }
-
-  use 'AndrewRadev/splitjoin.vim'
-
   use {
     'norcalli/nvim-colorizer.lua',
     config = function()
       require('plugins.colorizer')
     end
   }
-  -- use {'kkoomen/vim-doge', run = ':call doge#install()'}
-  --
-  -- maybe
   use {
     'akinsho/nvim-toggleterm.lua',
     config = function()
@@ -113,7 +107,6 @@ return require('packer').startup(function(use)
     end
   }
   use 'romgrk/barbar.nvim'
-  -- use 'glepnir/dashboard-nvim'
   use 'theniceboy/nvim-deus'
   use 'haishanh/night-owl.vim'
   use 'sainnhe/edge'

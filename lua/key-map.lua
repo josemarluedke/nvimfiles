@@ -35,6 +35,10 @@ map('n', 't', '<cmd>Telescope find_files<CR>', opts)
 
 -- Misc
 map('n', '<leader><space>', ':noh<CR>', opts)
+map('n', ';', ':', opts)
+map('n', ':E', ':e', opts)
+map('n', ':W', ':w', opts)
+map('n', ':Q', ':q', opts)
 
 -- BarBar
 map('n', '<C-s>', '<cmd>BufferPick<CR>', opts)
