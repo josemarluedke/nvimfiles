@@ -86,6 +86,13 @@ return require('packer').startup(function(use)
       require('gitsigns').setup()
     end
   }
+  use {
+    'plasticboy/vim-markdown',
+    config = function()
+      require('plugins.vim-markdown')
+    end
+  }
+  use 'nelstrom/vim-visual-star-search'
 
   -- TreeSitter
   use {

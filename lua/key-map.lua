@@ -59,3 +59,18 @@ map('t', '<C-h>', '<C-\\><C-n><C-w>h', opts)
 map('t', '<C-j>', '<C-\\><C-n><C-w>j', opts)
 map('t', '<C-k>', '<C-\\><C-n><C-w>k', opts)
 map('t', '<C-l>', '<C-\\><C-n><C-w>l', opts)
+
+-- Switch between the last two files
+map('n', '<leader><leader>', '<c-^>', opts)
+
+--  Indent lines
+map('n', '<', '<<', opts)
+map('n', '>', '>>', opts)
+map('n', '<', '><gv', opts)
+map('n', '>', '>>gv', opts)
+
+-- " Copy to osx clipboard
+-- vnoremap <C-c> "*y<CR><Paste>
+-- vnoremap <C-c> "*y<CR>
+-- vnoremap y "*y<CR>
+-- nnoremap Y "*Y<CR>
