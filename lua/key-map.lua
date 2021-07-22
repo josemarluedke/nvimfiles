@@ -66,8 +66,8 @@ map('n', '<leader><leader>', '<c-^>', opts)
 --  Indent lines
 map('n', '<', '<<', opts)
 map('n', '>', '>>', opts)
-map('n', '<', '><gv', opts)
-map('n', '>', '>>gv', opts)
+map('v', '<', '><gv', opts)
+map('v', '>', '>>gv', opts)
 
 -- " Copy to osx clipboard
 -- vnoremap <C-c> "*y<CR><Paste>
