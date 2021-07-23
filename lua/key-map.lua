@@ -29,9 +29,13 @@ map('n', '<Up>',
     '<cmd>lua require(\'lspsaga.action\').smart_scroll_with_saga(-1)<CR>', opts)
 
 -- Telescope
-map('n', '<Leader>f', '<cmd>Telescope find_files<CR>', opts)
+map('n', '<Leader>f',
+    '<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>',
+    opts)
 map('n', '<Leader>g', '<cmd>Telescope live_grep<CR>', opts)
-map('n', 't', '<cmd>Telescope find_files<CR>', opts)
+map('n', 't',
+    '<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>',
+    opts)
 
 -- Misc
 map('n', '<leader><space>', ':noh<CR>', opts)
