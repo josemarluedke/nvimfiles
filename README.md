@@ -107,7 +107,8 @@ https://github.com/epk/SF-Mono-Nerd-Font
 
 ## Thanks for inspiration
 
-- [@krisleech](https://github.com/krisleech) for his [nvimfiles](https://github.com/krisleech/nvimfiles/)
-- [@wongyouth](https://github.com/wongyouth) for his [nvimfiles](https://github.com/wongyouth/nvimfiles)
-- [@dcrec1](https://github.com/dcrec1) for [strip trailing whitespace](https://github.com/akitaonrails/nvimfiles/commit/b9299f3570653ea70870a7b208eccd553523bddb)
+- [@krisleech](https://github.com/krisleech) for his [vimfiles](https://github.com/krisleech/vimfiles/)
+- [@wongyouth](https://github.com/wongyouth) for his [vimfiles](https://github.com/wongyouth/vimfiles)
+- [@e-cal](https://github.com/e-cal) for [evim](https://github.com/e-cal/evim)
+- [@ChristianChiarulli](https://github.com/ChristianChiarulli) for [LunarVim](https://github.com/ChristianChiarulli/LunarVim)
 
