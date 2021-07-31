@@ -17,7 +17,7 @@ Please also check [install dependencies](#install-dependencies) section.
 
 ### Basic Mappings
 
-The leader key is mapped to `,`, you can change it in your `~/.config/nvim/init.local.vim`.
+The leader key is mapped to `,`.
 
 Action | Hotkey
 --------------------------------------------------------- | -----------------
