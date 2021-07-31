@@ -1,7 +1,8 @@
 .PHONY: install
 install:
-	@echo "Installing Bundles\n"
-	@nvim -c PlugInstall -c q -c q -u bundles.vim
+	@echo "Installing Packer\n"
+	@nvim -u ./init.lua --headless +'autocmd User PackerComplete sleep 100m | qall' +PackerInstall
+	@nvim -u ./init.lua --headless +'autocmd User PackerComplete sleep 100m | qall' +PackerSync
 	@echo "*******************************************************************"
 	@echo "All done!"
 	@echo "Be sure to checkout the helpful links in the README"
@@ -12,8 +13,9 @@ install:
 update:
 	@echo "Updating to latest and greatest..\n"
 	@(which git-up > /dev/null && git-up) || git pull origin main
-	@echo "Updating Bundles\n"
-	@nvim  -c PlugClean! -c PlugUpgrade -c PlugUpdate
+	@echo "Updating Packer\n"
+	@nvim -u ./init.lua --headless +'autocmd User PackerComplete sleep 100m | qall' +PackerInstall
+	@nvim -u ./init.lua --headless +'autocmd User PackerComplete sleep 100m | qall' +PackerSync
 	@echo "*******************************************************************"
 	@echo "Finished"
 	@echo "*******************************************************************"
