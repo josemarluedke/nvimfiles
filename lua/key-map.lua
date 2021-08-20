@@ -30,11 +30,11 @@ map('n', '<Up>',
 
 -- Telescope
 map('n', '<Leader>f',
-    '<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>',
+    '<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files,--glob=!.git<CR>',
     opts)
 map('n', '<Leader>g', '<cmd>Telescope live_grep<CR>', opts)
 map('n', 't',
-    '<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>',
+    '<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files,--glob=!.git<CR>',
     opts)
 
 -- Misc
