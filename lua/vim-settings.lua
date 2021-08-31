@@ -19,8 +19,7 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.hlsearch = true
 
--- Use tab to navigate in list mode
-vim.o.list = true
+vim.o.list = false
 vim.o.listchars = 'trail:»,tab:»-'
 
 -- Use 2 spaces for tab

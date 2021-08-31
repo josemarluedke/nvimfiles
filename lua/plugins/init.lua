@@ -118,4 +118,5 @@ return require('packer').startup(function(use)
   use 'haishanh/night-owl.vim'
   use 'sainnhe/edge'
   use 'sainnhe/sonokai'
+  use {'rose-pine/neovim', as = 'rose-pine'}
 end)

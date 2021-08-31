@@ -1,4 +1,4 @@
-Colorscheme = 'deus'
+Colorscheme = 'rose-pine'
 Font = 'FiraCode Nerd Font:h17'
 TabSize = 2
 
