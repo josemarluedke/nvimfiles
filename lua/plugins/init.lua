@@ -105,7 +105,7 @@ return require('packer').startup(function(use)
   use 'JoosepAlviste/nvim-ts-context-commentstring'
   use 'windwp/nvim-ts-autotag'
 
-  -- Theming
+  -- Theming, color
   use 'kyazdani42/nvim-web-devicons'
   use {
     'glepnir/galaxyline.nvim',
@@ -118,5 +118,6 @@ return require('packer').startup(function(use)
   use 'haishanh/night-owl.vim'
   use 'sainnhe/edge'
   use 'sainnhe/sonokai'
+  use 'projekt0n/github-nvim-theme'
   use {'rose-pine/neovim', as = 'rose-pine'}
 end)
