@@ -21,7 +21,8 @@ return require('packer').startup(function(use)
   use 'neovim/nvim-lspconfig'
   use 'kabouzeid/nvim-lspinstall'
   use {
-    'glepnir/lspsaga.nvim',
+    'tami5/lspsaga.nvim',
+    branch = 'nvim51',
     config = function()
       require('plugins.lspsaga')
     end
