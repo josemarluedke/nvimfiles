@@ -8,12 +8,7 @@ DATA_PATH = vim.fn.stdpath('data')
 CACHE_PATH = vim.fn.stdpath('cache')
 
 Lua = {}
-Lua.formatter = 'lua-format'
 Lua.formatLineLength = 80
-
-JS_TS = {}
-JS_TS.formatter = 'eslint'
-JS_TS.linter = 'eslint'
 
 Term = {}
 Term.shell = vim.o.shell -- or a string with the path to a shell binary
@@ -27,7 +22,6 @@ LSP.format_on_save = true
 
 LSP.Servers = {efm = {format = true}, gopls = {format = true}}
 
-local user_servers = vim.tbl_keys(LSP.Servers)
 function LSP.can_client_format(client_name)
   if LSP.Servers[client_name] == true then return true end
 
