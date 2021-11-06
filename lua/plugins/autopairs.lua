@@ -30,11 +30,14 @@ npairs.setup {
     lua = {'string'}, -- it will not add pair on that treesitter node
     javascript = {'template_string'},
     java = false -- don't check treesitter on java
-  }
+  },
+  disable_filetype = {'TelescopePrompt', 'vim'}
 }
 
-require('nvim-treesitter.configs').setup {autopairs = {enable = true}}
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+require('cmp').event:on('confirm_done', cmp_autopairs.on_confirm_done())
 
+require('nvim-treesitter.configs').setup {autopairs = {enable = true}}
 local ts_conds = require 'nvim-autopairs.ts-conds'
 
 -- press % => %% is only inside comment or string
