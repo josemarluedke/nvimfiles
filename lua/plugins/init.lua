@@ -18,8 +18,20 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- LSP
-  use 'neovim/nvim-lspconfig'
-  use 'kabouzeid/nvim-lspinstall'
+  use({
+    'williamboman/nvim-lsp-installer',
+    requires = {
+      'neovim/nvim-lspconfig', 'ray-x/lsp_signature.nvim',
+      'jose-elias-alvarez/nvim-lsp-ts-utils'
+    },
+    config = function()
+      require('lsp')
+    end,
+    event = 'BufEnter'
+  })
+
+  --
+  -- use 'kabouzeid/nvim-lspinstall'
   use {
     'tami5/lspsaga.nvim',
     branch = 'nvim51',
