@@ -1,72 +1,81 @@
-vim.fn.sign_define('LspDiagnosticsSignError', {
-  texthl = 'LspDiagnosticsSignError',
-  text = '',
-  numhl = 'LspDiagnosticsSignError'
-})
-vim.fn.sign_define('LspDiagnosticsSignWarning', {
-  texthl = 'LspDiagnosticsSignWarning',
-  text = '',
-  numhl = 'LspDiagnosticsSignWarning'
-})
-vim.fn.sign_define('LspDiagnosticsSignHint', {
-  texthl = 'LspDiagnosticsSignHint',
-  text = '',
-  numhl = 'LspDiagnosticsSignHint'
-})
-vim.fn.sign_define('LspDiagnosticsSignInformation', {
-  texthl = 'LspDiagnosticsSignInformation',
-  text = '',
-  numhl = 'LspDiagnosticsSignInformation'
+local default_config = require('lsp.defaults')
+
+vim.lsp.handlers['textDocument/signatureHelp'] =
+    vim.lsp.with(vim.lsp.handlers.signature_help, {border = 'single'})
+vim.lsp.handlers['textDocument/hover'] =
+    vim.lsp.with(vim.lsp.handlers.hover, {border = 'single'})
+
+local lsp_installer = require('nvim-lsp-installer')
+
+lsp_installer.settings({
+  ui = {
+    keymaps = {
+      -- Keymap to expand a server in the UI
+      toggle_server_expand = 'i',
+      -- Keymap to install a server
+      install_server = '<CR>',
+      -- Keymap to reinstall/update a server
+      update_server = 'u',
+      -- Keymap to uninstall a server
+      uninstall_server = 'x'
+    }
+  }
 })
 
--- symbols for autocomplete
-vim.lsp.protocol.CompletionItemKind = {
-  '   (Text) ', '   (Method)', '   (Function)', '   (Constructor)',
-  ' ﴲ  (Field)', '[] (Variable)', '   (Class)', ' ﰮ  (Interface)',
-  '   (Module)', ' 襁 (Property)', '   (Unit)', '   (Value)',
-  ' 練 (Enum)', '   (Keyword)', ' ﬌  (Snippet)', '   (Color)',
-  '   (File)', '   (Reference)', '   (Folder)', '   (EnumMember)',
-  ' ﲀ  (Constant)', ' ﳤ  (Struct)', '   (Event)', '   (Operator)',
-  '   (TypeParameter)'
+-- initial default servers
+local requested_servers = {
+  'efm', 'tsserver', 'ember', 'gopls', 'graphql', 'sumneko_lua', 'tailwindcss',
+  'jsonls', 'cssls', 'html'
 }
 
-local function documentHighlight(client, bufnr)
-  -- Set autocommands conditional on server_capabilities
-  if client.resolved_capabilities.document_highlight then
-    vim.api.nvim_exec([[
-      hi LspReferenceRead cterm=bold ctermbg=red guibg=#464646
-      hi LspReferenceText cterm=bold ctermbg=red guibg=#464646
-      hi LspReferenceWrite cterm=bold ctermbg=red guibg=#464646
-      augroup lsp_document_highlight
-        autocmd! * <buffer>
-        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-      augroup END
-    ]], false)
+-- get disabled servers from config
+local disabled_servers = {}
+for config_server, config_opt in pairs(LSP.Servers) do
+  if config_opt == false then
+    table.insert(disabled_servers, config_server)
+  elseif not vim.tbl_contains(requested_servers, config_server) then
+    -- add additonally defined servers to be installed
+    -- todo: how to handle non-default server opts?
+    table.insert(requested_servers, config_server)
   end
 end
 
-local lsp_config = {}
-
-function lsp_config.common_on_attach(client, bufnr)
-  documentHighlight(client, bufnr)
+-- go through requested_servers and ensure installation
+local lsp_installer_servers = require('nvim-lsp-installer.servers')
+for _, requested_server in pairs(requested_servers) do
+  local ok, server = lsp_installer_servers.get_server(requested_server)
+  if ok then if not server:is_installed() then server:install() end end
 end
 
-function lsp_config.tsserver_on_attach(client, bufnr)
-  lsp_config.common_on_attach(client, bufnr)
-  client.resolved_capabilities.document_formatting = false
-end
+lsp_installer.on_server_ready(function(server)
+  local opts = default_config
 
-lsp_config.show_vtext = true
+  -- disable server if config disabled server list says so
+  opts.autostart = true
+  if vim.tbl_contains(disabled_servers, server.name) then
+    opts.autostart = false
+  end
 
-lsp_config.toggle_vtext = function()
-  lsp_config.show_vtext = not lsp_config.show_vtext
-  vim.lsp.diagnostic.display(vim.lsp.diagnostic.get(0, 1), 0, 1,
-                             {virtual_text = lsp_config.show_vtext})
-end
+  if server.name == 'tsserver' then
+    opts = vim.tbl_deep_extend('force', opts, require('lsp.tsserver'))
+  elseif server.name == 'efm' then
+    opts = vim.tbl_deep_extend('force', opts, require('lsp.efm'))
+  elseif server.name == 'jsonls' then
+    opts = vim.tbl_deep_extend('force', opts, require('lsp.jsonls'))
+  elseif server.name == 'gopls' then
+    opts = vim.tbl_deep_extend('force', opts, require('lsp.go'))
+  elseif server.name == 'sumneko_lua' then
+    opts = vim.tbl_deep_extend('force', opts, require('lsp.lua'))
+  end
 
-vim.api.nvim_exec(
-    'command! -nargs=0 LspVirtualTextToggle lua require("lsp").toggle_vtext()',
-    false)
+  -- override options if user definds them
+  if type(LSP.Servers[server.name]) == 'table' then
+    if LSP.Servers[server.name].opts ~= nil then
+      opts = LSP.Servers[server.name].opts
+    end
+  end
 
-return lsp_config
+  -- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)
+  server:setup(opts)
+  vim.cmd([[ do User LspAttachBuffers ]])
+end)
