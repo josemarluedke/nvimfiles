@@ -12,4 +12,3 @@ vim.g.edge_enable_italic = 1
 vim.g.rose_pine_variant = 'moon'
 
 vim.cmd('colorscheme ' .. Colorscheme)
-

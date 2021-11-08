@@ -1,4 +1,4 @@
-require('toggleterm').setup {
+require('toggleterm').setup({
   size = Term.size,
   open_mapping = [[<c-\>]],
   hide_numbers = true, -- hide the number column in toggleterm buffers
@@ -21,6 +21,6 @@ require('toggleterm').setup {
     -- width = <value>,
     -- height = <value>,
     winblend = 3,
-    highlights = {border = 'Normal', background = 'Normal'}
-  }
-}
+    highlights = { border = 'Normal', background = 'Normal' },
+  },
+})

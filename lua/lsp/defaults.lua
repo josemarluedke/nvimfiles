@@ -1,39 +1,58 @@
 vim.fn.sign_define('LspDiagnosticsSignError', {
   texthl = 'LspDiagnosticsSignError',
   text = '',
-  numhl = 'LspDiagnosticsSignError'
+  numhl = 'LspDiagnosticsSignError',
 })
 vim.fn.sign_define('LspDiagnosticsSignWarning', {
   texthl = 'LspDiagnosticsSignWarning',
   text = '',
-  numhl = 'LspDiagnosticsSignWarning'
+  numhl = 'LspDiagnosticsSignWarning',
 })
 vim.fn.sign_define('LspDiagnosticsSignHint', {
   texthl = 'LspDiagnosticsSignHint',
   text = '',
-  numhl = 'LspDiagnosticsSignHint'
+  numhl = 'LspDiagnosticsSignHint',
 })
 vim.fn.sign_define('LspDiagnosticsSignInformation', {
   texthl = 'LspDiagnosticsSignInformation',
   text = '',
-  numhl = 'LspDiagnosticsSignInformation'
+  numhl = 'LspDiagnosticsSignInformation',
 })
 
 -- symbols for autocomplete
 vim.lsp.protocol.CompletionItemKind = {
-  '   (Text) ', '   (Method)', '   (Function)', '   (Constructor)',
-  ' ﴲ  (Field)', '[] (Variable)', '   (Class)', ' ﰮ  (Interface)',
-  '   (Module)', ' 襁 (Property)', '   (Unit)', '   (Value)',
-  ' 練 (Enum)', '   (Keyword)', ' ﬌  (Snippet)', '   (Color)',
-  '   (File)', '   (Reference)', '   (Folder)', '   (EnumMember)',
-  ' ﲀ  (Constant)', ' ﳤ  (Struct)', '   (Event)', '   (Operator)',
-  '   (TypeParameter)'
+  '   (Text) ',
+  '   (Method)',
+  '   (Function)',
+  '   (Constructor)',
+  ' ﴲ  (Field)',
+  '[] (Variable)',
+  '   (Class)',
+  ' ﰮ  (Interface)',
+  '   (Module)',
+  ' 襁 (Property)',
+  '   (Unit)',
+  '   (Value)',
+  ' 練 (Enum)',
+  '   (Keyword)',
+  ' ﬌  (Snippet)',
+  '   (Color)',
+  '   (File)',
+  '   (Reference)',
+  '   (Folder)',
+  '   (EnumMember)',
+  ' ﲀ  (Constant)',
+  ' ﳤ  (Struct)',
+  '   (Event)',
+  '   (Operator)',
+  '   (TypeParameter)',
 }
 
 local function documentHighlight(client, bufnr)
   -- Set autocommands conditional on server_capabilities
   if client.resolved_capabilities.document_highlight then
-    vim.api.nvim_exec([[
+    vim.api.nvim_exec(
+      [[
       hi LspReferenceRead cterm=bold ctermbg=red guibg=#464646
       hi LspReferenceText cterm=bold ctermbg=red guibg=#464646
       hi LspReferenceWrite cterm=bold ctermbg=red guibg=#464646
@@ -42,7 +61,9 @@ local function documentHighlight(client, bufnr)
         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
         autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
       augroup END
-    ]], false)
+    ]],
+      false
+    )
   end
 end
 
@@ -89,21 +110,21 @@ function M.on_attach(client, bufnr)
 
   require('lsp_signature').on_attach({
     bind = true, -- This is mandatory, otherwise border config won't get registered.
-    handler_opts = {border = 'single'}
+    handler_opts = { border = 'single' },
   }, bufnr)
 end
 
-M.flags = {debounce_text_changes = 150}
+M.flags = { debounce_text_changes = 150 }
 
 -- M.capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 M.root_dir = function(fname)
   local util = require('lspconfig').util
-  return util.root_pattern('.git')(fname) or
-             util.root_pattern('tsconfig.base.json')(fname) or
-             util.root_pattern('package.json')(fname) or
-             util.root_pattern('.eslintrc.js')(fname) or
-             util.root_pattern('tsconfig.json')(fname)
+  return util.root_pattern('.git')(fname)
+    or util.root_pattern('tsconfig.base.json')(fname)
+    or util.root_pattern('package.json')(fname)
+    or util.root_pattern('.eslintrc.js')(fname)
+    or util.root_pattern('tsconfig.json')(fname)
 end
 
 M.autostart = true

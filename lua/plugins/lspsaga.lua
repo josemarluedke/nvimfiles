@@ -1,5 +1,5 @@
-local saga = require 'lspsaga'
-saga.init_lsp_saga {
+local saga = require('lspsaga')
+saga.init_lsp_saga({
   --  use_saga_diagnostic_sign = false,
   error_sign = '',
   warn_sign = '',
@@ -8,6 +8,6 @@ saga.init_lsp_saga {
   code_action_icon = '💡',
   rename_action_keys = {
     quit = '<esc>',
-    exec = '<CR>' -- quit can be a table
-  }
-}
+    exec = '<CR>', -- quit can be a table
+  },
+})

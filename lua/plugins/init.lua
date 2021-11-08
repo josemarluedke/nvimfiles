@@ -5,39 +5,44 @@ local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
   fn.system({
-    'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path
+    'git',
+    'clone',
+    'https://github.com/wbthomason/packer.nvim',
+    install_path,
   })
-  execute 'packadd packer.nvim'
+  execute('packadd packer.nvim')
 end
 
 -- Autocompile
-vim.cmd 'autocmd BufWritePost init.lua PackerCompile'
+vim.cmd('autocmd BufWritePost init.lua PackerCompile')
 
 return require('packer').startup(function(use)
   -- Package Manager
-  use 'wbthomason/packer.nvim'
+  use('wbthomason/packer.nvim')
 
   -- LSP
   use({
     'williamboman/nvim-lsp-installer',
     requires = {
-      'neovim/nvim-lspconfig', 'ray-x/lsp_signature.nvim',
-      'jose-elias-alvarez/nvim-lsp-ts-utils'
+      'neovim/nvim-lspconfig',
+      'ray-x/lsp_signature.nvim',
+      'jose-elias-alvarez/nvim-lsp-ts-utils',
     },
     config = function()
       require('lsp')
     end,
     after = 'nvim-cmp',
-    event = 'BufEnter'
+    event = 'BufEnter',
   })
 
-  use {
+  use({
     'tami5/lspsaga.nvim',
     branch = 'nvim51',
     config = function()
       require('plugins.lspsaga')
-    end
-  }
+    end,
+  })
+
   -- Autocomplete
   use({
     'hrsh7th/nvim-cmp',
@@ -45,99 +50,103 @@ return require('packer').startup(function(use)
       require('plugins.nvim-cmp').init()
     end,
     requires = {
-      {'L3MON4D3/LuaSnip'}, {'saadparwaiz1/cmp_luasnip'},
-      {'hrsh7th/cmp-buffer'}, {'hrsh7th/cmp-nvim-lua'}, {'hrsh7th/cmp-path'},
-      {'onsails/lspkind-nvim'}, {'ray-x/lsp_signature.nvim'},
-      {'hrsh7th/cmp-nvim-lsp'}
-    }
+      { 'L3MON4D3/LuaSnip' },
+      { 'saadparwaiz1/cmp_luasnip' },
+      { 'hrsh7th/cmp-buffer' },
+      { 'hrsh7th/cmp-nvim-lua' },
+      { 'hrsh7th/cmp-path' },
+      { 'onsails/lspkind-nvim' },
+      { 'ray-x/lsp_signature.nvim' },
+      { 'hrsh7th/cmp-nvim-lsp' },
+    },
     -- event = 'InsertEnter'
   })
 
   -- Navigation
-  use {
+  use({
     'kyazdani42/nvim-tree.lua',
     config = function()
       require('plugins.nvim-tree')
-    end
-  }
+    end,
+  })
 
-  use {
+  use({
     'nvim-telescope/telescope.nvim',
-    requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
+    requires = { { 'nvim-lua/popup.nvim' }, { 'nvim-lua/plenary.nvim' } },
     config = function()
       require('plugins.telescope')
-    end
-  }
+    end,
+  })
 
   -- Convenience
   -- use 'folke/which-key.nvim'
-  use 'tpope/vim-abolish'
-  use 'AndrewRadev/splitjoin.vim'
-  use {
+  use('tpope/vim-abolish')
+  use('AndrewRadev/splitjoin.vim')
+  use({
     'windwp/nvim-autopairs',
     after = 'nvim-cmp',
     config = function()
       require('plugins.autopairs')
-    end
-  }
-  use {
+    end,
+  })
+  use({
     'terrortylor/nvim-comment',
     config = function()
       require('plugins.nvim-comment')
-    end
-  }
-  use {
+    end,
+  })
+  use({
     'norcalli/nvim-colorizer.lua',
     config = function()
       require('plugins.colorizer')
-    end
-  }
-  use {
+    end,
+  })
+  use({
     'akinsho/nvim-toggleterm.lua',
     config = function()
       require('plugins.nvim-toggleterm')
-    end
-  }
-  use {
+    end,
+  })
+  use({
     'lewis6991/gitsigns.nvim',
-    requires = {'nvim-lua/plenary.nvim'},
+    requires = { 'nvim-lua/plenary.nvim' },
 
     config = function()
       require('gitsigns').setup()
-    end
-  }
-  use {
+    end,
+  })
+  use({
     'plasticboy/vim-markdown',
     config = function()
       require('plugins.vim-markdown')
-    end
-  }
-  use 'nelstrom/vim-visual-star-search'
+    end,
+  })
+  use('nelstrom/vim-visual-star-search')
 
   -- TreeSitter
-  use {
+  use({
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
     config = function()
       require('plugins.treesitter')
-    end
-  }
-  use 'JoosepAlviste/nvim-ts-context-commentstring'
-  use 'windwp/nvim-ts-autotag'
+    end,
+  })
+  use('JoosepAlviste/nvim-ts-context-commentstring')
+  use('windwp/nvim-ts-autotag')
 
   -- Theming, color
-  use 'kyazdani42/nvim-web-devicons'
-  use {
+  use('kyazdani42/nvim-web-devicons')
+  use({
     'glepnir/galaxyline.nvim',
     config = function()
       require('plugins.galaxyline')
-    end
-  }
-  use 'romgrk/barbar.nvim'
-  use 'theniceboy/nvim-deus'
-  use 'haishanh/night-owl.vim'
-  use 'sainnhe/edge'
-  use 'sainnhe/sonokai'
-  use 'projekt0n/github-nvim-theme'
-  use {'rose-pine/neovim', as = 'rose-pine'}
+    end,
+  })
+  use('romgrk/barbar.nvim')
+  use('theniceboy/nvim-deus')
+  use('haishanh/night-owl.vim')
+  use('sainnhe/edge')
+  use('sainnhe/sonokai')
+  use('projekt0n/github-nvim-theme')
+  use({ 'rose-pine/neovim', as = 'rose-pine' })
 end)

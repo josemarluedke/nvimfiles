@@ -1,9 +1,7 @@
 local default_config = require('lsp.defaults')
 
-vim.lsp.handlers['textDocument/signatureHelp'] =
-    vim.lsp.with(vim.lsp.handlers.signature_help, {border = 'single'})
-vim.lsp.handlers['textDocument/hover'] =
-    vim.lsp.with(vim.lsp.handlers.hover, {border = 'single'})
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'single' })
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'single' })
 
 local lsp_installer = require('nvim-lsp-installer')
 
@@ -17,15 +15,23 @@ lsp_installer.settings({
       -- Keymap to reinstall/update a server
       update_server = 'u',
       -- Keymap to uninstall a server
-      uninstall_server = 'x'
-    }
-  }
+      uninstall_server = 'x',
+    },
+  },
 })
 
 -- initial default servers
 local requested_servers = {
-  'efm', 'tsserver', 'ember', 'gopls', 'graphql', 'sumneko_lua', 'tailwindcss',
-  'jsonls', 'cssls', 'html'
+  'efm',
+  'tsserver',
+  'ember',
+  'gopls',
+  'graphql',
+  'sumneko_lua',
+  'tailwindcss',
+  'jsonls',
+  'cssls',
+  'html',
 }
 
 -- get disabled servers from config
@@ -44,7 +50,11 @@ end
 local lsp_installer_servers = require('nvim-lsp-installer.servers')
 for _, requested_server in pairs(requested_servers) do
   local ok, server = lsp_installer_servers.get_server(requested_server)
-  if ok then if not server:is_installed() then server:install() end end
+  if ok then
+    if not server:is_installed() then
+      server:install()
+    end
+  end
 end
 
 lsp_installer.on_server_ready(function(server)

@@ -2,16 +2,16 @@ local M = {}
 
 require('utils').define_augroups({
   _go_format = {
-    {'BufWritePre', '*.go', 'lua vim.lsp.buf.formatting_sync(nil,1000)'},
-    {'BufWritePre', '*.go', 'lua require("lsp.go").goImports(1000)'}
+    { 'BufWritePre', '*.go', 'lua vim.lsp.buf.formatting_sync(nil,1000)' },
+    { 'BufWritePre', '*.go', 'lua require("lsp.go").goImports(1000)' },
   },
   _go = {
     -- Go generally requires Tabs instead of spaces.
-    {'FileType', 'go', 'setlocal tabstop=' .. TabSize},
-    {'FileType', 'go', 'setlocal shiftwidth=' .. TabSize},
-    {'FileType', 'go', 'setlocal softtabstop=' .. TabSize},
-    {'FileType', 'go', 'setlocal noexpandtab'}
-  }
+    { 'FileType', 'go', 'setlocal tabstop=' .. TabSize },
+    { 'FileType', 'go', 'setlocal shiftwidth=' .. TabSize },
+    { 'FileType', 'go', 'setlocal softtabstop=' .. TabSize },
+    { 'FileType', 'go', 'setlocal noexpandtab' },
+  },
 })
 
 -- Enhanced Go syntax highlighting
@@ -35,9 +35,8 @@ vim.g.go_highlight_function_calls = 1
 
 M.goImports = function(timeout_ms)
   local params = vim.lsp.util.make_range_params()
-  params.context = {only = {'source.organizeImports'}}
-  local result = vim.lsp.buf_request_sync(0, 'textDocument/codeAction', params,
-                                          timeout_ms)
+  params.context = { only = { 'source.organizeImports' } }
+  local result = vim.lsp.buf_request_sync(0, 'textDocument/codeAction', params, timeout_ms)
   for _, res in pairs(result or {}) do
     for _, r in pairs(res.result or {}) do
       if r.edit then
@@ -49,7 +48,7 @@ M.goImports = function(timeout_ms)
   end
 end
 
-M.settings = {gopls = {analyses = {unusedparams = true}, staticcheck = true}}
-M.init_options = {usePlaceholders = true, completeUnimported = true}
+M.settings = { gopls = { analyses = { unusedparams = true }, staticcheck = true } }
+M.init_options = { usePlaceholders = true, completeUnimported = true }
 
 return M
