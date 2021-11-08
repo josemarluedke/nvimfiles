@@ -1,8 +1,7 @@
 local util = require('lspconfig').util
 
-local lua_format = {
-  formatCommand = 'lua-format -i --no-keep-simple-function-one-line --double-quote-to-single-quote --column-limit=' ..
-      Lua.formatLineLength .. ' --no-use-tab --indent-width ' .. TabSize,
+local stylua = {
+  formatCommand = 'stylua -s --quote-style AutoPreferSingle --indent-type Spaces --indent-width 2 -',
   formatStdin = true
 }
 
@@ -22,7 +21,7 @@ local prettier = {
 }
 
 local languages = {
-  lua = {lua_format},
+  lua = {stylua},
   javascript = {eslint},
   javascriptreact = {eslint},
   typescript = {eslint},
