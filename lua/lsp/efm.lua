@@ -36,7 +36,7 @@ local languages = {
 
 return {
   init_options = { documentFormatting = true, codeAction = true },
-  root_dir = util.root_pattern({ '.git/', '.' }),
+  root_dir = util.root_pattern('package.json', '.git/', '.zshrc'),
   filetypes = vim.tbl_keys(languages),
   settings = { languages = languages },
 }
