@@ -57,9 +57,11 @@ M.init = function()
         's',
       }),
     },
-    documentation = {
-      border = 'single',
-      winhighlight = 'FloatBorder:FloatBorder,Normal:Normal',
+    window = {
+      documentation = {
+        border = 'single',
+        winhighlight = 'FloatBorder:FloatBorder,Normal:Normal',
+      },
     },
     experimental = { ghost_text = true },
     sources = cmp.config.sources({
