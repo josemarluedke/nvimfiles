@@ -10,15 +10,15 @@ map('n', '<leader>n', '<cmd>NvimTreeFindFile<CR>', opts)
 
 -- LSP
 map('n', 'K', '<cmd>Lspsaga hover_doc<CR>', opts)
-map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-map('n', 'gs', '<cmd>lua require("lspsaga.signaturehelp").signature_help()<CR>', opts)
-map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+map('n', 'gd', '<cmd>Lspsaga preview_definition<CR>', opts)
+map('n', 'gD', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+map('n', 'gs', '<Cmd>Lspsaga signature_help<CR>', { silent = true })
+map('n', 'gf', '<cmd>Lspsaga lsp_finder<CR>', opts)
 map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
 map('n', 'ca', '<cmd>Lspsaga code_action<CR>', opts)
 map('n', '<C-p>', '<cmd>Lspsaga diagnostic_jump_prev<CR>', opts)
 map('n', '<C-n>', '<cmd>Lspsaga diagnostic_jump_next<CR>', opts)
-map('n', '<leader>r', '<cmd>lua require("lspsaga.rename").rename()<CR>', opts)
+map('n', '<leader>r', '<cmd>Lspsaga rename<CR>', opts)
 
 -- scroll down hover doc or scroll in definition preview
 map('n', '<Down>', "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>", opts)
