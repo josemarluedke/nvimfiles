@@ -1,5 +1,5 @@
-Colorscheme = 'github_dimmed'
--- Colorscheme = 'rose-pine'
+-- Colorscheme = 'github_dimmed'
+Colorscheme = 'rose-pine'
 -- Colorscheme = 'github_light'
 Font = 'FiraCode Nerd Font:h17'
 TabSize = 2
