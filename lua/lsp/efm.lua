@@ -12,6 +12,11 @@ local eslint = {
   lintIgnoreExitCode = true,
   formatCommand = 'eslint_d --stdin --fix-to-stdout --stdin-filename=${INPUT}',
   formatStdin = true,
+  rootMarkers = {
+    '.eslintrc.cjs',
+    '.eslintrc.js',
+    '.eslintrc',
+  },
 }
 
 local prettier = {
@@ -21,7 +26,7 @@ local prettier = {
 
 local languages = {
   lua = { stylua },
-  javascript = { eslint },
+  javascript = { eslint, prettier },
   javascriptreact = { eslint },
   typescript = { eslint },
   typescriptreact = { eslint },
