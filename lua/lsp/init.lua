@@ -86,6 +86,7 @@ lsp_installer.on_server_ready(function(server)
       opts = LSP.Servers[server.name].opts
     end
   end
+  opts.capabilities = default_config.default_capabilities()
 
   -- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)
   server:setup(opts)

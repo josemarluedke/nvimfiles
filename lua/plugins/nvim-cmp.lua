@@ -63,6 +63,7 @@ M.init = function()
         winhighlight = 'FloatBorder:FloatBorder,Normal:Normal',
       },
     },
+    preselect = cmp.PreselectMode.None,
     experimental = { ghost_text = true },
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
@@ -85,7 +86,23 @@ M.init = function()
     },
   })
 
-  cmp.setup.cmdline('/', { sources = { { name = 'buffer' } } })
+  -- `/` cmdline setup.
+  cmp.setup.cmdline('/', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+      { name = 'buffer' },
+    },
+  })
+
+  -- `:` cmdline setup.
+  cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+      { name = 'path' },
+    }, {
+      { name = 'cmdline' },
+    }),
+  })
 
   require('lsp_signature').setup({
     bind = true, -- This is mandatory, otherwise border config won't get registered.

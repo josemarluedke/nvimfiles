@@ -58,6 +58,7 @@ return require('packer').startup(function(use)
       { 'onsails/lspkind-nvim' },
       { 'ray-x/lsp_signature.nvim' },
       { 'hrsh7th/cmp-nvim-lsp' },
+      { 'hrsh7th/cmp-cmdline' },
     },
     -- event = 'InsertEnter'
   })
