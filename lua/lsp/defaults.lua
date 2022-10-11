@@ -50,7 +50,7 @@ vim.lsp.protocol.CompletionItemKind = {
 
 local function documentHighlight(client, bufnr)
   -- Set autocommands conditional on server_capabilities
-  if client.resolved_capabilities.document_highlight then
+  if client.server_capabilities.document_highlight then
     vim.api.nvim_exec(
       [[
       hi LspReferenceRead cterm=bold ctermbg=red guibg=#464646
@@ -82,8 +82,8 @@ function M.on_attach(client, bufnr)
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   if LSP.can_client_format(client.name) then
-    client.resolved_capabilities.document_formatting = true
-    client.resolved_capabilities.document_range_formatting = true
+    client.server_capabilities.document_formatting = true
+    client.server_capabilities.document_range_formatting = true
     -- check user config to see if we can format on save
     if LSP.format_on_save and not auto_format_lock then
       auto_format_lock = true -- just run autocommand once
@@ -104,8 +104,8 @@ function M.on_attach(client, bufnr)
         ]]):format(format_filetypes))
     end
   else
-    client.resolved_capabilities.document_formatting = false
-    client.resolved_capabilities.document_range_formatting = false
+    client.server_capabilities.document_formatting = false
+    client.server_capabilities.document_range_formatting = false
   end
 
   require('lsp_signature').on_attach({
