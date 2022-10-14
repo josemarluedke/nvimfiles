@@ -20,7 +20,24 @@ Term.floatBorder = 'shadow' -- single, double, shadow, or curved
 LSP = {}
 LSP.format_on_save = true
 
-LSP.Servers = { efm = { format = true }, gopls = { format = true } }
+LSP.Servers = {
+  efm = {
+    format = true,
+  },
+  gopls = {
+    format = false,
+  },
+  jsonls = {
+    format = false,
+  },
+  sumneko_lua = {
+    format = false,
+  },
+  html = true,
+  tsserver = {
+    format = false,
+  },
+}
 
 function LSP.can_client_format(client_name)
   if LSP.Servers[client_name] == true then

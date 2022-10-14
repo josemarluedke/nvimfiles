@@ -123,6 +123,7 @@ return require('packer').startup(function(use)
     end,
   })
   use('nelstrom/vim-visual-star-search')
+  use('RRethy/vim-illuminate')
 
   -- TreeSitter
   use({
