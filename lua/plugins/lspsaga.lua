@@ -1,5 +1,5 @@
 local saga = require('lspsaga')
-saga.init_lsp_saga({
+saga.setup({
   border_style = 'rounded',
   rename_action_quit = '<esc>',
   finder_action_keys = {
