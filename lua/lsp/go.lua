@@ -2,7 +2,7 @@ local M = {}
 
 require('utils').define_augroups({
   _go_format = {
-    { 'BufWritePre', '*.go', 'lua vim.lsp.buf.formatting_sync(nil,1000)' },
+    { 'BufWritePre', '*.go', 'lua vim.lsp.buf.format({async = true, timeout = 1000})' },
     { 'BufWritePre', '*.go', 'lua require("lsp.go").goImports(1000)' },
   },
   _go = {
