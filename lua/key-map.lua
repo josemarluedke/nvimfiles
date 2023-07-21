@@ -10,10 +10,9 @@ map('n', '<leader>n', '<cmd>NvimTreeFindFile<CR>', opts)
 
 -- LSP
 map('n', 'K', '<cmd>Lspsaga hover_doc<CR>', opts)
-map('n', 'gd', '<cmd>Lspsaga preview_definition<CR>', opts)
+map('n', 'gd', '<cmd>Lspsaga peek_definition<CR>', opts)
 map('n', 'gD', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-map('n', 'gs', '<Cmd>Lspsaga signature_help<CR>', { silent = true })
-map('n', 'gf', '<cmd>Lspsaga lsp_finder<CR>', opts)
+map('n', 'gf', '<cmd>Lspsaga finder<CR>', opts)
 map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
 map('n', 'ca', '<cmd>Lspsaga code_action<CR>', opts)
 map('n', '<C-p>', '<cmd>Lspsaga diagnostic_jump_prev<CR>', opts)
