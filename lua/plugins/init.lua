@@ -22,19 +22,17 @@ return require('packer').startup(function(use)
 
   -- LSP
   use({
-    'williamboman/nvim-lsp-installer',
-    requires = {
-      'neovim/nvim-lspconfig',
-      'ray-x/lsp_signature.nvim',
-      'jose-elias-alvarez/nvim-lsp-ts-utils',
-    },
+    'williamboman/mason.nvim',
+    'neovim/nvim-lspconfig',
+    'ray-x/lsp_signature.nvim',
+  })
+  use({
+    'williamboman/mason-lspconfig.nvim',
+     run = ":MasonUpdate",
     config = function()
       require('lsp')
     end,
-    after = 'nvim-cmp',
-    event = 'BufEnter',
   })
-
   use({
     'glepnir/lspsaga.nvim',
     branch = 'main',

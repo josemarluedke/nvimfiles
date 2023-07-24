@@ -25,12 +25,12 @@ LSP.Servers = {
     format = true,
   },
   gopls = {
-    format = false,
+    format = true,
   },
   jsonls = {
     format = false,
   },
-  sumneko_lua = {
+  lua_ls = {
     format = false,
   },
   html = true,
