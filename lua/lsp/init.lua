@@ -27,6 +27,7 @@ vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.s
 
 -- initial default servers
 local requested_servers = {
+  'glint',
   'efm',
   'tsserver',
   'ember',
