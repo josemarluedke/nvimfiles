@@ -28,7 +28,7 @@ return require('packer').startup(function(use)
   })
   use({
     'williamboman/mason-lspconfig.nvim',
-     run = ":MasonUpdate",
+    run = ':MasonUpdate',
     config = function()
       require('lsp')
     end,
@@ -38,6 +38,15 @@ return require('packer').startup(function(use)
     branch = 'main',
     config = function()
       require('plugins.lspsaga')
+    end,
+  })
+  use({
+    'jose-elias-alvarez/null-ls.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+    },
+    config = function()
+      require('plugins.null-ls')
     end,
   })
 

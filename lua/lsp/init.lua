@@ -28,7 +28,6 @@ vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.s
 -- initial default servers
 local requested_servers = {
   'glint',
-  'efm',
   'tsserver',
   'ember',
   'gopls',
@@ -72,8 +71,6 @@ require('mason-lspconfig').setup_handlers({
 
     if server.name == 'tsserver' then
       opts = vim.tbl_deep_extend('force', opts, require('lsp.tsserver'))
-    elseif server.name == 'efm' then
-      opts = vim.tbl_deep_extend('force', opts, require('lsp.efm'))
     elseif server.name == 'jsonls' then
       opts = vim.tbl_deep_extend('force', opts, require('lsp.jsonls'))
     elseif server.name == 'gopls' then
