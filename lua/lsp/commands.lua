@@ -19,7 +19,8 @@ M.Init = function()
     clear = true,
   })
 
-  vim.api.nvim_create_autocmd(string.format('BufWritePre %s', format_filetypes), {
+  vim.api.nvim_create_autocmd({'BufWritePre'}, {
+    pattern =  {format_filetypes},
     callback = M.Format,
     group = group,
     nested = true,
