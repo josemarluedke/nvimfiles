@@ -88,6 +88,7 @@ return require('packer').startup(function(use)
 
   -- Convenience
   -- use 'folke/which-key.nvim'
+  use('github/copilot.vim')
   use('tpope/vim-abolish')
   use('AndrewRadev/splitjoin.vim')
   use({

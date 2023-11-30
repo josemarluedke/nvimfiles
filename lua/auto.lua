@@ -6,10 +6,10 @@ require('utils').define_augroups({
   },
 
   misc_autoformat = {
-    { 'BufNewFile,BufRead', '*.go.tpl', 'set filetype=gotexttmpl' },
+    { 'BufNewFile,BufRead', '*.go.tpl',        'set filetype=gotexttmpl' },
     { 'BufNewFile,BufRead', '*.gql,*.graphql', 'set filetype=graphql' },
-    { 'BufNewFile,BufRead', '*.gts', 'setfiletype typescript.tsx' },
-    { 'BufNewFile,BufRead', '*.gjs', 'setfiletype javascript' },
+    { 'BufNewFile,BufRead', '*.gts',           'setfiletype typescript.tsx' },
+    { 'BufNewFile,BufRead', '*.gjs',           'setfiletype javascript' },
   },
 
   yank = {
