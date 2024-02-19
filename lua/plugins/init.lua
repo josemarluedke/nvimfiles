@@ -86,9 +86,25 @@ return require('packer').startup(function(use)
     end,
   })
 
+  -- AI
+  use({
+    'zbirenbaum/copilot.lua',
+    cmd = 'Copilot',
+    event = 'InsertEnter',
+    config = function()
+      require('copilot').setup({})
+    end,
+  })
+  use({
+    'zbirenbaum/copilot-cmp',
+    after = { 'copilot.lua' },
+    config = function()
+      require('copilot_cmp').setup()
+    end,
+  })
+
   -- Convenience
   -- use 'folke/which-key.nvim'
-  use('github/copilot.vim')
   use('tpope/vim-abolish')
   use('AndrewRadev/splitjoin.vim')
   use({

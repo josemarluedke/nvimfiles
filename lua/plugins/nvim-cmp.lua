@@ -64,8 +64,8 @@ M.init = function()
       },
     },
     preselect = cmp.PreselectMode.None,
-    -- experimental = { ghost_text = true },
     sources = cmp.config.sources({
+      { name = 'copilot' },
       { name = 'nvim_lsp' },
       { name = 'nvim_lua' },
       { name = 'buffer' },
