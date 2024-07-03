@@ -1,0 +1,18 @@
+{
+  "extras": [
+    "lazyvim.plugins.extras.coding.copilot",
+    "lazyvim.plugins.extras.dap.core",
+    "lazyvim.plugins.extras.lang.markdown",
+    "lazyvim.plugins.extras.lang.go",
+    "lazyvim.plugins.extras.lang.sql",
+    "lazyvim.plugins.extras.lang.tailwind",
+    "lazyvim.plugins.extras.lang.typescript",
+    "lazyvim.plugins.extras.test.core",
+    "lazyvim.plugins.extras.util.mini-hipatterns",
+    "lazyvim.plugins.extras.coding.mini-comment"
+  ],
+  "news": {
+    "NEWS.md": "6077"
+  },
+  "version": 6
+}
