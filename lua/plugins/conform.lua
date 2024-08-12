@@ -10,6 +10,9 @@ return {
         "goimports",
         -- "goimports-reviser",
       },
+      graphql = {
+        "prettier",
+      },
     },
     format_on_save = function(bufnr)
       return { async = true, timeout_ms = 5000, lsp_fallback = true }
