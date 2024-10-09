@@ -21,6 +21,8 @@ return {
         "vim",
         "yaml",
         "glimmer",
+        "glimmer_javascript",
+        "glimmer_typescript",
         "graphql",
       },
     },

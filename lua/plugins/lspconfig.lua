@@ -6,7 +6,6 @@ return {
     },
 
     setup = {
-
       protols = function(_, opts)
         require("lspconfig").protols.setup({})
       end,
