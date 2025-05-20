@@ -1,8 +1,8 @@
-autoload/
-plug/
-plugged/
-.netrwhist
-.init.vim-rplugin~
-init.local.vim
-queries/
-plugin/
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+*.log
+data

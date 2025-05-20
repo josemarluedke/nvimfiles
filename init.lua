@@ -1,7 +1,2 @@
-vim.cmd('luafile ~/.config/nvim/settings.lua')
-
-require('plugins')
-require('vim-settings')
-require('colors')
-require('key-map')
-require('auto')
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")

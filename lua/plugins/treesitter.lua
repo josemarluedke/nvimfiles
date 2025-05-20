@@ -1,7 +1,30 @@
-require('nvim-treesitter.configs').setup({
-  ensure_installed = 'all',
-  ignore_install = { 'haskell', 'phpdoc' },
-  highlight = { enable = true },
-  indent = { enable = true },
-  autotag = { enable = true }, -- requires windwp/nvim-ts-autotag
-})
+return {
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      highlight = {
+        enable = true,
+      },
+      ensure_installed = {
+        "bash",
+        "go",
+        "html",
+        "javascript",
+        "json",
+        "lua",
+        "markdown",
+        "markdown_inline",
+        "query",
+        "regex",
+        "tsx",
+        "typescript",
+        "vim",
+        "yaml",
+        "glimmer",
+        "glimmer_javascript",
+        "glimmer_typescript",
+        "graphql",
+      },
+    },
+  },
+}
