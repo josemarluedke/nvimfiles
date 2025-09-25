@@ -18,6 +18,8 @@ return {
     log_level = vim.log.levels.DEBUG,
     -- add your config here
     formatters_by_ft = {
+      -- go install -v github.com/incu6us/goimports-reviser/v3@latest
+      -- go install mvdan.cc/gofumpt@latest
       go = {
         "gofumpt",
         "goimports_reviser",
