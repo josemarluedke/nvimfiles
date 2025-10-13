@@ -3,6 +3,9 @@
 -- Add any additional options here
 --
 
+-- Force git root detection to take priority over LSP in monorepos
+vim.g.root_spec = { { ".git" }, "lsp", "cwd" }
+
 -- vim.cmd([[autocmd BufWritePre *.go lua vim.lsp.buf.format({ async = true })]])
 -- vim.api.nvim_create_autocmd("BufWritePre", {
 --   pattern = "*.go",

@@ -1,6 +1,7 @@
 {
   "extras": [
     "lazyvim.plugins.extras.ai.copilot",
+    "lazyvim.plugins.extras.ai.sidekick",
     "lazyvim.plugins.extras.dap.core",
     "lazyvim.plugins.extras.lang.markdown",
     "lazyvim.plugins.extras.lang.go",
