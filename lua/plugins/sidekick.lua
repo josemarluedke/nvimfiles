@@ -12,13 +12,7 @@ return {
     -- Extend with custom config
     return vim.tbl_deep_extend("force", opts, {
       cli = {
-        keys = {
-          stopinsert = {
-            "<c-[>",
-            "stopinsert",
-            mode = "t",
-          },
-        },
+        keys = { stopinsert = { "<c-[>", "stopinsert", mode = "t" } },
       },
     })
   end,
