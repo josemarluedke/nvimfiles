@@ -4,7 +4,7 @@ return {
   opts = { ensure_installed = {
     "goimports",
     "gofumpt",
-    "glint",
+    -- "glint", -- v1; v2 uses @glint/tsserver-plugin via vtsls
     "graphql-language-service-cli",
   } },
 }
